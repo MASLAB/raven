@@ -23,4 +23,4 @@ ninja
 ### Linker Bug
 For some reason, STM32CubeMX has a bug in generating the linker script, and misses RAM in a few places
 
-Ignore the project generated linker file, as I changed the CMakeLists.txt to link to the one in raven folder for both hubs
+Ignore the project generated linker file, as I changed the CMakeLists.txt to link to the one in firmware folder for both hubs
