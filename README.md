@@ -12,6 +12,14 @@ Install build tools if you need to
 sudo apt install ninja-build cmake gcc-arm-none-eabi
 ```
 
+### Compiling
+Compile from either sensor-hub or motor-hub folder
+```
+cmake . --preset=Release
+cd Release
+ninja
+```
+
 ### Linker Bug
 For some reason, STM32CubeMX has a bug in generating the linker script, and misses RAM in a few places
 
