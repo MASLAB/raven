@@ -460,7 +460,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "rigid4.kicad_pro",
+    "filename": "raven.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -741,7 +741,95 @@
   "sheets": [
     [
       "38b0a34b-2047-47f6-90d7-ccdf77e8e212",
-      ""
+      "Root"
+    ],
+    [
+      "ef67af30-d83a-493a-9361-758646c1cbba",
+      "LightSensor2"
+    ],
+    [
+      "7e3f67f4-c7a7-4f15-a62c-4903c0d88b19",
+      "MotorHub"
+    ],
+    [
+      "de0a8e47-afa7-482a-9ba2-9f2770efabd5",
+      "Encoder6"
+    ],
+    [
+      "69f17c52-085e-4098-9317-47d7511472bd",
+      "SensorHub"
+    ],
+    [
+      "128c6682-3228-4ea8-b0f1-85499c10b362",
+      "Encoder7"
+    ],
+    [
+      "e4ef8bfb-8ca4-4eda-88d6-8d711af4ddb5",
+      "LightSensor1"
+    ],
+    [
+      "44e25890-077a-4dca-8ac5-7180ffdb26d1",
+      "Encoder8"
+    ],
+    [
+      "047c48ad-38c6-4ace-a080-536411528ad9",
+      "Encoder9"
+    ],
+    [
+      "87bd6621-4b81-4f81-8fb5-2dcbfbbe46be",
+      "Magnometer"
+    ],
+    [
+      "fe1f0ae0-b9d2-45da-98fc-eb3e7ec43aeb",
+      "Encoder10"
+    ],
+    [
+      "57782601-a380-4e83-8dfa-53e09bbece77",
+      "IMU"
+    ],
+    [
+      "249fcc58-d8e4-4b0d-99c0-747a6cf91710",
+      "LargeMotor6"
+    ],
+    [
+      "9f7d2e26-c7a7-4b0f-805e-fdab42de5209",
+      "LargeMotor7"
+    ],
+    [
+      "e1a5b04d-7138-46b4-8c91-fd022c4d312f",
+      "LargeMotor8"
+    ],
+    [
+      "92b774df-9763-4e1e-8d73-4d39ffc77980",
+      "LargeMotor9"
+    ],
+    [
+      "abdd067e-b041-4df4-bd7d-1afbb9d7fcd1",
+      "LargeMotor10"
+    ],
+    [
+      "c43efd4d-e310-4bbf-b378-f4ca4f0e12c9",
+      "Servo7"
+    ],
+    [
+      "5f5322a5-6ca6-4329-b225-2e98f5af77fb",
+      "Servo8"
+    ],
+    [
+      "efc83594-e3fb-499b-a4ad-dd6a5dd5f24e",
+      "Servo9"
+    ],
+    [
+      "48bd910e-1922-4cbf-82c0-63516f836aae",
+      "Servo10"
+    ],
+    [
+      "b34e6cdb-0429-4c8b-ab94-be7f1417c867",
+      "Servo11"
+    ],
+    [
+      "4b9f6c8c-5050-4109-94cd-845922bb9507",
+      "Servo12"
     ]
   ],
   "text_variables": {}

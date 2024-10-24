@@ -5,6 +5,82 @@
 	(uuid "38b0a34b-2047-47f6-90d7-ccdf77e8e212")
 	(paper "A4")
 	(lib_symbols)
+	(sheet
+		(at 198.12 87.63)
+		(size 25.4 13.97)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "69f17c52-085e-4098-9317-47d7511472bd")
+		(property "Sheetname" "SensorHub"
+			(at 198.12 86.9184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sensor-hub.kicad_sch"
+			(at 198.12 102.1846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "raven"
+				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212"
+					(page "19")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 196.85 53.34)
+		(size 29.21 11.43)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "7e3f67f4-c7a7-4f15-a62c-4903c0d88b19")
+		(property "Sheetname" "MotorHub"
+			(at 196.85 52.6284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "motor-hub.kicad_sch"
+			(at 196.85 65.3546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "raven"
+				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212"
+					(page "18")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")
