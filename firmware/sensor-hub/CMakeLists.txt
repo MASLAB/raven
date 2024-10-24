@@ -66,3 +66,15 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 
     # Add user defined libraries
 )
+
+# Generate binary from elf
+add_custom_command(
+    OUTPUT ${CMAKE_PROJECT_NAME}.bin
+    COMMAND ${CMAKE_OBJCOPY} -O binary ${CMAKE_PROJECT_NAME}.elf ${CMAKE_PROJECT_NAME}.bin
+    DEPENDS ${CMAKE_PROJECT_NAME}.elf
+)
+add_custom_target(
+    gen_bin ALL
+    DEPENDS ${CMAKE_PROJECT_NAME}.bin
+)
+add_dependencies(gen_bin ${CMAKE_PROJECT_NAME})
