@@ -744,8 +744,40 @@
       "Root"
     ],
     [
-      "ef67af30-d83a-493a-9361-758646c1cbba",
-      "LightSensor2"
+      "6efef10c-3fe0-4055-829d-9b7a714ef2a6",
+      "Switch2"
+    ],
+    [
+      "0468a395-528f-40e9-a80c-ea76604d83d5",
+      "Switch3"
+    ],
+    [
+      "907212ed-04bc-4847-9304-636cf67f996f",
+      "Switch4"
+    ],
+    [
+      "342a8149-844d-48b1-b606-577c49d96b64",
+      "Switch5"
+    ],
+    [
+      "a6b29ecb-c69a-4a56-96a2-a4702bce8bfa",
+      "Switch6"
+    ],
+    [
+      "8ef7f6c1-b5f0-4b4e-b05a-a624501256e5",
+      "IMU1"
+    ],
+    [
+      "11ab18bc-ce77-4033-8a5c-38e1164bac50",
+      "LightSensor3"
+    ],
+    [
+      "bf3906f2-c83b-4398-a50d-7d7e43f0335f",
+      "LightSensor4"
+    ],
+    [
+      "bb55d5dc-17ea-4c4f-8b20-038db2561a4a",
+      "Magnometer1"
     ],
     [
       "7e3f67f4-c7a7-4f15-a62c-4903c0d88b19",
@@ -756,16 +788,8 @@
       "Encoder6"
     ],
     [
-      "69f17c52-085e-4098-9317-47d7511472bd",
-      "SensorHub"
-    ],
-    [
       "128c6682-3228-4ea8-b0f1-85499c10b362",
       "Encoder7"
-    ],
-    [
-      "e4ef8bfb-8ca4-4eda-88d6-8d711af4ddb5",
-      "LightSensor1"
     ],
     [
       "44e25890-077a-4dca-8ac5-7180ffdb26d1",
@@ -776,20 +800,16 @@
       "Encoder9"
     ],
     [
-      "87bd6621-4b81-4f81-8fb5-2dcbfbbe46be",
-      "Magnometer"
-    ],
-    [
       "fe1f0ae0-b9d2-45da-98fc-eb3e7ec43aeb",
       "Encoder10"
     ],
     [
-      "57782601-a380-4e83-8dfa-53e09bbece77",
-      "IMU"
-    ],
-    [
       "249fcc58-d8e4-4b0d-99c0-747a6cf91710",
       "LargeMotor6"
+    ],
+    [
+      "389c9745-b4ed-4a72-983a-3e20800a0a90",
+      "Switch1"
     ],
     [
       "9f7d2e26-c7a7-4b0f-805e-fdab42de5209",
@@ -809,27 +829,27 @@
     ],
     [
       "c43efd4d-e310-4bbf-b378-f4ca4f0e12c9",
-      "Servo7"
+      "Servo1"
     ],
     [
       "5f5322a5-6ca6-4329-b225-2e98f5af77fb",
-      "Servo8"
+      "Servo2"
     ],
     [
       "efc83594-e3fb-499b-a4ad-dd6a5dd5f24e",
-      "Servo9"
+      "Servo3"
     ],
     [
       "48bd910e-1922-4cbf-82c0-63516f836aae",
-      "Servo10"
+      "Servo4"
     ],
     [
       "b34e6cdb-0429-4c8b-ab94-be7f1417c867",
-      "Servo11"
+      "Servo5"
     ],
     [
       "4b9f6c8c-5050-4109-94cd-845922bb9507",
-      "Servo12"
+      "Servo6"
     ]
   ],
   "text_variables": {}
