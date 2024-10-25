@@ -744,6 +744,10 @@
       "Root"
     ],
     [
+      "f394c898-b22e-4c04-a716-6dfc9ed58812",
+      "LargeMotor2"
+    ],
+    [
       "6efef10c-3fe0-4055-829d-9b7a714ef2a6",
       "Switch2"
     ],
@@ -765,19 +769,27 @@
     ],
     [
       "8ef7f6c1-b5f0-4b4e-b05a-a624501256e5",
-      "IMU1"
-    ],
-    [
-      "11ab18bc-ce77-4033-8a5c-38e1164bac50",
-      "LightSensor3"
-    ],
-    [
-      "bf3906f2-c83b-4398-a50d-7d7e43f0335f",
-      "LightSensor4"
+      "IMU"
     ],
     [
       "bb55d5dc-17ea-4c4f-8b20-038db2561a4a",
-      "Magnometer1"
+      "Magnometer"
+    ],
+    [
+      "9c212a0e-8f59-4d50-809b-5c46c113ebb1",
+      "LargeMotor3"
+    ],
+    [
+      "1c56c3db-f249-45f3-a7a2-312c4cc0f608",
+      "LargeMotor4"
+    ],
+    [
+      "19d40972-e1c0-4b6b-86ea-479f802a4116",
+      "LargeMotor5"
+    ],
+    [
+      "f227bbf4-2b20-4d75-886f-a4b89b58a946",
+      "LightSensor1"
     ],
     [
       "7e3f67f4-c7a7-4f15-a62c-4903c0d88b19",
@@ -805,27 +817,11 @@
     ],
     [
       "249fcc58-d8e4-4b0d-99c0-747a6cf91710",
-      "LargeMotor6"
+      "LargeMotor1"
     ],
     [
       "389c9745-b4ed-4a72-983a-3e20800a0a90",
       "Switch1"
-    ],
-    [
-      "9f7d2e26-c7a7-4b0f-805e-fdab42de5209",
-      "LargeMotor7"
-    ],
-    [
-      "e1a5b04d-7138-46b4-8c91-fd022c4d312f",
-      "LargeMotor8"
-    ],
-    [
-      "92b774df-9763-4e1e-8d73-4d39ffc77980",
-      "LargeMotor9"
-    ],
-    [
-      "abdd067e-b041-4df4-bd7d-1afbb9d7fcd1",
-      "LargeMotor10"
     ],
     [
       "c43efd4d-e310-4bbf-b378-f4ca4f0e12c9",
