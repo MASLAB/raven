@@ -48,7 +48,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.3
+          "min_clearance": 0.25
         }
       },
       "diff_pair_dimensions": [
@@ -184,9 +184,11 @@
       ],
       "track_widths": [
         0.0,
+        0.2,
         0.254,
         0.5,
-        1.0
+        1.0,
+        2.5
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -744,47 +746,27 @@
       "Root"
     ],
     [
-      "f394c898-b22e-4c04-a716-6dfc9ed58812",
+      "ecff1507-07a4-4051-a53e-7f381d310b19",
       "LargeMotor2"
-    ],
-    [
-      "6efef10c-3fe0-4055-829d-9b7a714ef2a6",
-      "Switch2"
-    ],
-    [
-      "0468a395-528f-40e9-a80c-ea76604d83d5",
-      "Switch3"
-    ],
-    [
-      "907212ed-04bc-4847-9304-636cf67f996f",
-      "Switch4"
-    ],
-    [
-      "342a8149-844d-48b1-b606-577c49d96b64",
-      "Switch5"
-    ],
-    [
-      "a6b29ecb-c69a-4a56-96a2-a4702bce8bfa",
-      "Switch6"
     ],
     [
       "8ef7f6c1-b5f0-4b4e-b05a-a624501256e5",
       "IMU"
     ],
     [
+      "57a549cf-4a04-4a00-b17d-114b63a3b7b2",
+      "LargeMotor3"
+    ],
+    [
+      "a1a579ba-cb28-4cf4-9218-3d3db613743c",
+      "LargeMotor4"
+    ],
+    [
       "bb55d5dc-17ea-4c4f-8b20-038db2561a4a",
       "Magnometer"
     ],
     [
-      "9c212a0e-8f59-4d50-809b-5c46c113ebb1",
-      "LargeMotor3"
-    ],
-    [
-      "1c56c3db-f249-45f3-a7a2-312c4cc0f608",
-      "LargeMotor4"
-    ],
-    [
-      "19d40972-e1c0-4b6b-86ea-479f802a4116",
+      "53b970fa-9cb5-40ca-bce6-73192befc367",
       "LargeMotor5"
     ],
     [
@@ -797,31 +779,27 @@
     ],
     [
       "de0a8e47-afa7-482a-9ba2-9f2770efabd5",
-      "Encoder6"
+      "Encoder1"
     ],
     [
       "128c6682-3228-4ea8-b0f1-85499c10b362",
-      "Encoder7"
+      "Encoder2"
     ],
     [
       "44e25890-077a-4dca-8ac5-7180ffdb26d1",
-      "Encoder8"
+      "Encoder3"
     ],
     [
       "047c48ad-38c6-4ace-a080-536411528ad9",
-      "Encoder9"
+      "Encoder4"
     ],
     [
       "fe1f0ae0-b9d2-45da-98fc-eb3e7ec43aeb",
-      "Encoder10"
+      "Encoder5"
     ],
     [
       "249fcc58-d8e4-4b0d-99c0-747a6cf91710",
       "LargeMotor1"
-    ],
-    [
-      "389c9745-b4ed-4a72-983a-3e20800a0a90",
-      "Switch1"
     ],
     [
       "c43efd4d-e310-4bbf-b378-f4ca4f0e12c9",

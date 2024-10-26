@@ -2525,6 +2525,12 @@
 		(uuid "03705fb9-c50c-4818-8a9e-5e9e939b9ff0")
 	)
 	(junction
+		(at 35.56 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1745855e-a292-4e39-a33f-954993183c9b")
+	)
+	(junction
 		(at 35.56 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2589,12 +2595,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "db947c96-3613-4de2-82b1-876866df47e8")
-	)
-	(junction
-		(at 35.56 121.92)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "df550a18-f04d-458c-8d14-b8eb0d81e242")
 	)
 	(no_connect
 		(at 38.1 81.28)
@@ -2756,6 +2756,16 @@
 	)
 	(wire
 		(pts
+			(xy 40.64 119.38) (xy 40.64 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35a3bd2c-2df7-4321-9678-edbd6368ddbb")
+	)
+	(wire
+		(pts
 			(xy 68.58 73.66) (xy 68.58 76.2)
 		)
 		(stroke
@@ -2866,6 +2876,16 @@
 	)
 	(wire
 		(pts
+			(xy 27.94 55.88) (xy 38.1 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64a3af53-7889-4b6b-82b3-c0ff714734cd")
+	)
+	(wire
+		(pts
 			(xy 93.98 35.56) (xy 101.6 35.56)
 		)
 		(stroke
@@ -2926,6 +2946,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 73.66) (xy 58.42 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "763fc172-72e7-4ebb-ad86-edaeadffef38")
+	)
+	(wire
+		(pts
 			(xy 53.34 63.5) (xy 50.8 63.5)
 		)
 		(stroke
@@ -2973,16 +3003,6 @@
 			(type default)
 		)
 		(uuid "85a361ea-86a7-4db9-bd2f-55e56ec1894c")
-	)
-	(wire
-		(pts
-			(xy 35.56 121.92) (xy 40.64 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "88ee33f3-30a9-41bf-b0bb-db915e1cd174")
 	)
 	(wire
 		(pts
@@ -3126,13 +3146,13 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 63.5) (xy 38.1 63.5)
+			(xy 40.64 121.92) (xy 35.56 121.92)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c87be0ea-8539-4f5b-b30a-66178baa49de")
+		(uuid "c387ebe3-1079-44b2-8bbe-5596e410eee3")
 	)
 	(wire
 		(pts
@@ -3193,16 +3213,6 @@
 			(type default)
 		)
 		(uuid "d8456aca-0d8b-4c15-b500-57c8b1365c1b")
-	)
-	(wire
-		(pts
-			(xy 27.94 60.96) (xy 38.1 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dac08248-37d7-4261-ace6-5a267cb9e225")
 	)
 	(wire
 		(pts
@@ -3314,27 +3324,6 @@
 		)
 		(uuid "f73e085c-e7cf-4a0b-a4f5-5a3e934ba844")
 	)
-	(wire
-		(pts
-			(xy 40.64 121.92) (xy 40.64 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fa90a401-886d-4a9f-818c-932d67f4754f")
-	)
-	(label "INT0"
-		(at 27.94 60.96 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "06cad9f5-9013-487c-a64b-4dff565012d7")
-	)
 	(label "SDA"
 		(at 147.32 68.58 0)
 		(fields_autoplaced yes)
@@ -3400,17 +3389,6 @@
 			(justify left bottom)
 		)
 		(uuid "57fa967e-bf6c-4ef1-a2cb-e892153438c1")
-	)
-	(label "INT1"
-		(at 27.94 63.5 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "5c824f94-4856-4eb9-acb6-cf27e4d8c65a")
 	)
 	(label "RX"
 		(at 148.59 45.72 0)
@@ -3533,6 +3511,17 @@
 		)
 		(uuid "bb32e3df-b351-457a-ac21-4aeac649c995")
 	)
+	(label "INT1"
+		(at 27.94 55.88 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d44aa2c3-56eb-4f6d-a3fe-05c19004a359")
+	)
 	(label "MISO"
 		(at 29.21 73.66 0)
 		(fields_autoplaced yes)
@@ -3554,6 +3543,17 @@
 			(justify left bottom)
 		)
 		(uuid "ef147f2c-8e33-45f6-b64d-41eef9250caa")
+	)
+	(label "INT0"
+		(at 54.61 73.66 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f5b02979-094a-45a2-99ca-153df5d7b69f")
 	)
 	(label "INT0"
 		(at 173.99 86.36 0)
@@ -3784,73 +3784,6 @@
 			(project "raven"
 				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212"
 					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 40.64 116.84 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "238e1ca0-f461-4fbb-a781-c95e49cb65cc")
-		(property "Reference" "H4"
-			(at 39.37 112.522 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 43.18 116.8399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.5mm_Pad"
-			(at 40.64 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 40.64 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 40.64 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7c78a763-fb5b-4c92-b134-fc1d87ce81ea")
-		)
-		(instances
-			(project "raven"
-				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212"
-					(reference "H4")
 					(unit 1)
 				)
 			)
@@ -4334,6 +4267,73 @@
 			(project "raven"
 				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212"
 					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 40.64 116.84 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "80e154d3-f010-45b9-a050-d0500c442688")
+		(property "Reference" "H4"
+			(at 39.37 112.522 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 43.18 116.8399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.5mm_Pad"
+			(at 40.64 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 40.64 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 40.64 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4beb3148-e9a0-4e99-b968-323927d352a7")
+		)
+		(instances
+			(project "raven"
+				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212"
+					(reference "H4")
 					(unit 1)
 				)
 			)
@@ -5131,7 +5131,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x20_P2.54mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_2x20_P2.54mm_Vertical"
 			(at 43.18 71.12 0)
 			(effects
 				(font
