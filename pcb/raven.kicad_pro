@@ -770,10 +770,6 @@
       "LargeMotor5"
     ],
     [
-      "f227bbf4-2b20-4d75-886f-a4b89b58a946",
-      "LightSensor1"
-    ],
-    [
       "7e3f67f4-c7a7-4f15-a62c-4903c0d88b19",
       "MotorHub"
     ],
@@ -820,10 +816,6 @@
     [
       "b34e6cdb-0429-4c8b-ab94-be7f1417c867",
       "Servo5"
-    ],
-    [
-      "4b9f6c8c-5050-4109-94cd-845922bb9507",
-      "Servo6"
     ]
   ],
   "text_variables": {}
