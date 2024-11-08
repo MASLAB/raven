@@ -1091,7 +1091,7 @@
 				)
 			)
 			(pin input line
-				(at -2.54 -2.54 0)
+				(at -2.54 -7.62 0)
 				(length 2.54)
 				(name "EN"
 					(effects
@@ -1109,9 +1109,9 @@
 				)
 			)
 			(pin open_collector line
-				(at -2.54 -7.62 0)
+				(at -2.54 -2.54 0)
 				(length 2.54)
-				(name "PGOOD"
+				(name "GOOD"
 					(effects
 						(font
 							(size 1.27 1.27)

@@ -709,7 +709,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Footprints:TPS548B28RWWR"
 			(at 0 0 0)
 			(effects
 				(font
