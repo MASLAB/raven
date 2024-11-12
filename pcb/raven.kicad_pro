@@ -188,6 +188,7 @@
         0.254,
         0.5,
         1.0,
+        2.0,
         2.5
       ],
       "tuning_pattern_settings": {

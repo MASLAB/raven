@@ -2542,7 +2542,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3042b0e1-15c8-42a0-8fcb-497bfb4599bd")
-		(property "Reference" "J20"
+		(property "Reference" "J29"
 			(at 152.4 58.4199 0)
 			(effects
 				(font
