@@ -6570,18 +6570,6 @@
 		)
 		(uuid "9d432262-4824-4d3a-b59c-56e2591784df")
 	)
-	(text "CHANGE TO: C2071422"
-		(exclude_from_sim no)
-		(at 203.454 119.38 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-				(thickness 0.508)
-				(bold yes)
-			)
-		)
-		(uuid "b9b56bb5-dfd5-44c1-970b-dc64027490be")
-	)
 	(text "f_sw = 800khz"
 		(exclude_from_sim no)
 		(at 203.454 153.162 0)
