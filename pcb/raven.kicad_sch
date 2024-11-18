@@ -1778,6 +1778,139 @@
 				)
 			)
 		)
+		(symbol "Device:Fuse"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "F"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Fuse"
+				(at -1.905 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Fuse"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "fuse"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "*Fuse*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Fuse_0_1"
+				(rectangle
+					(start -0.762 -2.54)
+					(end 0.762 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Fuse_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:L"
 			(pin_numbers hide)
 			(pin_names
@@ -3320,12 +3453,6 @@
 		)
 	)
 	(junction
-		(at 104.14 124.46)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "01288678-08de-4c54-b229-56e751ae5cce")
-	)
-	(junction
 		(at 54.61 64.77)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3655,19 +3782,9 @@
 		(at 39.37 110.49)
 		(uuid "f0959b00-201c-41b9-b5a7-a213bda0ff38")
 	)
-	(wire
-		(pts
-			(xy 104.14 124.46) (xy 107.95 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0058430a-e0ee-4ae9-b4f3-020411b71faa")
-	)
 	(polyline
 		(pts
-			(xy 52.07 124.46) (xy 64.77 124.46)
+			(xy 52.07 124.46) (xy 63.5 124.46)
 		)
 		(stroke
 			(width 0)
@@ -3767,7 +3884,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 144.78) (xy 35.56 144.78)
+			(xy 33.02 144.78) (xy 38.1 144.78)
 		)
 		(stroke
 			(width 0)
@@ -3857,7 +3974,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 147.32) (xy 33.02 147.32)
+			(xy 33.02 147.32) (xy 52.07 147.32)
 		)
 		(stroke
 			(width 0)
@@ -4024,16 +4141,6 @@
 			(type default)
 		)
 		(uuid "2291031d-cd04-4923-9e12-876838b8b562")
-	)
-	(wire
-		(pts
-			(xy 104.14 121.92) (xy 104.14 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "23e27e33-b9d5-4f19-850e-f7ff4ab1b620")
 	)
 	(wire
 		(pts
@@ -4254,16 +4361,6 @@
 			(type default)
 		)
 		(uuid "338e82a7-1a19-4cfd-8df1-3ec45d53b9b3")
-	)
-	(wire
-		(pts
-			(xy 104.14 124.46) (xy 104.14 127)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "34bae3a1-7110-4484-a508-08aa4ee7337b")
 	)
 	(wire
 		(pts
@@ -4557,7 +4654,7 @@
 	)
 	(polyline
 		(pts
-			(xy 64.77 52.07) (xy 64.77 124.46)
+			(xy 63.5 52.07) (xy 63.5 124.46)
 		)
 		(stroke
 			(width 0)
@@ -4707,7 +4804,7 @@
 	)
 	(polyline
 		(pts
-			(xy 48.26 158.75) (xy 48.26 133.35)
+			(xy 63.5 158.75) (xy 63.5 133.35)
 		)
 		(stroke
 			(width 0)
@@ -5557,7 +5654,7 @@
 	)
 	(polyline
 		(pts
-			(xy 19.05 52.07) (xy 64.77 52.07)
+			(xy 19.05 52.07) (xy 63.5 52.07)
 		)
 		(stroke
 			(width 0)
@@ -5674,6 +5771,16 @@
 			(type default)
 		)
 		(uuid "a9793724-15ab-4a17-83f2-b297b6b6e819")
+	)
+	(wire
+		(pts
+			(xy 45.72 144.78) (xy 52.07 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9bd06f1-6209-4fe2-8cf7-c7fb91b85445")
 	)
 	(wire
 		(pts
@@ -5797,7 +5904,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 111.76) (xy 104.14 114.3)
+			(xy 104.14 124.46) (xy 104.14 127)
 		)
 		(stroke
 			(width 0)
@@ -5867,7 +5974,7 @@
 	)
 	(polyline
 		(pts
-			(xy 48.26 133.35) (xy 26.67 133.35)
+			(xy 63.5 133.35) (xy 26.67 133.35)
 		)
 		(stroke
 			(width 0)
@@ -6267,7 +6374,7 @@
 	)
 	(polyline
 		(pts
-			(xy 19.05 158.75) (xy 48.26 158.75)
+			(xy 19.05 158.75) (xy 63.5 158.75)
 		)
 		(stroke
 			(width 0)
@@ -6463,6 +6570,16 @@
 		)
 		(uuid "17255ce1-a350-4602-af36-95e9dc798d04")
 	)
+	(text "100k divider"
+		(exclude_from_sim no)
+		(at 105.41 103.886 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "1756b818-97f2-41e6-a408-9543db0af248")
+	)
 	(text "IMU"
 		(exclude_from_sim no)
 		(at 18.796 19.304 0)
@@ -6476,6 +6593,16 @@
 		)
 		(uuid "1ada2936-07e9-418d-b345-602aa33dc526")
 	)
+	(text "9.1V cutoff"
+		(exclude_from_sim no)
+		(at 104.902 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "5121c07d-330b-4047-89b3-6be4b2221b7c")
+	)
 	(text "Motor Hub"
 		(exclude_from_sim no)
 		(at 120.65 170.18 0)
@@ -6488,6 +6615,18 @@
 			(justify left bottom)
 		)
 		(uuid "63acef78-d982-481b-a36c-4ac68ca1cbef")
+	)
+	(text "fix zones"
+		(exclude_from_sim no)
+		(at 205.74 36.068 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.508)
+				(bold yes)
+			)
+		)
+		(uuid "68a39ab8-bc42-41ee-b8aa-b8a3a49cdca6")
 	)
 	(text "V_out = 5.1V"
 		(exclude_from_sim no)
@@ -6570,6 +6709,18 @@
 		)
 		(uuid "9d432262-4824-4d3a-b59c-56e2591784df")
 	)
+	(text "make sure bsns is comparator pin"
+		(exclude_from_sim no)
+		(at 230.632 30.226 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.508)
+				(bold yes)
+			)
+		)
+		(uuid "bdcb857f-1fdc-4d5a-b024-7faf50cff1f9")
+	)
 	(text "f_sw = 800khz"
 		(exclude_from_sim no)
 		(at 203.454 153.162 0)
@@ -6592,6 +6743,16 @@
 			(justify left bottom)
 		)
 		(uuid "e112a7dd-93f3-492e-917d-06d707a79a51")
+	)
+	(text "<1V disable\n5uA leakage"
+		(exclude_from_sim no)
+		(at 105.156 97.028 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "ed101374-6d26-4b8f-81ac-3c28f35db8a8")
 	)
 	(text "Magnometer"
 		(exclude_from_sim no)
@@ -6738,17 +6899,6 @@
 		)
 		(uuid "6005586c-0310-474e-86be-7a68441573a5")
 	)
-	(label "END"
-		(at 104.14 124.46 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "657cf3e6-ceff-44c3-9c2e-9626360efcc8")
-	)
 	(label "SW1"
 		(at 31.75 102.87 0)
 		(fields_autoplaced yes)
@@ -6880,6 +7030,17 @@
 			(justify left bottom)
 		)
 		(uuid "98a43990-03c8-44c5-849d-d540b4ef6fcb")
+	)
+	(label "VDDF"
+		(at 46.99 144.78 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9aca208e-f778-40f8-a0a0-5ea522af3720")
 	)
 	(label "CS0"
 		(at 52.07 29.21 0)
@@ -7602,7 +7763,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "12k"
 			(at 106.68 144.7799 0)
 			(effects
 				(font
@@ -7638,7 +7799,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25744"
+		(property "LCSC" "C25752"
 			(at 104.14 143.51 0)
 			(effects
 				(font
@@ -7883,6 +8044,83 @@
 			(project "raven"
 				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212"
 					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Fuse")
+		(at 41.91 144.78 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "16ff4a24-977d-4137-bedc-7cfe060192db")
+		(property "Reference" "F1"
+			(at 41.91 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Fuse"
+			(at 41.91 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Fuse:Fuse_1206_3216Metric"
+			(at 41.91 146.558 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 41.91 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Fuse"
+			(at 41.91 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2838917"
+			(at 41.91 144.78 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b24382cf-8bda-4c03-9977-202c8892e53e")
+		)
+		(pin "2"
+			(uuid "fa12fb16-e508-4594-8336-510abdb391f7")
+		)
+		(instances
+			(project ""
+				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212"
+					(reference "F1")
 					(unit 1)
 				)
 			)
@@ -8182,16 +8420,15 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 104.14 118.11 0)
+		(at 104.14 130.81 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "24680a8f-1e75-4aba-81d3-4be67f894aca")
 		(property "Reference" "R56"
-			(at 106.68 116.8399 0)
+			(at 106.426 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8199,8 +8436,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10k"
-			(at 106.68 119.3799 0)
+		(property "Value" "100k"
+			(at 106.172 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8209,7 +8446,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 102.362 118.11 90)
+			(at 102.362 130.81 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8218,7 +8455,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 104.14 118.11 0)
+			(at 104.14 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8227,7 +8464,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 104.14 118.11 0)
+			(at 104.14 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8235,8 +8472,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25744"
-			(at 104.14 118.11 0)
+		(property "LCSC" "C25741"
+			(at 104.14 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8393,7 +8630,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x02_Pin")
-		(at 40.64 147.32 180)
+		(at 57.15 147.32 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8402,7 +8639,7 @@
 		(fields_autoplaced yes)
 		(uuid "2f925db3-b027-426a-8248-ba0572047d2b")
 		(property "Reference" "J3"
-			(at 41.91 144.7799 0)
+			(at 58.42 144.7799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8411,7 +8648,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02_Pin"
-			(at 41.91 147.3199 0)
+			(at 58.42 147.3199 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -8421,8 +8658,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_AMASS:AMASS_XT30PW-M_1x02_P2.50mm_Horizontal"
-			(at 40.64 147.32 0)
+		(property "Footprint" "Connector_AMASS:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical"
+			(at 57.15 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8431,7 +8668,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 40.64 147.32 0)
+			(at 57.15 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8440,7 +8677,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 40.64 147.32 0)
+			(at 57.15 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8448,8 +8685,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C431092"
-			(at 40.64 147.32 0)
+		(property "LCSC" "C428721"
+			(at 57.15 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9524,7 +9761,7 @@
 	)
 	(symbol
 		(lib_id "power:VDD")
-		(at 104.14 111.76 0)
+		(at 104.14 124.46 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9533,7 +9770,7 @@
 		(fields_autoplaced yes)
 		(uuid "7d64f9bc-2ba4-49ec-84f4-5b8a3cb100d2")
 		(property "Reference" "#PWR0105"
-			(at 104.14 115.57 0)
+			(at 104.14 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9542,7 +9779,7 @@
 			)
 		)
 		(property "Value" "VDD"
-			(at 104.14 106.68 0)
+			(at 104.14 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9550,7 +9787,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 104.14 111.76 0)
+			(at 104.14 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9559,7 +9796,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 104.14 111.76 0)
+			(at 104.14 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9568,7 +9805,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VDD\""
-			(at 104.14 111.76 0)
+			(at 104.14 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12974,85 +13211,6 @@
 			(project ""
 				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212"
 					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 104.14 130.81 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f60c192f-99c6-4f9e-9283-43cd391758bf")
-		(property "Reference" "R51"
-			(at 106.68 129.5399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 106.68 132.0799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 102.362 130.81 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 104.14 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 104.14 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C25744"
-			(at 104.14 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "bd6b88e8-d981-48f2-8c30-fdf64da0f168")
-		)
-		(pin "2"
-			(uuid "ae6d3be8-bf3a-4897-b1d6-acfa510095da")
-		)
-		(instances
-			(project "raven"
-				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212"
-					(reference "R51")
 					(unit 1)
 				)
 			)
