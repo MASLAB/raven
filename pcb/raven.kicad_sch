@@ -7721,85 +7721,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 104.14 143.51 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "106d515a-12bf-4346-962f-d5061b247eee")
-		(property "Reference" "R52"
-			(at 106.68 142.2399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "12k"
-			(at 106.68 144.7799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 102.362 143.51 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 104.14 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 104.14 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C25752"
-			(at 104.14 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "0fc877e1-41eb-4d4a-9149-575649817ed4")
-		)
-		(pin "2"
-			(uuid "4b957e2d-f672-4f03-b2cb-b6d5b67a2c11")
-		)
-		(instances
-			(project "raven"
-				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212"
-					(reference "R52")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 226.06 107.95 0)
 		(unit 1)
@@ -9453,6 +9374,85 @@
 			(project "raven"
 				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212"
 					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 104.14 143.51 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6541056f-c342-4e00-b0ca-737908828f97")
+		(property "Reference" "R51"
+			(at 106.68 142.2399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 106.68 144.7799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 102.362 143.51 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 104.14 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 104.14 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25744"
+			(at 104.14 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3aafc682-2dc4-4a52-89aa-ac0387580d54")
+		)
+		(pin "2"
+			(uuid "16e66ab2-a2ec-4602-8229-42d27e3e8cd7")
+		)
+		(instances
+			(project "raven"
+				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212"
+					(reference "R51")
 					(unit 1)
 				)
 			)
