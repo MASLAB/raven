@@ -6674,6 +6674,16 @@
 		)
 		(uuid "97f8c5b8-9e31-419c-b5fc-037e6bea5a85")
 	)
+	(text "C154869"
+		(exclude_from_sim no)
+		(at 128.27 78.486 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "98eeea56-f930-440a-a255-26719d2cfde2")
+	)
 	(text "I_out = 12A (peak = 14A)"
 		(exclude_from_sim no)
 		(at 209.296 149.86 0)
