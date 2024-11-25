@@ -2539,7 +2539,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "3042b0e1-15c8-42a0-8fcb-497bfb4599bd")
 		(property "Reference" "J29"

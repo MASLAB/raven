@@ -7470,6 +7470,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C1017"
+			(at 119.38 33.02 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3c3905ed-9e9c-4e66-b70e-8c14c1a08c3f")
 		)
