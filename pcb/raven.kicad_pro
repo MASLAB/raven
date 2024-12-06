@@ -636,7 +636,7 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "raven.step",
       "svg": "",
       "vrml": ""
     },
