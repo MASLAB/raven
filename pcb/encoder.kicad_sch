@@ -599,6 +599,16 @@
 	)
 	(wire
 		(pts
+			(xy 63.5 50.8) (xy 63.5 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "001fd1a8-1a53-49ec-91ab-62c4bed483f6")
+	)
+	(wire
+		(pts
 			(xy 86.36 41.91) (xy 91.44 41.91)
 		)
 		(stroke
@@ -616,6 +626,16 @@
 			(type default)
 		)
 		(uuid "144ae683-6d9f-4fd4-96e3-3b1fb589b3fd")
+	)
+	(wire
+		(pts
+			(xy 60.96 53.34) (xy 69.85 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19afae7b-8ba9-4c55-be04-f694114f1931")
 	)
 	(wire
 		(pts
@@ -649,7 +669,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 53.34) (xy 60.96 53.34)
+			(xy 63.5 58.42) (xy 60.96 58.42)
 		)
 		(stroke
 			(width 0)
@@ -666,16 +686,6 @@
 			(type default)
 		)
 		(uuid "5967fdfc-f1af-4464-ae5d-85871cd43772")
-	)
-	(wire
-		(pts
-			(xy 63.5 50.8) (xy 63.5 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5dcb825f-4532-4a69-a2d5-57b7d8b80818")
 	)
 	(wire
 		(pts
@@ -699,16 +709,6 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 55.88) (xy 66.04 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7f18ca4e-72e6-4f26-956c-20060c970b62")
-	)
-	(wire
-		(pts
 			(xy 91.44 54.61) (xy 93.98 54.61)
 		)
 		(stroke
@@ -719,13 +719,13 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 58.42) (xy 66.04 58.42)
+			(xy 60.96 55.88) (xy 69.85 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "886a58ef-b9b4-4d42-86ce-188930da58d3")
+		(uuid "7fd31e2f-ce2e-47e0-ba34-7b7083e74f9c")
 	)
 	(wire
 		(pts
@@ -799,8 +799,8 @@
 		)
 		(uuid "6663c06f-c74d-47a9-9a01-d207addab3db")
 	)
-	(label "BIN"
-		(at 62.23 58.42 0)
+	(label "AIN"
+		(at 66.04 55.88 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -810,8 +810,8 @@
 		)
 		(uuid "cccb85c6-6865-4a55-99e3-90653d9c4945")
 	)
-	(label "AIN"
-		(at 62.23 55.88 0)
+	(label "BIN"
+		(at 66.04 53.34 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1110,7 +1110,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "7k5"
 			(at 93.98 62.2299 0)
 			(effects
 				(font
@@ -1146,7 +1146,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25744"
+		(property "LCSC" "C25918"
 			(at 91.44 60.96 0)
 			(effects
 				(font
@@ -1287,7 +1287,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "7k5"
 			(at 106.68 62.2299 0)
 			(effects
 				(font
@@ -1323,7 +1323,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25744"
+		(property "LCSC" "C25918"
 			(at 104.14 60.96 0)
 			(effects
 				(font
@@ -1382,7 +1382,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "7k5"
 			(at 106.68 49.5299 0)
 			(effects
 				(font
@@ -1418,7 +1418,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25744"
+		(property "LCSC" "C25918"
 			(at 104.14 48.26 0)
 			(effects
 				(font
@@ -1477,7 +1477,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "7k5"
 			(at 93.98 49.5299 0)
 			(effects
 				(font
@@ -1513,7 +1513,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25744"
+		(property "LCSC" "C25918"
 			(at 91.44 48.26 0)
 			(effects
 				(font

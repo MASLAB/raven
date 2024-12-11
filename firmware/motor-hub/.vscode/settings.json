@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "register.h": "c",
+        "cstdint": "c"
+    }
+}

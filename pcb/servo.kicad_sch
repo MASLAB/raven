@@ -425,7 +425,7 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 55.88) (xy 81.28 58.42)
+			(xy 81.28 55.88) (xy 81.28 60.96)
 		)
 		(stroke
 			(width 0)
@@ -445,7 +445,7 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 58.42) (xy 83.82 58.42)
+			(xy 81.28 60.96) (xy 83.82 60.96)
 		)
 		(stroke
 			(width 0)
@@ -465,17 +465,17 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 60.96) (xy 83.82 60.96)
+			(xy 78.74 58.42) (xy 83.82 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9fc29ea9-848c-4183-85af-6d2cf374f57a")
+		(uuid "9cd39634-18ab-456f-806e-c4a4d3381140")
 	)
 	(hierarchical_label "SIG"
 		(shape input)
-		(at 81.28 60.96 180)
+		(at 78.74 58.42 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -551,10 +551,6 @@
 				)
 				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/5f5322a5-6ca6-4329-b225-2e98f5af77fb"
 					(reference "#PWR0253")
-					(unit 1)
-				)
-				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/b34e6cdb-0429-4c8b-ab94-be7f1417c867"
-					(reference "#PWR0259")
 					(unit 1)
 				)
 				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/c43efd4d-e310-4bbf-b378-f4ca4f0e12c9"
@@ -633,10 +629,6 @@
 				)
 				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/5f5322a5-6ca6-4329-b225-2e98f5af77fb"
 					(reference "#PWR0254")
-					(unit 1)
-				)
-				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/b34e6cdb-0429-4c8b-ab94-be7f1417c867"
-					(reference "#PWR0260")
 					(unit 1)
 				)
 				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/c43efd4d-e310-4bbf-b378-f4ca4f0e12c9"
@@ -730,10 +722,6 @@
 				)
 				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/5f5322a5-6ca6-4329-b225-2e98f5af77fb"
 					(reference "J22")
-					(unit 1)
-				)
-				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/b34e6cdb-0429-4c8b-ab94-be7f1417c867"
-					(reference "J25")
 					(unit 1)
 				)
 				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/c43efd4d-e310-4bbf-b378-f4ca4f0e12c9"
