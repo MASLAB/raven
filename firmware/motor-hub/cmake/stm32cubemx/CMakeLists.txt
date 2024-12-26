@@ -40,6 +40,8 @@ target_sources(stm32cubemx INTERFACE
     /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c
     /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c
     /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c
+    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_crc.c
+    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_crc_ex.c
     /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.c
     /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.c
     /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c

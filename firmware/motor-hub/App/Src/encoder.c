@@ -15,7 +15,7 @@ void Encoder_Update(struct Encoder_Handle* handle) {
 	const uint8_t bDiff = bState^handle->bLast;
 
 	if (aDiff^bDiff) {
-		const uint8_t idir = aDiff ^ aState ^ bState ^ handle->dir;
+		const uint8_t idir = aDiff ^ aState ^ bState;
 		handle->pos += (idir<<1);
 		handle->pos -= 1;
 	}

@@ -42211,7 +42211,7 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R23"
-			(at -0.016482 0.906622 360)
+			(at -0.016482 0.906622 0)
 			(layer "F.SilkS")
 			(uuid "750f4730-2923-4295-80d1-f51bbfaf2d4e")
 			(effects
@@ -42222,7 +42222,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 0 1.17 360)
+			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "8f8ee6a4-f414-4312-bd8d-83de9f137a05")
 			(effects
@@ -42390,7 +42390,7 @@
 			(uuid "c8377e22-87c5-4cc9-9859-702ceafd62e3")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "6709e69a-7186-4ebc-89b6-8cd7a5adc858")
 			(effects
@@ -52269,7 +52269,7 @@
 		(descr "Net tie, 2 pin, 0.5mm square SMD pads")
 		(tags "net tie")
 		(property "Reference" "NT1"
-			(at 0 1.2 360)
+			(at 0 1.2 0)
 			(layer "B.SilkS")
 			(hide yes)
 			(uuid "faa99545-8f60-4b16-a49a-57d1a4a73511")
@@ -52282,7 +52282,7 @@
 			)
 		)
 		(property "Value" "NetTie_2"
-			(at 0 -1.2 360)
+			(at 0 -1.2 0)
 			(layer "B.Fab")
 			(hide yes)
 			(uuid "5af9805d-1871-4007-9ef9-63c54ae25fa9")
@@ -58267,15 +58267,15 @@
 		(width 0.2)
 		(layer "F.Cu")
 		(net 22)
-		(uuid "bae21162-6274-4dc7-8ecd-26d7b92b69a8")
+		(uuid "a1954347-fab1-434a-bf0a-a38c4f279123")
 	)
 	(segment
-		(start 117.827288 65.512051)
-		(end 118.93899 64.400349)
+		(start 118.93899 64.400349)
+		(end 117.827288 65.512051)
 		(width 0.2)
 		(layer "F.Cu")
 		(net 22)
-		(uuid "f9e55ab5-a891-4185-9416-2c38e3afbde7")
+		(uuid "d8cef9aa-06a0-49b5-8564-66ff38715d13")
 	)
 	(segment
 		(start 116.314001 65.512051)
