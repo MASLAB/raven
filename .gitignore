@@ -6,3 +6,5 @@ fp-info-cache
 *.log
 *-backups/
 
+### VSCode ###
+.vscode/

@@ -44,9 +44,34 @@ struct Sipo_Handle sipo = {.clkPort = RCLK_GPIO_Port, .clkPin = RCLK_Pin, .dataP
 // parameter (2bit)
 // data (0-31 bytes)
 
-static void receive(uint8_t* data, uint8_t len) {
+static struct Message {
+    void (*fn)(uint8_t*);
+    uint8_t len;
+};
+
+static void pwm(uint8_t* data) {
     UNUSED(data);
-    UNUSED(len);
+}
+
+static void motor(uint8_t* data) {
+    UNUSED(data);
+}
+
+#define MCOUNT 2
+static struct Message messages[MCOUNT] = {{.fn = &pwm, .len = 2}, {.fn = &motor, .len = 2}};
+
+static void receive(uint8_t* data, uint8_t len) {
+    if (!len) {
+        return; // error
+    }
+    const uint8_t mType = data[0];
+    if (mType >= MCOUNT) {
+        return; // error
+    }
+    if (messages[mType].len != len) {
+        return; // error
+    }
+    (messages[mType].fn)(data);
 }
 
 struct Com_Handle com = {.huart = &huart3, .hdma = &hdma_usart3_rx, .hcrc = &hcrc, .receive = &receive, .sByte = 0xAA, .maxRetries = 5};
