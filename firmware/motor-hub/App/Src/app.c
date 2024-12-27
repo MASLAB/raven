@@ -3,6 +3,7 @@
 #include "sipo.h"
 #include "encoder.h"
 #include "drv8874.h"
+#include "com.h"
 
 #define ENCODER(num) {.aPort = A##num##_GPIO_Port, .aPin = A##num##_Pin, .bPort = B##num##_GPIO_Port, .bPin = B##num##_Pin}
 #define CONFIG(name,index) static void name(uint8_t state){if(state){sipo.data|=1<<index;}else{sipo.data&=~(1<<index);}}
@@ -20,7 +21,35 @@ extern TIM_HandleTypeDef htim16;
 extern ADC_HandleTypeDef hadc1;
 extern ADC_HandleTypeDef hadc2;
 
+extern UART_HandleTypeDef huart3;
+extern DMA_HandleTypeDef hdma_usart3_rx;
+
+extern CRC_HandleTypeDef hcrc;
+
 struct Sipo_Handle sipo = {.clkPort = RCLK_GPIO_Port, .clkPin = RCLK_Pin, .dataPort = RDAT_GPIO_Port, .dataPin = RDAT_Pin, .loadPort = RSV_GPIO_Port, .loadPin = RSV_Pin};
+
+// RECIEVE
+// 0:servos (4)
+// 1:motor (5) (mode, request, voltage, current)
+// 2:PIDs (5) (P, I, D)
+// hearbeat
+
+// SEND
+// 0:current (5)
+// 1:encoders (5)
+
+// DATA FORMAT
+// message type (3bit)
+// channel (3bit)
+// parameter (2bit)
+// data (0-31 bytes)
+
+static void receive(uint8_t* data, uint8_t len) {
+    UNUSED(data);
+    UNUSED(len);
+}
+
+struct Com_Handle com = {.huart = &huart3, .hdma = &hdma_usart3_rx, .hcrc = &hcrc, .receive = &receive, .sByte = 0xAA, .maxRetries = 5};
 
 struct Encoder_Handle encoders[5] = {
     ENCODER(1),
@@ -79,45 +108,6 @@ void App_Init(void) {
     Drv8874_Init(&motors[4]);
 }
 
-// 460800
-
-// RECIEVE
-// 0:servos (4)
-// 1:motor (5) (mode, request, voltage, current)
-// 2:PIDs (5) (P, I, D)
-
-// SEND
-// 0:current (5)
-// 1:encoders (5)
-
-/*
-m: message ID
-c: channel (0-5 motors or 0-4 servos)
-p: parameter
-d: data (12/14 bits)
-r: CRC-7 (7 bits) (G4 supported in hardware)
-
-MESSAGE: 1mmcccpp 0ddddddd 0ddddddd 0rrrrrrr
-*/
-
-
-
-
-
-// start bit 1
-// channel ID (3 bits)
-// val (4h bits)
-
-// start bit 0
-// val (7m bits)
-
-// start bit 0
-// val (1l bits)
-// 
-
-// start bit 0
-// crc-7
-
 void App_Update(void) {
 }
 
@@ -131,4 +121,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
         Encoder_Update(&encoders[3]);
         Encoder_Update(&encoders[4]);
     }
+}
+
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t size) {
+    UNUSED(huart);
+    Com_Receive(&com, size);
 }

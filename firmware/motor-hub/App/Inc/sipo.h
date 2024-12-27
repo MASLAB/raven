@@ -5,11 +5,11 @@
 
 struct Sipo_Handle {
 	// configuration
-	GPIO_TypeDef *clkPort;
+	GPIO_TypeDef* clkPort;
 	uint16_t clkPin;
-	GPIO_TypeDef *dataPort;
+	GPIO_TypeDef* dataPort;
 	uint16_t dataPin;
-	GPIO_TypeDef *loadPort;
+	GPIO_TypeDef* loadPort;
 	uint16_t loadPin;
 
 	// internal
