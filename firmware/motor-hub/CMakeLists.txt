@@ -53,6 +53,8 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     App/Src/encoder.c
     App/Src/drv8874.c
     App/Src/com.c
+    App/Src/servo.c
+    App/Src/pid.c
 )
 
 # Add include paths

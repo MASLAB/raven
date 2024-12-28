@@ -22,7 +22,7 @@ void Com_Receive(struct Com_Handle* handle, uint16_t size) {
                 handle->receive(handle->data_buf, len);
                 handle->rx_pid++;
                 if (handle->rx_buf[1]&1) {
-                    //send back ok message
+                    //TODO send back ok message
                 }
             }
         }
@@ -39,6 +39,6 @@ void Com_Send(struct Com_Handle* handle, uint8_t* data, uint8_t len, uint8_t awk
     if (!awk) {
         handle->tx_pid++;
     }else {
-        //later make sure ok to pid++ or resend
+        //TODO later make sure ok to pid++ or resend
     }
 }
