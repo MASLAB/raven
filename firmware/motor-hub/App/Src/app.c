@@ -124,24 +124,30 @@ static struct Message {
 
 //TODO finish adding messages
 
-// servo set pos
-// motor set enable
+// FORALL 4 SERVOS
+// servo set pos (16bit)
 
-// motor set mode
+// FORALL 5 MOTORS/ENCODERS/PID
+// motor set enable (1bit)
 
-// motor set voltage
-// motor set current limit
-// motor set dir
+// motor set mode (2bit)
 
-// motor set PID constants
+// motor set voltage (12bit)
+// motor set current limit (12bit)
+// motor set dir (1bit)
 
-// motor set target PID
+// motor set PID constants (float p, float i, float d)
+
+// motor set target position (int32_t)
+// motor set target velocity (float)
+
+// read encoder (int32_t)
+// read current (12bit)
 
 // reset PID
-
 // reset encoder
 
-static void pwm(uint8_t* data) {
+static void servo(uint8_t* data) {
     // uint16_t val = (data[0]<<8 | data[1])&0x1FFF;
 }
 
@@ -155,7 +161,7 @@ static void pid(uint8_t* data) {
 }
 
 #define MCOUNT 2
-static struct Message messages[MCOUNT] = {{.fn = &pwm, .len = 2}, {.fn = &motor, .len = 2}};
+static struct Message messages[MCOUNT] = {{.fn = &servo, .len = 2}, {.fn = &motor, .len = 2}};
 
 static void receive(uint8_t* data, uint8_t len) {
     if (!len) {
