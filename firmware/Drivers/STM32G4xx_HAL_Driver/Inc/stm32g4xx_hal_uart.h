@@ -284,6 +284,7 @@ typedef struct __UART_HandleTypeDef
 
   void (* MspInitCallback)(struct __UART_HandleTypeDef *huart);           /*!< UART Msp Init callback                */
   void (* MspDeInitCallback)(struct __UART_HandleTypeDef *huart);         /*!< UART Msp DeInit callback              */
+  void *CallbackArg
 #endif  /* USE_HAL_UART_REGISTER_CALLBACKS */
 
 } UART_HandleTypeDef;
@@ -308,7 +309,7 @@ typedef enum
 
   HAL_UART_MSPINIT_CB_ID                 = 0x0BU,    /*!< UART MspInit callback ID                 */
   HAL_UART_MSPDEINIT_CB_ID               = 0x0CU     /*!< UART MspDeInit callback ID               */
-
+  
 } HAL_UART_CallbackIDTypeDef;
 
 /**

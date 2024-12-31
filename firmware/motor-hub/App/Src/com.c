@@ -2,43 +2,152 @@
 #include "string.h"
 #include "stdlib.h"
 
-void Com_Init(struct Com_Handle* handle) {
-    handle->rx_pid = 0;
-    handle->tx_pid = 1;
+static void Com_Callback_(UART_HandleTypeDef *huart);
 
-    handle->rx_buf = malloc(35);
-    handle->data_buf = malloc(32);
+// Callback handling 
+static Com_Reply_t*
+EmptyRead(uint8_t* message, uint8_t length) {
+    static Com_Reply_t none = {
+        .length = 0
+    };
 
-    HAL_UARTEx_ReceiveToIdle_DMA(handle->huart, handle->rx_buf, 35);
-    __HAL_DMA_DISABLE_IT(handle->hdma, DMA_IT_HT);
+    return &none;
+}
+static bool
+EmptyWrite(uint8_t* message, uint8_t length) {
+    return false;
 }
 
-void Com_Receive(struct Com_Handle* handle, uint16_t size) {
-    const uint8_t len = handle->rx_buf[1]>>3;
-    if (size == len+3) {
-        if ((HAL_CRC_Calculate(handle->hcrc, (uint32_t*)handle->rx_buf, size)&0xFF) == 0) {//include CRC byte
-            const uint8_t pid = (handle->rx_buf[1]>>1)&3;
-            if (pid != handle->rx_pid) {
-                handle->receive(handle->data_buf, len);
-                handle->rx_pid++;
-                if (handle->rx_buf[1]&1) {
-                    //TODO send back ok message
-                }
+// Read helper functions
+static void Com_Read_(Com_Handle_t* handle, uint8_t *buffer, uint8_t length) {
+    HAL_UART_Receive_DMA(handle->huart, buffer, length);
+}
+static void Com_ReadCtrl_(Com_Handle_t* handle) {
+    Com_Read_(handle, &handle->ctrlByte_, 1);
+}
+static void Com_ReadData_(Com_Handle_t* handle) {
+    Com_Read_(handle, handle->dataBuf_, handle->dataLength_);
+}
+
+void Com_Init(Com_Handle_t* handle) {
+    // Initialize values
+    for (uint8_t i = 0; i < NUM_HDR; i++) {
+        handle->readCallbacks_[i] = &EmptyRead;
+        handle->writeCallbacks_[i] = &EmptyWrite;
+    }
+    handle->txBuf_[0] = handle->sByte; // Initialize to start byte
+    handle->rxState_ = RX_START;
+
+    // Initialize callback and reinit UART
+    handle->huart->CallbackArg = handle;
+    HAL_UART_RegisterCallback(handle->huart, HAL_UART_RX_COMPLETE_CB_ID, Com_Callback_);
+    HAL_UART_Init(handle->huart);
+
+    // Start reading first byte
+    Com_ReadCtrl_(handle);
+}
+
+void Com_RegisterReadCallback(
+    Com_Handle_t* handle,
+    Header_Type_t header_type,
+    Com_Reply_t* (*callback)(uint8_t* data, uint8_t length)
+) {
+    handle->readCallbacks_[header_type] = callback;
+}
+
+void Com_RegisterWriteCallback(
+    Com_Handle_t* handle,
+    Header_Type_t header_type,
+    bool (*callback)(uint8_t* data, uint8_t length)
+) {
+    handle->writeCallbacks_[header_type] = callback;
+}
+
+static void Com_SendData_(Com_Handle_t* handle, Header_Type_t header, void* data, uint8_t length) {
+    handle->txBuf_[1] = header;
+    handle->txBuf_[2] = length;
+    if(length) memcpy(&handle->txBuf_[3], data, length);
+    handle->txBuf_[length + 3] = HAL_CRC_Calculate(handle->hcrc, (uint32_t) handle->txBuf_, length + 3);
+    while ((HAL_UART_GetState(handle->huart) & 1) != 0)
+      ;
+    HAL_UART_Transmit_DMA(handle->huart, handle->txBuf_, length + 4);
+}
+
+static void Com_SendAck_(Com_Handle_t* handle, bool ack) {
+    Com_SendData_(handle, ack, NULL, 0);
+}
+
+static void Com_Process_Write_(Com_Handle_t* handle) {
+    bool ack = handle->writeCallbacks_[handle->header_.header](handle->dataBuf_, handle->dataLength_);
+    Com_SendAck_(handle, ack);
+}
+
+static void Com_Process_Read_(Com_Handle_t* handle) {
+    Com_Reply_t* reply = handle->readCallbacks_[handle->header_.header](handle->dataBuf_, handle->dataLength_);
+    Com_SendData_(handle, HDR_REPLY, reply->data, reply->length);
+}
+
+void Com_Callback_(UART_HandleTypeDef *huart) {
+    // State machine for parsing message
+    Com_Handle_t* handle = (Com_Handle_t*) huart->CallbackArg;
+
+    switch (handle->rxState_) {
+    case RX_START:
+        // Get the a reader byte if received byte is a start byte
+        if (handle->ctrlByte_ == handle->sByte) {
+            HAL_CRC_Calculate(handle->hcrc, (uint32_t *)&handle->ctrlByte_, 1);
+            handle->rxState_ = RX_HEADER;
+        }
+        // Else keep read the next byte as pcf byte
+        Com_ReadCtrl_(handle);
+        break;
+    case RX_HEADER:
+        // Set header
+        handle->header_.value = handle->ctrlByte_;
+        if(handle->header_.header > NUM_HDR) {
+            // Nack if handle is not among the expected handle
+            handle->rxState_ = RX_START;
+            Com_SendAck_(handle, 0);
+        } else {
+            // Else get length
+            HAL_CRC_Accumulate(handle->hcrc, (uint32_t *)&handle->ctrlByte_, 1);
+            handle->rxState_ = RX_LENGTH;
+        }
+        Com_ReadCtrl_(handle);
+        break;
+    case RX_LENGTH:
+        // Get data
+        handle->dataLength_ = handle->ctrlByte_;
+        HAL_CRC_Accumulate(handle->hcrc, (uint32_t *)&handle->ctrlByte_, 1);
+        if(handle->dataLength_) {
+            handle->rxState_ = RX_DATA;
+            Com_ReadData_(handle);
+        } else {
+            handle->rxState_ = RX_CRC;
+            Com_ReadCtrl_(handle);
+        }
+        break;
+    case RX_DATA:
+        // Get CRC
+        HAL_CRC_Accumulate(handle->hcrc, (uint32_t *)&handle->dataBuf_, handle->dataLength_);
+        handle->rxState_ = RX_CRC;
+        Com_ReadCtrl_(handle);
+        break;
+    case RX_CRC:
+        // Check CRC and process
+        uint8_t crc = HAL_CRC_Accumulate(handle->hcrc, (uint32_t *)&handle->ctrlByte_, 1);
+        // Send Nack if wrong crc
+        if (crc) {
+            Com_SendAck_(handle, 0);
+        } else {
+            if(handle->header_.rw) {
+                Com_Process_Write_(handle);
+            } else {
+                Com_Process_Read_(handle);
             }
         }
-    }
-    HAL_UARTEx_ReceiveToIdle_DMA(handle->huart, handle->rx_buf, 35);
-    __HAL_DMA_DISABLE_IT(handle->hdma, DMA_IT_HT);
-}
-
-void Com_Send(struct Com_Handle* handle, uint8_t* data, uint8_t len, uint8_t awk) {
-    handle->tx_buf[1] = (len << 3) | ((handle->tx_pid & 3) << 1) | (awk & 1);
-    memcpy(handle->tx_buf+2, data, len);
-    const uint8_t crc = HAL_CRC_Calculate(handle->hcrc, (uint32_t*)handle->tx_buf, len+2);
-    handle->tx_buf[len+2] = crc;
-    if (!awk) {
-        handle->tx_pid++;
-    }else {
-        //TODO later make sure ok to pid++ or resend
+        handle->rxState_ = RX_START;
+        Com_ReadCtrl_(handle);
+        break;
     }
 }
