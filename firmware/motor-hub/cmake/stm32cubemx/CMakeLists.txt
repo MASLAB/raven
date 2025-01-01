@@ -14,38 +14,38 @@ target_compile_definitions(stm32cubemx INTERFACE
 
 target_include_directories(stm32cubemx INTERFACE
     ../../Core/Inc
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Inc
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/CMSIS/Include
+    ../../../Drivers/STM32G4xx_HAL_Driver/Inc
+    ../../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy
+    ../../../Drivers/CMSIS/Device/ST/STM32G4xx/Include
+    ../../../Drivers/CMSIS/Include
 )
 
 target_sources(stm32cubemx INTERFACE
     ../../Core/Src/main.c
     ../../Core/Src/stm32g4xx_it.c
     ../../Core/Src/stm32g4xx_hal_msp.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc_ex.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_adc.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_crc.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_crc_ex.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c
-    /mnt/data/Documents/MASLAB/2025/ubuntu-raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc_ex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_adc.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_crc.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_crc_ex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c
     ../../Core/Src/system_stm32g4xx.c
     ../../Core/Src/sysmem.c
     ../../Core/Src/syscalls.c
