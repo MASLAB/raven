@@ -21,7 +21,7 @@
 
 #define COM_BUF_SIZE 16 // Longest is PID (12 bytes data + start, pcf, header, crc)
 
-typedef enum {
+typedef enum __attribute__((packed)) {
     HDR_NACK,
     HDR_ACK,
     HDR_REPLY,
