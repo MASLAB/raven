@@ -119,36 +119,36 @@ static bool MotorPIDWrite(void* message, uint8_t length);
 static bool ServoValueWrite(void* message, uint8_t length);
 
 void App_Init(void) {
-    // HAL_TIM_Base_Start_IT(&htim6);
-    // HAL_TIM_Base_Start_IT(&htim7);
+    HAL_TIM_Base_Start_IT(&htim6);
+    HAL_TIM_Base_Start_IT(&htim7);
 
-    // HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc1Data, 2);
-    // HAL_ADC_Start_DMA(&hadc2, (uint32_t*)adc2Data, 4);
+    HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc1Data, 2);
+    HAL_ADC_Start_DMA(&hadc2, (uint32_t*)adc2Data, 4);
 
-    // Sipo_Init(&sipo);
+    Sipo_Init(&sipo);
     
-    // Encoder_Init(&encoders[0]);
-    // Encoder_Init(&encoders[1]);
-    // Encoder_Init(&encoders[2]);
-    // Encoder_Init(&encoders[3]);
-    // Encoder_Init(&encoders[4]);
+    Encoder_Init(&encoders[0]);
+    Encoder_Init(&encoders[1]);
+    Encoder_Init(&encoders[2]);
+    Encoder_Init(&encoders[3]);
+    Encoder_Init(&encoders[4]);
 
-    // Drv8874_Init(&motors[0]);
-    // Drv8874_Init(&motors[1]);
-    // Drv8874_Init(&motors[2]);
-    // Drv8874_Init(&motors[3]);
-    // Drv8874_Init(&motors[4]);
+    Drv8874_Init(&motors[0]);
+    Drv8874_Init(&motors[1]);
+    Drv8874_Init(&motors[2]);
+    Drv8874_Init(&motors[3]);
+    Drv8874_Init(&motors[4]);
 
-    // Servo_Init(&servos[0]);
-    // Servo_Init(&servos[1]);
-    // Servo_Init(&servos[2]);
-    // Servo_Init(&servos[3]);
+    Servo_Init(&servos[0]);
+    Servo_Init(&servos[1]);
+    Servo_Init(&servos[2]);
+    Servo_Init(&servos[3]);
 
-    // Pid_Init(&pids[0]);
-    // Pid_Init(&pids[1]);
-    // Pid_Init(&pids[2]);
-    // Pid_Init(&pids[3]);
-    // Pid_Init(&pids[4]);
+    Pid_Init(&pids[0]);
+    Pid_Init(&pids[1]);
+    Pid_Init(&pids[2]);
+    Pid_Init(&pids[3]);
+    Pid_Init(&pids[4]);
 
     Com_Init(&com);
     Com_RegisterReadCallback(&com, HDR_MOTOR_CMD, &MotorCmdRead);
