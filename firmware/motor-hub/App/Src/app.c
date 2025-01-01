@@ -21,8 +21,6 @@ extern ADC_HandleTypeDef hadc1;
 extern ADC_HandleTypeDef hadc2;
 
 extern UART_HandleTypeDef huart3;
-extern DMA_HandleTypeDef hdma_usart3_rx;
-
 extern CRC_HandleTypeDef hcrc;
 
 // shift register
@@ -102,19 +100,23 @@ static uint16_t* vbat = &adc1Data[1];
 static uint16_t* currents[5] = {&adc1Data[0], &adc2Data[3], &adc2Data[0], &adc2Data[1], &adc2Data[2]};
 
 // Com handle
-static Com_Handle_t com = {.huart = &huart3, .hcrc = &hcrc, .sByte = 0xAA};
+static Com_Handle_t com = {
+    .huart = &huart3,
+    .hcrc = &hcrc, 
+    .sByte = 0xAA,
+};
 // Com callbacks
 // Reads
-static Com_Reply_t* MotorCmdRead(uint8_t* message, uint8_t length);
-static Com_Reply_t* MotorModeRead(uint8_t* message, uint8_t length);
-static Com_Reply_t* MotorPIDRead(uint8_t* message, uint8_t length);
-static Com_Reply_t* EncoderValueRead(uint8_t* message, uint8_t length);
-static Com_Reply_t* ErrorRead(uint8_t* message, uint8_t length);
+static Com_Reply_t* MotorCmdRead(void* message, uint8_t length);
+static Com_Reply_t* MotorModeRead(void* message, uint8_t length);
+static Com_Reply_t* MotorPIDRead(void* message, uint8_t length);
+static Com_Reply_t* EncoderValueRead(void* message, uint8_t length);
+static Com_Reply_t* ErrorRead(void* message, uint8_t length);
 // Writes
-static bool MotorCmdWrite(uint8_t* message, uint8_t length);
-static bool MotorModeWrite(uint8_t* message, uint8_t length);
-static bool MotorPIDWrite(uint8_t* message, uint8_t length);
-static bool ServoValueWrite(uint8_t* message, uint8_t length);
+static bool MotorCmdWrite(void* message, uint8_t length);
+static bool MotorModeWrite(void* message, uint8_t length);
+static bool MotorPIDWrite(void* message, uint8_t length);
+static bool ServoValueWrite(void* message, uint8_t length);
 
 void App_Init(void) {
     // HAL_TIM_Base_Start_IT(&htim6);
@@ -226,86 +228,87 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
 
 // Com callbacks
 // Reads
-Com_Reply_t* MotorCmdRead(uint8_t* message, uint8_t length) {
+Com_Reply_t* MotorCmdRead(void* message, uint8_t length) {
     static float command;
     static Com_Reply_t reply = {
         .length = sizeof(float), // 1 float value for command
         .data = (void*) &command,
     };
 
-    uint8_t channel = &message;
-    command = 0.0; // TODO: Modify command according to channel
+    uint8_t channel = *((uint8_t*) message);
+    command = channel; // TODO: Modify command according to channel
     
     return &reply;
 }
 
-Com_Reply_t* MotorModeRead(uint8_t* message, uint8_t length) {
+Com_Reply_t* MotorModeRead(void* message, uint8_t length) {
     static Motor_Mode_t mode;
     static Com_Reply_t reply = {
         .length = sizeof(Motor_Mode_t), // 1 byte of mode
         .data = (void*) &mode,
     };
     
-    uint8_t channel = &message;
+    uint8_t channel = *((uint8_t*) message);
     mode = MOTOR_MODE_NULL; // TODO: Modify mode according to channel
 
     return &reply;
 }
 
-Com_Reply_t* MotorPIDRead(uint8_t* message, uint8_t length) {
+Com_Reply_t* MotorPIDRead(void* message, uint8_t length) {
     static Motor_PID_t pid;
     static Com_Reply_t reply = {
         .length = sizeof(Motor_PID_t), // 3 values of PID
         .data = (void*) &pid,
     };
     
-    uint8_t channel = &message;
+    uint8_t channel = *((uint8_t*) message);
     // TODO: Modify pid according to channel
-    pid.p = 1;
-    pid.i = 2;
-    pid.d = 3;
+    pid.p = channel + 1;
+    pid.i = channel * 2;
+    pid.d = channel / 3;
     
     return &reply;
 }
 
-Com_Reply_t* EncoderValueRead(uint8_t* message, uint8_t length) {
+Com_Reply_t* EncoderValueRead(void* message, uint8_t length) {
     static uint32_t value;
     static Com_Reply_t reply = {
         .length = sizeof(uint32_t), // 1 encoder value
         .data = (void*) &value,
     };
 
-    uint8_t channel = &message;
-    value = 0; // TODO: Modify the reply according to channel
+    uint8_t channel = *((uint8_t*) message);
+    value = channel; // TODO: Modify the reply according to channel
 
     return &reply;
 }
 
-Com_Reply_t* ErrorRead(uint8_t* message, uint8_t length) {
+Com_Reply_t* ErrorRead(void* message, uint8_t length) {
     static Com_Reply_t reply;
     // TODO: Modify the reply
     return &reply;
 }
 
 // Writes
-bool MotorCmdWrite(uint8_t* message, uint8_t length) {
+bool MotorCmdWrite(void* message, uint8_t length) {
     Motor_Cmd_Msg_t* msg = (Motor_Cmd_Msg_t*) message;
+    // TODO: Do something about it
     return true;
 }
 
-bool MotorModeWrite(uint8_t* message, uint8_t length) {
+bool MotorModeWrite(void* message, uint8_t length) {
     Motor_Mode_Msg_t* msg = (Motor_Mode_Msg_t*) message;
     // TODO: Do something about it
     return true;
 }
 
-bool MotorPIDWrite(uint8_t* message, uint8_t length) {
+bool MotorPIDWrite(void* message, uint8_t length) {
     Motor_PID_Msg_t* msg = (Motor_PID_Msg_t*) message;
     // TODO: Do something about it
     return true;
 }
 
-bool ServoValueWrite(uint8_t* message, uint8_t length) {
+bool ServoValueWrite(void* message, uint8_t length) {
     Servo_Value_Msg_t* msg = (Servo_Value_Msg_t*) message;
     // TODO: Do something about it
     return true;

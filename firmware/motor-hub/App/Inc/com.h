@@ -41,8 +41,8 @@ typedef struct {
     uint8_t dataLength_; // Length of data
     uint8_t dataBuf_[COM_BUF_SIZE-3]; // Minus start, pcf, and crc
     // Callbacks
-    Com_Reply_t* (*readCallbacks_[NUM_HDR])(uint8_t* data, uint8_t length);
-    bool (*writeCallbacks_[NUM_HDR])(uint8_t* data, uint8_t length);
+    Com_Reply_t* (*readCallbacks_[NUM_HDR])(void* message, uint8_t length);
+    bool (*writeCallbacks_[NUM_HDR])(void* message, uint8_t length);
 } Com_Handle_t;
 
 /**
@@ -66,7 +66,7 @@ void Com_Init(Com_Handle_t* handle);
 void Com_RegisterReadCallback(
     Com_Handle_t* handle,
     Header_Type_t header_type,
-    Com_Reply_t* (*callback)(uint8_t* data, uint8_t length)
+    Com_Reply_t* (*callback)(void* message, uint8_t length)
 );
 
 /**
@@ -80,7 +80,7 @@ void Com_RegisterReadCallback(
 void Com_RegisterWriteCallback(
     Com_Handle_t* handle,
     Header_Type_t header_type,
-    bool (*callback)(uint8_t* data, uint8_t length)
+    bool (*callback)(void* message, uint8_t length)
 );
 
 #endif

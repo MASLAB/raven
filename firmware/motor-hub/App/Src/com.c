@@ -4,9 +4,9 @@
 
 static void Com_Callback_(UART_HandleTypeDef *huart);
 
-// Callback handling 
+// Empty callbacks
 static Com_Reply_t*
-EmptyRead(uint8_t* message, uint8_t length) {
+EmptyRead(void* message, uint8_t length) {
     static Com_Reply_t none = {
         .length = 0
     };
@@ -14,7 +14,7 @@ EmptyRead(uint8_t* message, uint8_t length) {
     return &none;
 }
 static bool
-EmptyWrite(uint8_t* message, uint8_t length) {
+EmptyWrite(void* message, uint8_t length) {
     return false;
 }
 
@@ -50,7 +50,7 @@ void Com_Init(Com_Handle_t* handle) {
 void Com_RegisterReadCallback(
     Com_Handle_t* handle,
     Header_Type_t header_type,
-    Com_Reply_t* (*callback)(uint8_t* data, uint8_t length)
+    Com_Reply_t* (*callback)(void* data, uint8_t length)
 ) {
     handle->readCallbacks_[header_type] = callback;
 }
@@ -58,7 +58,7 @@ void Com_RegisterReadCallback(
 void Com_RegisterWriteCallback(
     Com_Handle_t* handle,
     Header_Type_t header_type,
-    bool (*callback)(uint8_t* data, uint8_t length)
+    bool (*callback)(void* data, uint8_t length)
 ) {
     handle->writeCallbacks_[header_type] = callback;
 }
@@ -67,7 +67,7 @@ static void Com_SendData_(Com_Handle_t* handle, Header_Type_t header, void* data
     handle->txBuf_[1] = header;
     handle->txBuf_[2] = length;
     if(length) memcpy(&handle->txBuf_[3], data, length);
-    handle->txBuf_[length + 3] = HAL_CRC_Calculate(handle->hcrc, (uint32_t) handle->txBuf_, length + 3);
+    handle->txBuf_[length + 3] = HAL_CRC_Calculate(handle->hcrc, (uint32_t*) handle->txBuf_, length + 3);
     while ((HAL_UART_GetState(handle->huart) & 1) != 0)
       ;
     HAL_UART_Transmit_DMA(handle->huart, handle->txBuf_, length + 4);
@@ -78,12 +78,16 @@ static void Com_SendAck_(Com_Handle_t* handle, bool ack) {
 }
 
 static void Com_Process_Write_(Com_Handle_t* handle) {
-    bool ack = handle->writeCallbacks_[handle->header_.header](handle->dataBuf_, handle->dataLength_);
+    bool ack = handle->writeCallbacks_[handle->header_.header](
+        (void*) handle->dataBuf_, handle->dataLength_
+    );
     Com_SendAck_(handle, ack);
 }
 
 static void Com_Process_Read_(Com_Handle_t* handle) {
-    Com_Reply_t* reply = handle->readCallbacks_[handle->header_.header](handle->dataBuf_, handle->dataLength_);
+    Com_Reply_t* reply = handle->readCallbacks_[handle->header_.header](
+        (void*) handle->dataBuf_, handle->dataLength_
+    );
     Com_SendData_(handle, HDR_REPLY, reply->data, reply->length);
 }
 
@@ -129,7 +133,7 @@ void Com_Callback_(UART_HandleTypeDef *huart) {
         break;
     case RX_DATA:
         // Get CRC
-        HAL_CRC_Accumulate(handle->hcrc, (uint32_t *)&handle->dataBuf_, handle->dataLength_);
+        HAL_CRC_Accumulate(handle->hcrc, (uint32_t *)handle->dataBuf_, handle->dataLength_);
         handle->rxState_ = RX_CRC;
         Com_ReadCtrl_(handle);
         break;
