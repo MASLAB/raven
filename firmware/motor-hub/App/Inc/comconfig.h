@@ -38,36 +38,36 @@ typedef enum __attribute__((packed)) {
 #define TYPEDEF_PACKED typedef struct __attribute__((packed))
 
 TYPEDEF_PACKED {
-    uint8_t channel;
-    float command;
+    uint8_t channel; // Channel from 0 to 4 for motor 1 to 5
+    float command; // Float command
 } Motor_Cmd_Msg_t;
 
 typedef enum __attribute__((packed)) {
-    MOTOR_MODE_NULL,
-    MOTOR_MODE_SPEED,
-    MOTOR_MODE_POSITION,
+    MOTOR_MODE_NULL, // Invalid
+    MOTOR_MODE_SPEED, // Speed control
+    MOTOR_MODE_POSITION, // Position control
 } Motor_Mode_t;
 
 TYPEDEF_PACKED {
-    uint8_t channel;
-    Motor_Mode_t mode;
+    uint8_t channel; // Channel from 0 to 4 for motor 1 to 5
+    Motor_Mode_t mode; // Motor mode
 } Motor_Mode_Msg_t;
 
 
 TYPEDEF_PACKED {
-    float p;
-    float i;
-    float d;
+    float p; // P gain
+    float i; // I gain
+    float d; // D gain
 } Motor_PID_t;
 
 TYPEDEF_PACKED {
-    uint8_t channel;
+    uint8_t channel; // Channel from 0 to 4 for motor 1 to 5
     Motor_PID_t pid;
 } Motor_PID_Msg_t;
 
 TYPEDEF_PACKED {
-    uint8_t channel;
-    uint16_t timer_val;
+    uint8_t channel; // Channel from 0 to 3 for motor 1 to 4
+    uint16_t timer_val; // Precalculated compare value for the servo timer
 } Servo_Value_Msg_t;
 
 // Will only request encoder value
