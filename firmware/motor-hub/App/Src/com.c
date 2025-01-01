@@ -74,7 +74,9 @@ static void Com_SendData_(Com_Handle_t* handle, Header_Type_t header, void* data
 }
 
 static void Com_SendAck_(Com_Handle_t* handle, bool ack) {
-    Com_SendData_(handle, ack, NULL, 0);
+    // Assuming this is only called during callback (CRC state)
+    // such that ctrlByte_ holds the CRC
+    Com_SendData_(handle, ack, (void*)&handle->ctrlByte_, 1);
 }
 
 static void Com_Process_Write_(Com_Handle_t* handle) {
