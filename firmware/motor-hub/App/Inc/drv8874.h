@@ -2,6 +2,7 @@
 #define INC_DRV8874_H_
 
 #include "main.h"
+#include "stdbool.h"
 
 struct Drv8874_Handle {
     // configuration
@@ -17,8 +18,8 @@ struct Drv8874_Handle {
 
 void Drv8874_Init(struct Drv8874_Handle* handle);
 
-void Drv8874_SetEnable(struct Drv8874_Handle* handle, uint8_t en);
-void Drv8874_SetDirection(struct Drv8874_Handle* handle, uint8_t dir);
+void Drv8874_SetEnable(struct Drv8874_Handle* handle, bool en);
+void Drv8874_SetDirection(struct Drv8874_Handle* handle, bool dir);
 
 void Drv8874_SetVoltage(struct Drv8874_Handle* handle, uint8_t voltage);
 void Drv8874_SetCurrent(struct Drv8874_Handle* handle, uint8_t current);

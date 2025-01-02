@@ -11,11 +11,11 @@ void Drv8874_Init(struct Drv8874_Handle* handle) {
 	handle->dFunc(0);
 }
 
-void Drv8874_SetEnable(struct Drv8874_Handle* handle, uint8_t en) {
+void Drv8874_SetEnable(struct Drv8874_Handle* handle, bool en) {
 	handle->eFunc(en);
 }
 
-void Drv8874_SetDirection(struct Drv8874_Handle* handle, uint8_t dir) {
+void Drv8874_SetDirection(struct Drv8874_Handle* handle, bool dir) {
 	handle->dFunc(dir);
 }
 

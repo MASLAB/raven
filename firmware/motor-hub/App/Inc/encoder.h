@@ -2,6 +2,7 @@
 #define INC_ENCODER_H_
 
 #include "main.h"
+#include "stdbool.h"
 
 struct Encoder_Handle {
 	// configuration
@@ -11,8 +12,8 @@ struct Encoder_Handle {
 	uint16_t bPin;
 
 	// internal
-	uint8_t aLast;
-	uint8_t bLast;
+	bool aLast;
+	bool bLast;
 
 	int32_t pos;
 };
