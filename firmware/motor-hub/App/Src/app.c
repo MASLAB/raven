@@ -231,9 +231,11 @@ static void check_vbat(void) {
     // value after divider
     const uint16_t adcbat = *vbat;
 
-    //TODO
-
-    if (adcbat < 1200) {
+    // 0.185 is voltage divider
+    // 3s* (cell cuttof) * 0.185 * 4096(2^12) / 3.3v
+    // float math gets precompiled so just leave like so
+    const float cellCutoff = 3.1f;
+    if (adcbat < 3.0f * cellCutoff * 0.185f * 4096.0f / 3.3f) {
         // unlatch FET
         HAL_GPIO_WritePin(PWR_GPIO_Port, PWR_Pin, 0);
     }
