@@ -3,18 +3,11 @@
 
 #include "main.h"
 
-union Pid_Config {
-    struct {
-        float kp;
-        float ki;
-        float kd;
-    };
-    uint8_t bytes[12];
-};
-
 struct Pid_Handle {
     // configuration
-    union Pid_Config config;
+    float kp;
+    float ki;
+    float kd;
 
     // internal
     float target;

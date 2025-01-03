@@ -19,10 +19,10 @@ void Drv8874_SetDirection(struct Drv8874_Handle* handle, bool dir) {
 	handle->dFunc(dir);
 }
 
-void Drv8874_SetVoltage(struct Drv8874_Handle* handle, uint8_t voltage) {
+void Drv8874_SetVoltage(struct Drv8874_Handle* handle, uint16_t voltage) {
 	__HAL_TIM_SET_COMPARE(handle->vTim, handle->vChan, voltage);
 }
 
-void Drv8874_SetCurrent(struct Drv8874_Handle* handle, uint8_t current) {
+void Drv8874_SetCurrent(struct Drv8874_Handle* handle, uint16_t current) {
 	__HAL_TIM_SET_COMPARE(handle->cTim, handle->cChan, current);
 }

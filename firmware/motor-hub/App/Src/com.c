@@ -23,7 +23,7 @@ void Com_Transmit(struct Com_Handle* handle, uint8_t* data, uint8_t len, bool re
     handle->send(handle->txBuf, len+2);
 }
 
-void Com_Callback(struct Com_Handle* handle) {
+void Com_Handler(struct Com_Handle* handle) {
     switch (handle->rxState) {
     case Com_RxStart:
         if (handle->rxBuf[0] == handle->sByte) {

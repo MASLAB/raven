@@ -55,6 +55,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     App/Src/com.c
     App/Src/servo.c
     App/Src/pid.c
+    App/Src/parser.c
 )
 
 # Add include paths

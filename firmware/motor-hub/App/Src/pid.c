@@ -10,12 +10,12 @@ void Pid_Init(struct Pid_Handle* handle) {
 float Pid_Update(struct Pid_Handle* handle, float pos) {
     const float err = handle->target - pos;
 
-    const float p = handle->config.kp*err;
+    const float p = handle->kp*err;
 
     handle->errInt += err;
-	const float i = handle->config.ki*handle->errInt;
+	const float i = handle->ki*handle->errInt;
 
-	const float d = handle->config.kd*(err - handle->errPrev);
+	const float d = handle->kd*(err - handle->errPrev);
 	handle->errPrev = err;
 
 	return p+i+d;

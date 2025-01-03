@@ -26,16 +26,16 @@ struct Com_Handle {
     CRC_HandleTypeDef* hcrc;
 
     uint8_t sByte; // start byte
-    uint8_t maxData; // 1-32 bytes (cannot be 0)
+    uint8_t maxData; // 0-32 bytes
 
     // direct data write to peripheral
-    void (*send)(uint8_t* data, uint8_t len);
+    void (*send)(uint8_t*, uint8_t);
 
     // request bytes from peripheral
-    void (*request)(uint8_t* data, uint8_t len);
+    void (*request)(uint8_t*, uint8_t);
 
     // if returned not 0 there is response in same buffer of that len
-    uint8_t (*parse)(uint8_t* data, uint8_t len);
+    uint8_t (*parse)(uint8_t*, uint8_t);
 
     // internal
     uint8_t* rxBuf;
@@ -52,6 +52,6 @@ void Com_Init(struct Com_Handle* handle);
 void Com_Transmit(struct Com_Handle* handle, uint8_t* data, uint8_t len, bool resp);
 
 // called when data received from receive request
-void Com_Callback(struct Com_Handle* handle);
+void Com_Handler(struct Com_Handle* handle);
 
 #endif
