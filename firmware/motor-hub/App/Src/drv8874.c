@@ -9,6 +9,8 @@ void Drv8874_Init(struct Drv8874_Handle* handle) {
 
 	handle->eFunc(0);
 	handle->dFunc(0);
+
+	handle->dir = 0;
 }
 
 void Drv8874_SetEnable(struct Drv8874_Handle* handle, bool en) {
@@ -17,6 +19,11 @@ void Drv8874_SetEnable(struct Drv8874_Handle* handle, bool en) {
 
 void Drv8874_SetDirection(struct Drv8874_Handle* handle, bool dir) {
 	handle->dFunc(dir);
+	handle->dir = dir;
+}
+
+bool Drv8874_GetDirection(struct Drv8874_Handle* handle) {
+	return handle->dir;
 }
 
 void Drv8874_SetVoltage(struct Drv8874_Handle* handle, uint16_t voltage) {
@@ -25,4 +32,12 @@ void Drv8874_SetVoltage(struct Drv8874_Handle* handle, uint16_t voltage) {
 
 void Drv8874_SetCurrent(struct Drv8874_Handle* handle, uint16_t current) {
 	__HAL_TIM_SET_COMPARE(handle->cTim, handle->cChan, current);
+}
+
+uint16_t Drv8874_GetVoltage(struct Drv8874_Handle* handle) {
+	return __HAL_TIM_GET_COMPARE(handle->vTim, handle->vChan);
+}
+
+uint16_t Drv8874_GetCurrent(struct Drv8874_Handle* handle) {
+	return __HAL_TIM_GET_COMPARE(handle->cTim, handle->cChan);
 }

@@ -39,13 +39,19 @@ static struct Encoder_Handle encoders[5] = {
     ENCODER(5),
 };
 
+// tim17 update motor freq for pid
+static uint16_t pidFreq = 5000;
+
 // velocities for vel PID mode
 static float vels[5] = {0};
 static int32_t lastPos[5] = {0};
 
+static uint16_t velDiv = 10; // division on PID update
+static uint16_t velCounter = 0; // keep 0
+
 // functions for dir and en
 // some are through shift register and some are GPIO
-#define CONFIG(name,index) static void name(uint8_t state){if(state){sipo.data|=1<<index;}else{sipo.data&=~(1<<index);}}
+#define CONFIG(name,index) static void name(bool state){if(state){sipo.data|=1<<index;}else{sipo.data&=~(1<<index);}}
 CONFIG(dir1, 0)
 CONFIG(en1, 1)
 CONFIG(dir2, 2)
@@ -55,10 +61,10 @@ CONFIG(en3, 5)
 CONFIG(dir4, 6)
 CONFIG(en4, 7)
 
-static void dir5(uint8_t dir) {
+static void dir5(bool dir) {
     HAL_GPIO_WritePin(PH5_GPIO_Port, PH5_Pin, dir);
 }
-static void en5(uint8_t en) {
+static void en5(bool en) {
     HAL_GPIO_WritePin(SL5_GPIO_Port, SL5_Pin, en);
 }
 
@@ -78,7 +84,7 @@ static struct Pid_Handle pids[5] = {
     {.kp = 0, .ki = 0, .kd = 0},
 };
 
-static enum MotorMode {
+enum MotorMode {
     MotorModeDisable = 0u,
     MotorModeDirect = 1u, // direct control (for current limiting push into objects or smth)
     MotorModePos = 2u, // position pid
@@ -109,6 +115,7 @@ static uint8_t mode_read(uint8_t*, uint8_t);
 static uint8_t pid_read(uint8_t*, uint8_t);
 static uint8_t target_read(uint8_t*, uint8_t);
 static uint8_t voltage_read(uint8_t*, uint8_t);
+static uint8_t direction_read(uint8_t*, uint8_t);
 static uint8_t current_read(uint8_t*, uint8_t);
 static uint8_t encoder_read(uint8_t*, uint8_t);
 static uint8_t measCur_read(uint8_t*, uint8_t);
@@ -119,26 +126,29 @@ static void mode_write(uint8_t*, uint8_t);
 static void pid_write(uint8_t*, uint8_t);
 static void target_write(uint8_t*, uint8_t);
 static void voltage_write(uint8_t*, uint8_t);
+static void direction_write(uint8_t*, uint8_t);
 static void current_write(uint8_t*, uint8_t);
 static void encoder_write(uint8_t*, uint8_t);
 
-static uint8_t (*readFns[9])(uint8_t*, uint8_t) = {
+static uint8_t (*readFns[10])(uint8_t*, uint8_t) = {
     &servo_read,
     &mode_read,
     &pid_read,
     &target_read,
     &voltage_read,
+    &direction_read,
     &current_read,
     &encoder_read,
     &measCur_read,
     &measBat_read,
 };
-static void (*writeFns[9])(uint8_t*, uint8_t) = {
+static void (*writeFns[10])(uint8_t*, uint8_t) = {
     &servo_write,
     &mode_write,
     &pid_write,
     &target_write,
     &voltage_write,
+    &direction_write,
     &current_write,
     &encoder_write,
     NULL,
@@ -146,9 +156,9 @@ static void (*writeFns[9])(uint8_t*, uint8_t) = {
 };
 
 static struct Parser_Handle parser = {
-    .writes = &writeFns,
-    .reads = &readFns,
-    .len = 9,
+    .writes = writeFns,
+    .reads = readFns,
+    .len = 10,
     .typeBits = 4, // max 16 types
 };
 
@@ -231,6 +241,15 @@ static void check_vbat(void) {
 }
 
 static inline void update_motor(uint8_t chan) {
+    velCounter++;
+    if (velCounter == velDiv) {
+        velCounter = 0;
+    
+        for (uint8_t i = 0; i < 5; i++) {
+            // scaling so freq doesn't effect value
+            vels[i] = (float)(encoders[i].pos - lastPos[i]) * (float)pidFreq / (float)velDiv;
+        }
+    }
     if (motorModes[chan] == MotorModePos) {
         const int16_t out = Pid_Update(&pids[chan], (float)encoders[chan].pos);
         const uint8_t dir = out < 0;
@@ -277,47 +296,101 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
 }
 
 static uint8_t servo_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 2);
+        return 2;
+    }
     const uint8_t chan = data[0]&3;
     const uint16_t val = (chan < 4) ? Servo_Read(&servos[chan]) : 0;
-    memcpy(data, val, 2);
+    memcpy(data, &val, 2);
     return 2;
 }
 static uint8_t mode_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 1);
+        return 1;
+    }
     const uint8_t chan = data[0]&3;
     data[0] = (chan < 5) ? motorModes[chan] : 0;
     return 1;
 }
 static uint8_t pid_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 12);
+        return 12;
+    }
     const uint8_t chan = data[0]&3;
-    //TODO
+    if (chan < 5) {
+        memcpy(data, &pids[chan].kp, 12);
+    }else{
+        memset(data, 0, 12);
+    }
     return 12;
 }
 static uint8_t target_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 4);
+        return 4;
+    }
     const uint8_t chan = data[0]&3;
-    //TODO
+    const int32_t val = (chan < 5) ? pids[chan].target : 0;
+    memcpy(data, &val, 4);
     return 4;
 }
 static uint8_t voltage_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 2);
+        return 2;
+    }
     const uint8_t chan = data[0]&3;
-    //TODO
+    const uint16_t val = (chan < 5) ? Drv8874_GetVoltage(&motors[chan]) : 0;
+    memcpy(data, &val, 2);
     return 2;
 }
-static uint8_t current_read(uint8_t* data, uint8_t len) {
+static uint8_t direction_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 1);
+        return 1;
+    }
     const uint8_t chan = data[0]&3;
-    //TODO
+    data[0] = (chan < 5) ? Drv8874_GetDirection(&motors[chan]) : 0;
+    return 1;
+}
+static uint8_t current_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 2);
+        return 2;
+    }
+    const uint8_t chan = data[0]&3;
+    const uint16_t val = (chan < 5) ? Drv8874_GetCurrent(&motors[chan]) : 0;
+    memcpy(data, &val, 2);
     return 2;
 }
 static uint8_t encoder_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 4);
+        return 4;
+    }
     const uint8_t chan = data[0]&3;
-    //TODO
+    const int32_t val = (chan < 5) ? encoders[chan].pos : 0;
+    memcpy(data, &val, 4);
     return 4;
 }
 static uint8_t measCur_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 2);
+        return 2;
+    }
     const uint8_t chan = data[0]&3;
-    //TODO
+    const uint16_t val = (chan < 5) ? *currents[chan] : 0;
+    memcpy(data, &val, 2);
     return 2;
 }
 static uint8_t measBat_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 2);
+        return 2;
+    }
     const uint8_t chan = data[0]&3;
     const uint16_t val = chan ? 0 : *vbat;
     memcpy(data, &val, 2);
@@ -325,6 +398,7 @@ static uint8_t measBat_read(uint8_t* data, uint8_t len) {
 }
 
 static void servo_write(uint8_t* data, uint8_t len) {
+    if (len != 3) return;
     const uint8_t chan = data[0]&3;
     if (chan < 4) {
         uint16_t val;
@@ -333,26 +407,33 @@ static void servo_write(uint8_t* data, uint8_t len) {
     }
 }
 static void mode_write(uint8_t* data, uint8_t len) {
+    if (len != 2) return;
     const uint8_t chan = data[0]&3;
     if (chan < 5) {
         motorModes[chan] = data[1];
+        if (motorModes[chan] == MotorModeDirect) {
+            Drv8874_SetVoltage(&motors[chan], 0);
+            Drv8874_SetDirection(&motors[chan], 0);
+        }
+        if (motorModes[chan] == MotorModeDisable) {
+            Drv8874_SetVoltage(&motors[chan], 0);
+            Drv8874_SetCurrent(&motors[chan], 0);
+            Drv8874_SetDirection(&motors[chan], 0);
+        }
     }
 }
 static void pid_write(uint8_t* data, uint8_t len) {
+    if (len != 13) return;
     const uint8_t chan = data[0]&3;
-    if (chan < 5) {
-        //TODO
-    }
+    if (chan < 5) memcpy(&pids[chan].kp, &data[1], 12);
 }
 static void target_write(uint8_t* data, uint8_t len) {
+    if (len != 5) return;
     const uint8_t chan = data[0]&3;
-    if (chan < 5) {
-        float val;
-        memcpy(&val, &data[1], 4);
-        pids[chan].target = val;
-    }
+    if (chan < 5) memcpy(&pids[chan].target, &data[1], 4);
 }
 static void voltage_write(uint8_t* data, uint8_t len) {
+    if (len != 3) return;
     const uint8_t chan = data[0]&3;
     if (chan < 5) {
         uint16_t val;
@@ -360,7 +441,13 @@ static void voltage_write(uint8_t* data, uint8_t len) {
         Drv8874_SetVoltage(&motors[chan], val);
     }
 }
+static void direction_write(uint8_t* data, uint8_t len) {
+    if (len != 2) return;
+    const uint8_t chan = data[0]&3;
+    if (chan < 5) Drv8874_SetDirection(&motors[chan], data[1]);
+}
 static void current_write(uint8_t* data, uint8_t len) {
+    if (len != 3) return;
     const uint8_t chan = data[0]&3;
     if (chan < 5) {
         uint16_t val;
@@ -369,6 +456,15 @@ static void current_write(uint8_t* data, uint8_t len) {
     }
 }
 static void encoder_write(uint8_t* data, uint8_t len) {
+    if (len != 5) return;
     const uint8_t chan = data[0]&3;
-    //TODO
+    if (chan < 5) {
+        // disable motors if in PID modes
+        // can change this later if teams need
+        if (motorModes[chan] != MotorModeDirect) {
+            motorModes[chan] = MotorModeDisable;
+            Drv8874_SetVoltage(&motors[chan], 0);
+        }
+        memcpy(&encoders[chan].pos, &data[1], 4);
+    }
 }
