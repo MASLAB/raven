@@ -18,9 +18,9 @@ void Com_Transmit(struct Com_Handle* handle, uint8_t* data, uint8_t len, bool re
     handle->txBuf[1] = header.byte;
     memcpy(&handle->txBuf[2], data, len);
 
-    handle->txBuf[len+2] = HAL_CRC_Calculate(handle->hcrc, (uint32_t *)handle->rxBuf, len+2);
+    handle->txBuf[len+2] = HAL_CRC_Calculate(handle->hcrc, (uint32_t *)handle->txBuf, len+2);
 
-    handle->send(handle->txBuf, len+2);
+    handle->send(handle->txBuf, len+3);
 }
 
 void Com_Handler(struct Com_Handle* handle) {

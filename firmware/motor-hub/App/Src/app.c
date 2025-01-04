@@ -157,6 +157,8 @@ static struct Parser_Handle parser = {
     .reads = readFns,
     .len = MESSAGES,
     .typeBits = 4, // max 16 types
+    .typeMask = 15, // 4 bit mask. 
+                    // This is dumb and should be calculated
 };
 
 static struct Com_Handle com;

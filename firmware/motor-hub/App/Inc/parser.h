@@ -18,6 +18,7 @@ struct Parser_Handle {
 
     uint8_t len; // length of number of function pointers (num types)
     uint8_t typeBits; // bit length of (type field)
+    uint8_t typeMask; // mask for the type bits
 };
 
 uint8_t Parser_Handler(struct Parser_Handle* handle, uint8_t* data, uint8_t len);
