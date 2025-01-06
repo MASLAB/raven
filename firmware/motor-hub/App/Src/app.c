@@ -110,7 +110,7 @@ static uint16_t* vbat = &adc1Data[1];
 static uint16_t* currents[5] = {&adc1Data[0], &adc2Data[3], &adc2Data[0], &adc2Data[1], &adc2Data[2]};
 
 // parse functions
-#define MESSAGES 9
+#define MESSAGES 10
 static uint8_t servo_read(uint8_t*, uint8_t);
 static uint8_t mode_read(uint8_t*, uint8_t);
 static uint8_t pid_read(uint8_t*, uint8_t);
@@ -118,6 +118,7 @@ static uint8_t target_read(uint8_t*, uint8_t);
 static uint8_t voltage_read(uint8_t*, uint8_t);
 static uint8_t current_read(uint8_t*, uint8_t);
 static uint8_t encoder_read(uint8_t*, uint8_t);
+static uint8_t velocity_read(uint8_t*, uint8_t);
 static uint8_t measCur_read(uint8_t*, uint8_t);
 static uint8_t measBat_read(uint8_t*, uint8_t);
 
@@ -137,6 +138,7 @@ static uint8_t (*readFns[MESSAGES])(uint8_t*, uint8_t) = {
     &voltage_read,
     &current_read,
     &encoder_read,
+    &velocity_read,
     &measCur_read,
     &measBat_read,
 };
@@ -148,6 +150,7 @@ static void (*writeFns[MESSAGES])(uint8_t*, uint8_t) = {
     &voltage_write,
     &current_write,
     &encoder_write,
+    NULL,
     NULL,
     NULL,
 };
@@ -352,6 +355,16 @@ static uint8_t encoder_read(uint8_t* data, uint8_t len) {
     }
     const uint8_t chan = data[0]&3;
     const int32_t val = (chan < 5) ? encoders[chan].pos : 0;
+    memcpy(data, &val, 4);
+    return 4;
+}
+static uint8_t velocity_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 4);
+        return 4;
+    }
+    const uint8_t chan = data[0]&3;
+    const float val = (chan < 5) ? vels[chan] : 0;
     memcpy(data, &val, 4);
     return 4;
 }
