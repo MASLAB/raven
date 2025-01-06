@@ -227,6 +227,8 @@ void App_Init(void) {
     Pid_Init(&pids[3]);
     Pid_Init(&pids[4]);
 
+    Parser_Init(&parser);
+
     Com_Init(&com);
 }
 
