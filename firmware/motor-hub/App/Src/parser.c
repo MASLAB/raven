@@ -1,5 +1,11 @@
 #include "parser.h"
 
+
+
+void Parser_Init(struct Parser_Handle* handle) {
+    handle->typeMask = (1<<handle->typeBits)-1;
+}
+
 uint8_t Parser_Handler(struct Parser_Handle* handle, uint8_t* data, uint8_t len) {
     if (!len) return 0; // invalid or watchdog
 
