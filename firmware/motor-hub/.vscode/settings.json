@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "register.h": "c",
-        "cstdint": "c"
+        "cstdint": "c",
+        "parser.h": "c"
     }
 }
