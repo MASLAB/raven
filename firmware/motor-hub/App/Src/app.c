@@ -326,7 +326,7 @@ static uint8_t target_read(uint8_t* data, uint8_t len) {
         return 4;
     }
     const uint8_t chan = data[0]&3;
-    const int32_t val = (chan < 5) ? pids[chan].target : 0;
+    const float val = (chan < 5) ? pids[chan].target : 0;
     memcpy(data, &val, 4);
     return 4;
 }
