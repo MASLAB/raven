@@ -2,6 +2,7 @@
 #define INC_DRV8874_H_
 
 #include "main.h"
+#include "stdbool.h"
 
 struct Drv8874_Handle {
     // configuration
@@ -11,17 +12,21 @@ struct Drv8874_Handle {
     TIM_HandleTypeDef* cTim; // current
     uint32_t cChan;
 
-    void (*eFunc)(uint8_t); // enable
-    void (*dFunc)(uint8_t); // direction
+    void (*eFunc)(bool); // enable
+    void (*dFunc)(bool); // direction
+
+    //internal
+    int16_t voltage;
 };
 
 void Drv8874_Init(struct Drv8874_Handle* handle);
 
-void Drv8874_SetEnable(struct Drv8874_Handle* handle, uint8_t en);
-void Drv8874_SetDirection(struct Drv8874_Handle* handle, uint8_t dir);
+void Drv8874_SetEnable(struct Drv8874_Handle* handle, bool en);
 
-void Drv8874_SetVoltage(struct Drv8874_Handle* handle, uint8_t voltage);
-void Drv8874_SetCurrent(struct Drv8874_Handle* handle, uint8_t current);
+void Drv8874_SetVoltage(struct Drv8874_Handle* handle, int16_t voltage);
+void Drv8874_SetCurrent(struct Drv8874_Handle* handle, uint16_t current);
 
+int16_t Drv8874_GetVoltage(struct Drv8874_Handle* handle);
+uint16_t Drv8874_GetCurrent(struct Drv8874_Handle* handle);
 
 #endif

@@ -3,42 +3,70 @@
 #include "stdlib.h"
 
 void Com_Init(struct Com_Handle* handle) {
-    handle->rx_pid = 0;
-    handle->tx_pid = 1;
+    handle->rxBuf = malloc(handle->maxData+1);
 
-    handle->rx_buf = malloc(35);
-    handle->data_buf = malloc(32);
+    handle->rxState = Com_RxStart;
 
-    HAL_UARTEx_ReceiveToIdle_DMA(handle->huart, handle->rx_buf, 35);
-    __HAL_DMA_DISABLE_IT(handle->hdma, DMA_IT_HT);
+    handle->txBuf = malloc(handle->maxData+3);
+    handle->txBuf[0] = handle->sByte;
+
+    handle->request(handle->rxBuf, 1);
 }
 
-void Com_Receive(struct Com_Handle* handle, uint16_t size) {
-    const uint8_t len = handle->rx_buf[1]>>3;
-    if (size == len+3) {
-        if ((HAL_CRC_Calculate(handle->hcrc, (uint32_t*)handle->rx_buf, size)&0xFF) == 0) {//include CRC byte
-            const uint8_t pid = (handle->rx_buf[1]>>1)&3;
-            if (pid != handle->rx_pid) {
-                handle->receive(handle->data_buf, len);
-                handle->rx_pid++;
-                if (handle->rx_buf[1]&1) {
-                    //TODO send back ok message
-                }
+void Com_Transmit(struct Com_Handle* handle, uint8_t* data, uint8_t len, bool resp) {
+    const union Com_Header header = {.resp = resp, .len = len};
+    handle->txBuf[1] = header.byte;
+    memcpy(&handle->txBuf[2], data, len);
+
+    handle->txBuf[len+2] = HAL_CRC_Calculate(handle->hcrc, (uint32_t *)handle->txBuf, len+2);
+
+    handle->send(handle->txBuf, len+3);
+}
+
+void Com_Handler(struct Com_Handle* handle) {
+    switch (handle->rxState) {
+    case Com_RxStart:
+        if (handle->rxBuf[0] == handle->sByte) {
+            HAL_CRC_Calculate(handle->hcrc, (uint32_t *)handle->rxBuf, 1);
+            handle->rxState = Com_RxHeader;
+        }
+
+        handle->request(handle->rxBuf, 1);
+        break;
+    case Com_RxHeader:
+        handle->header.byte = handle->rxBuf[0];
+        HAL_CRC_Accumulate(handle->hcrc, (uint32_t *)handle->rxBuf, 1);
+
+        if (handle->header.len) {
+            handle->rxState = Com_RxData;
+            // do this 1 byte forward to fit CRC
+            // trust, makes sense for simplicity
+            // avoids many memcpys
+            handle->request(&handle->rxBuf[1], handle->header.len);
+        }else{
+            handle->rxState = Com_RxCRC;
+            handle->request(handle->rxBuf, 1);
+        }
+        break;
+    case Com_RxData:
+        HAL_CRC_Accumulate(handle->hcrc, (uint32_t *)(&handle->rxBuf[1]), handle->header.len);
+        handle->rxState = Com_RxCRC;
+
+        handle->request(handle->rxBuf, 1);
+        break;
+    case Com_RxCRC:
+        if (HAL_CRC_Accumulate(handle->hcrc, (uint32_t *)handle->rxBuf, 1)) {// wrong CRC
+            Com_Transmit(handle, handle->rxBuf, 1, 0);
+        } else {
+            // now data is perfectly alligned for transmission
+            const uint8_t respLen = handle->parse(&handle->rxBuf[1], handle->header.len);
+            if (handle->header.resp) {
+                // yay no memcpy here either
+                Com_Transmit(handle, handle->rxBuf, respLen+1, 0);
             }
         }
-    }
-    HAL_UARTEx_ReceiveToIdle_DMA(handle->huart, handle->rx_buf, 35);
-    __HAL_DMA_DISABLE_IT(handle->hdma, DMA_IT_HT);
-}
-
-void Com_Send(struct Com_Handle* handle, uint8_t* data, uint8_t len, uint8_t awk) {
-    handle->tx_buf[1] = (len << 3) | ((handle->tx_pid & 3) << 1) | (awk & 1);
-    memcpy(handle->tx_buf+2, data, len);
-    const uint8_t crc = HAL_CRC_Calculate(handle->hcrc, (uint32_t*)handle->tx_buf, len+2);
-    handle->tx_buf[len+2] = crc;
-    if (!awk) {
-        handle->tx_pid++;
-    }else {
-        //TODO later make sure ok to pid++ or resend
+        handle->rxState = Com_RxStart;
+        handle->request(handle->rxBuf, 1);
+        break;
     }
 }

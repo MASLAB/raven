@@ -11,6 +11,7 @@ struct Servo_Handle {
 
 void Servo_Init(struct Servo_Handle* handle);
 
-void Servo_Move(struct Servo_Handle* handle, uint16_t pos);
+void Servo_Write(struct Servo_Handle* handle, uint16_t pos);
+uint16_t Servo_Read(struct Servo_Handle* handle);
 
 #endif

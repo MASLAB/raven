@@ -1,4 +1,5 @@
 #include "app.h"
+#include "string.h"
 #include "main.h"
 #include "sipo.h"
 #include "encoder.h"
@@ -6,6 +7,7 @@
 #include "com.h"
 #include "servo.h"
 #include "pid.h"
+#include "parser.h"
 
 extern TIM_HandleTypeDef htim1;
 extern TIM_HandleTypeDef htim2;
@@ -16,21 +18,20 @@ extern TIM_HandleTypeDef htim7;
 extern TIM_HandleTypeDef htim8;
 extern TIM_HandleTypeDef htim15;
 extern TIM_HandleTypeDef htim16;
+extern TIM_HandleTypeDef htim17;
 
 extern ADC_HandleTypeDef hadc1;
 extern ADC_HandleTypeDef hadc2;
 
 extern UART_HandleTypeDef huart3;
-extern DMA_HandleTypeDef hdma_usart3_rx;
-
 extern CRC_HandleTypeDef hcrc;
 
 // shift register
 // automatically handled with timer
-struct Sipo_Handle sipo = {.clkPort = RCLK_GPIO_Port, .clkPin = RCLK_Pin, .dataPort = RDAT_GPIO_Port, .dataPin = RDAT_Pin, .loadPort = RSV_GPIO_Port, .loadPin = RSV_Pin};
+static struct Sipo_Handle sipo = {.clkPort = RCLK_GPIO_Port, .clkPin = RCLK_Pin, .dataPort = RDAT_GPIO_Port, .dataPin = RDAT_Pin, .loadPort = RSV_GPIO_Port, .loadPin = RSV_Pin};
 
 #define ENCODER(num) {.aPort = A##num##_GPIO_Port, .aPin = A##num##_Pin, .bPort = B##num##_GPIO_Port, .bPin = B##num##_Pin}
-struct Encoder_Handle encoders[5] = {
+static struct Encoder_Handle encoders[5] = {
     ENCODER(1),
     ENCODER(2),
     ENCODER(3),
@@ -38,13 +39,19 @@ struct Encoder_Handle encoders[5] = {
     ENCODER(5),
 };
 
+// tim17 update motor freq for pid
+static uint16_t pidFreq = 5000;
+
 // velocities for vel PID mode
 static float vels[5] = {0};
 static int32_t lastPos[5] = {0};
 
+static uint16_t velDiv = 10; // division on PID update
+static uint16_t velCounter = 0; // keep 0
+
 // functions for dir and en
 // some are through shift register and some are GPIO
-#define CONFIG(name,index) static void name(uint8_t state){if(state){sipo.data|=1<<index;}else{sipo.data&=~(1<<index);}}
+#define CONFIG(name,index) static void name(bool state){if(state){sipo.data|=1<<index;}else{sipo.data&=~(1<<index);}}
 CONFIG(dir1, 0)
 CONFIG(en1, 1)
 CONFIG(dir2, 2)
@@ -54,14 +61,14 @@ CONFIG(en3, 5)
 CONFIG(dir4, 6)
 CONFIG(en4, 7)
 
-static void dir5(uint8_t dir) {
+static void dir5(bool dir) {
     HAL_GPIO_WritePin(PH5_GPIO_Port, PH5_Pin, dir);
 }
-static void en5(uint8_t en) {
+static void en5(bool en) {
     HAL_GPIO_WritePin(SL5_GPIO_Port, SL5_Pin, en);
 }
 
-struct Drv8874_Handle motors[5] = {
+static struct Drv8874_Handle motors[5] = {
     {.vTim = &htim2, .vChan = TIM_CHANNEL_2, .cTim = &htim4, .cChan = TIM_CHANNEL_4, .eFunc = &en1, .dFunc = &dir1},
     {.vTim = &htim2, .vChan = TIM_CHANNEL_3, .cTim = &htim2, .cChan = TIM_CHANNEL_4, .eFunc = &en2, .dFunc = &dir2},
     {.vTim = &htim2, .vChan = TIM_CHANNEL_1, .cTim = &htim3, .cChan = TIM_CHANNEL_1, .eFunc = &en3, .dFunc = &dir3},
@@ -69,7 +76,7 @@ struct Drv8874_Handle motors[5] = {
     {.vTim = &htim8, .vChan = TIM_CHANNEL_1, .cTim = &htim15, .cChan = TIM_CHANNEL_2, .eFunc = &en5, .dFunc = &dir5},
 };
 
-struct Pid_Handle pids[5] = {
+static struct Pid_Handle pids[5] = {
     {.kp = 0, .ki = 0, .kd = 0},
     {.kp = 0, .ki = 0, .kd = 0},
     {.kp = 0, .ki = 0, .kd = 0},
@@ -78,15 +85,16 @@ struct Pid_Handle pids[5] = {
 };
 
 enum MotorMode {
-    MotorModeDirect = 0u, // direct control (for current limiting push into objects or smth)
-    MotorModePos = 1u, // position pid
-    MotorModeVel = 2u, // velocity pid
+    MotorModeDisable = 0u,
+    MotorModeDirect = 1u, // direct control (for current limiting push into objects or smth)
+    MotorModePos = 2u, // position pid
+    MotorModeVel = 3u, // velocity pid
 };
 
-// begin all in direct mode
-enum MotorMode motorModes[5] = {0};
+// all begin in direct mode
+static enum MotorMode motorModes[5] = {0};
 
-struct Servo_Handle servos[4] = {
+static struct Servo_Handle servos[4] = {
     {.tim = &htim1, .chan = TIM_CHANNEL_4},
     {.tim = &htim16, .chan = TIM_CHANNEL_1},
     {.tim = &htim1, .chan = TIM_CHANNEL_3},
@@ -101,92 +109,98 @@ static uint16_t adc2Data[4] = {0};
 static uint16_t* vbat = &adc1Data[1];
 static uint16_t* currents[5] = {&adc1Data[0], &adc2Data[3], &adc2Data[0], &adc2Data[1], &adc2Data[2]};
 
-// RECIEVE
-// 0:servos (4)
-// 1:motor (5) (mode, request, voltage, current)
-// 2:PIDs (5) (P, I, D)
-// hearbeat
+// parse functions
+#define MESSAGES 10
+static uint8_t servo_read(uint8_t*, uint8_t);
+static uint8_t mode_read(uint8_t*, uint8_t);
+static uint8_t pid_read(uint8_t*, uint8_t);
+static uint8_t target_read(uint8_t*, uint8_t);
+static uint8_t voltage_read(uint8_t*, uint8_t);
+static uint8_t current_read(uint8_t*, uint8_t);
+static uint8_t encoder_read(uint8_t*, uint8_t);
+static uint8_t velocity_read(uint8_t*, uint8_t);
+static uint8_t measCur_read(uint8_t*, uint8_t);
+static uint8_t measBat_read(uint8_t*, uint8_t);
 
-// SEND
-// 0:current (5)
-// 1:encoders (5)
+static void servo_write(uint8_t*, uint8_t);
+static void mode_write(uint8_t*, uint8_t);
+static void pid_write(uint8_t*, uint8_t);
+static void target_write(uint8_t*, uint8_t);
+static void voltage_write(uint8_t*, uint8_t);
+static void current_write(uint8_t*, uint8_t);
+static void encoder_write(uint8_t*, uint8_t);
 
-// DATA FORMAT
-// message type (3bit)
-// channel (3bit)
-// parameter (2bit)
-// data (0-31 bytes)
-
-static struct Message {
-    void (*fn)(uint8_t*);
-    uint8_t len;
+static uint8_t (*readFns[MESSAGES])(uint8_t*, uint8_t) = {
+    &servo_read,
+    &mode_read,
+    &pid_read,
+    &target_read,
+    &voltage_read,
+    &current_read,
+    &encoder_read,
+    &velocity_read,
+    &measCur_read,
+    &measBat_read,
+};
+static void (*writeFns[MESSAGES])(uint8_t*, uint8_t) = {
+    &servo_write,
+    &mode_write,
+    &pid_write,
+    &target_write,
+    &voltage_write,
+    &current_write,
+    &encoder_write,
+    NULL,
+    NULL,
+    NULL,
 };
 
-//TODO finish adding messages
+static struct Parser_Handle parser = {
+    .writes = writeFns,
+    .reads = readFns,
+    .len = MESSAGES,
+    .typeBits = 4, // max 16 types
+};
 
-// FORALL 4 SERVOS
-// servo set pos (16bit)
+static struct Com_Handle com;
 
-// FORALL 5 MOTORS/ENCODERS/PID
-// motor set enable (1bit)
-
-// motor set mode (2bit)
-
-// motor set voltage (12bit)
-// motor set current limit (12bit)
-// motor set dir (1bit)
-
-// motor set PID constants (float p, float i, float d)
-
-// motor set target position (int32_t)
-// motor set target velocity (float)
-
-// read encoder (int32_t)
-// read current (12bit)
-
-// reset PID
-// reset encoder
-
-static void servo(uint8_t* data) {
-    // uint16_t val = (data[0]<<8 | data[1])&0x1FFF;
+static void com_callback(UART_HandleTypeDef* huart) {
+    UNUSED(huart);
+    Com_Handler(&com);
 }
 
-static void motor(uint8_t* data) {
-    uint16_t val = 0;
-    UNUSED(data);
+static void com_send (uint8_t* data, uint8_t len) {
+    while ((HAL_UART_GetState(&huart3) & 1) != 0);
+    HAL_UART_Transmit_DMA(&huart3, data, len);
 }
 
-static void pid(uint8_t* data) {
-
+static void com_request (uint8_t* data, uint8_t len) {
+    HAL_UART_Receive_DMA(&huart3, data, len);
 }
 
-#define MCOUNT 2
-static struct Message messages[MCOUNT] = {{.fn = &servo, .len = 2}, {.fn = &motor, .len = 2}};
-
-static void receive(uint8_t* data, uint8_t len) {
-    if (!len) {
-        return; // kick watchog or error
-    }
-    // TODO parse data
-
-    // const uint8_t mType = data[0];
-    // if (mType >= MCOUNT) {
-    //     return; // error
-    // }
-    // if (messages[mType].len != len) {
-    //     return; // error
-    // }
-    // (messages[mType].fn)(data);
+static uint8_t com_parse (uint8_t* data, uint8_t len) {
+    return Parser_Handler(&parser, data, len);
 }
 
-struct Com_Handle com = {.huart = &huart3, .hdma = &hdma_usart3_rx, .hcrc = &hcrc, .receive = &receive, .sByte = 0xAA, .maxRetries = 5};
+static struct Com_Handle com = {
+    .hcrc = &hcrc,
+    .sByte = 0xAA,
+    .maxData = 12,
+    .send = &com_send,
+    .request = &com_request,
+    .parse = &com_parse,
+};
 
 void App_Init(void) {
     HAL_TIM_Base_Start_IT(&htim6);
     HAL_TIM_Base_Start_IT(&htim7);
+    HAL_TIM_Base_Start_IT(&htim17);
 
     HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc1Data, 2);
     HAL_ADC_Start_DMA(&hadc2, (uint32_t*)adc2Data, 4);
+
+    HAL_UART_RegisterCallback(&huart3, HAL_UART_RX_COMPLETE_CB_ID, com_callback);
+    HAL_UART_Init(&huart3);
 
     Sipo_Init(&sipo);
     
@@ -220,66 +234,219 @@ static void check_vbat(void) {
     // value after divider
     const uint16_t adcbat = *vbat;
 
-    if (adcbat < 1200) {
+    // 0.185 is voltage divider
+    // 3s* (cell cuttof) * 0.185 * 4096(2^12) / 3.3v
+    // float math gets precompiled so just leave like so
+    const float cellCutoff = 3.1f;
+    if (adcbat < 3.0f * cellCutoff * 0.185f * 4096.0f / 3.3f) {
         // unlatch FET
         HAL_GPIO_WritePin(PWR_GPIO_Port, PWR_Pin, 0);
     }
 }
 
 static inline void update_motor(uint8_t chan) {
-    if (motorModes[chan] == MotorModePos) {
-        const int16_t out = Pid_Update(&pids[chan], (float)encoders[chan].pos);
-        const uint8_t dir = out < 0;
-        Drv8874_SetDirection(&motors[chan], dir);
-        if (dir) {
-            Drv8874_SetVoltage(&motors[chan], (uint8_t)(-out));
-        }else {
-            Drv8874_SetVoltage(&motors[chan], (uint8_t)out);
+    velCounter++;
+    if (velCounter == velDiv) {
+        velCounter = 0;
+    
+        for (uint8_t i = 0; i < 5; i++) {
+            // scaling so freq doesn't effect value
+            vels[i] = (float)(encoders[i].pos - lastPos[i]) * (float)pidFreq / (float)velDiv;
         }
-    }else if (motorModes[chan] == MotorModeVel) {
-        const int16_t out = Pid_Update(&pids[chan], vels[chan]);
-        const uint8_t dir = out < 0;
-        Drv8874_SetDirection(&motors[chan], dir);
-        if (dir) {
-            Drv8874_SetVoltage(&motors[chan], (uint8_t)(-out));
-        }else {
-            Drv8874_SetVoltage(&motors[chan], (uint8_t)out);
-        }
+    }
+    if (motorModes[chan] == MotorModePos || motorModes[chan] == MotorModeVel) {
+        const int16_t out = Pid_Update(&pids[chan], (motorModes[chan] == MotorModePos)?(float)encoders[chan].pos:vels[chan]);
+        Drv8874_SetVoltage(&motors[chan], out);
     }
 }
 
+int16_t speed = 0;
+int8_t dir = 100;
 void App_Update(void) {
     check_vbat();
-    
-    // TODO calculate delta us with a timer
-    uint32_t dut = 1000;
-    for (uint8_t i = 0; i < 5; i++) {
-        vels[i] = 1000000.f*(float)(encoders[i].pos - lastPos[i])/((float)dut);
-        lastPos[i] = encoders[i].pos;
-    }
-
-    update_motor(0);
-    update_motor(1);
-    update_motor(2);
-    update_motor(3);
-    update_motor(4);
-
-    HAL_Delay(1);
+    HAL_Delay(50);
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
     if (htim == &htim6) {
         Sipo_Update(&sipo);
-    }else {//htim7
+    }else if (htim == &htim7){
+        // TODO figure this out when motors arrive
         Encoder_Update(&encoders[0]);
         Encoder_Update(&encoders[1]);
         Encoder_Update(&encoders[2]);
         Encoder_Update(&encoders[3]);
         Encoder_Update(&encoders[4]);
+    } else { // tim17
+        update_motor(0);
+        update_motor(1);
+        update_motor(2);
+        update_motor(3);
+        update_motor(4);
     }
 }
 
-void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t size) {
-    UNUSED(huart);
-    Com_Receive(&com, size);
+static uint8_t servo_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 2);
+        return 2;
+    }
+    const uint8_t chan = data[0]&3;
+    const uint16_t val = (chan < 4) ? Servo_Read(&servos[chan]) : 0;
+    memcpy(data, &val, 2);
+    return 2;
+}
+static uint8_t mode_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 1);
+        return 1;
+    }
+    const uint8_t chan = data[0]&3;
+    data[0] = (chan < 5) ? motorModes[chan] : 0;
+    return 1;
+}
+static uint8_t pid_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 12);
+        return 12;
+    }
+    const uint8_t chan = data[0]&3;
+    if (chan < 5) {
+        memcpy(data, &pids[chan].kp, 12);
+    }else{
+        memset(data, 0, 12);
+    }
+    return 12;
+}
+static uint8_t target_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 4);
+        return 4;
+    }
+    const uint8_t chan = data[0]&3;
+    const int32_t val = (chan < 5) ? pids[chan].target : 0;
+    memcpy(data, &val, 4);
+    return 4;
+}
+static uint8_t voltage_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 2);
+        return 2;
+    }
+    const uint8_t chan = data[0]&3;
+    const int16_t val = (chan < 5) ? Drv8874_GetVoltage(&motors[chan]) : 0;
+    memcpy(data, &val, 2);
+    return 2;
+}
+static uint8_t current_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 2);
+        return 2;
+    }
+    const uint8_t chan = data[0]&3;
+    const uint16_t val = (chan < 5) ? Drv8874_GetCurrent(&motors[chan]) : 0;
+    memcpy(data, &val, 2);
+    return 2;
+}
+static uint8_t encoder_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 4);
+        return 4;
+    }
+    const uint8_t chan = data[0]&3;
+    const int32_t val = (chan < 5) ? encoders[chan].pos : 0;
+    memcpy(data, &val, 4);
+    return 4;
+}
+static uint8_t velocity_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 4);
+        return 4;
+    }
+    const uint8_t chan = data[0]&3;
+    const float val = (chan < 5) ? vels[chan] : 0;
+    memcpy(data, &val, 4);
+    return 4;
+}
+static uint8_t measCur_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 2);
+        return 2;
+    }
+    const uint8_t chan = data[0]&3;
+    const uint16_t val = (chan < 5) ? *currents[chan] : 0;
+    memcpy(data, &val, 2);
+    return 2;
+}
+static uint8_t measBat_read(uint8_t* data, uint8_t len) {
+    if (len != 1) {
+        memset(data, 0, 2);
+        return 2;
+    }
+    const uint8_t chan = data[0]&3;
+    const uint16_t val = chan ? 0 : *vbat;
+    memcpy(data, &val, 2);
+    return 2;
+}
+
+static void servo_write(uint8_t* data, uint8_t len) {
+    if (len != 3) return;
+    const uint8_t chan = data[0]&3;
+    if (chan < 4) {
+        uint16_t val;
+        memcpy(&val, &data[1], 2);
+        Servo_Write(&servos[chan], val);
+    }
+}
+static void mode_write(uint8_t* data, uint8_t len) {
+    if (len != 2) return;
+    const uint8_t chan = data[0]&3;
+    if (chan < 5) {
+        motorModes[chan] = data[1];
+        if (motorModes[chan] == MotorModeDisable) {
+            Drv8874_SetVoltage(&motors[chan], 0);
+            Drv8874_SetCurrent(&motors[chan], 0);
+        }
+    }
+}
+static void pid_write(uint8_t* data, uint8_t len) {
+    if (len != 13) return;
+    const uint8_t chan = data[0]&3;
+    if (chan < 5) memcpy(&pids[chan].kp, &data[1], 12);
+}
+static void target_write(uint8_t* data, uint8_t len) {
+    if (len != 5) return;
+    const uint8_t chan = data[0]&3;
+    if (chan < 5) memcpy(&pids[chan].target, &data[1], 4);
+}
+static void voltage_write(uint8_t* data, uint8_t len) {
+    if (len != 3) return;
+    const uint8_t chan = data[0]&3;
+    if (chan < 5) {
+        int16_t val;
+        memcpy(&val, &data[1], 2);
+        Drv8874_SetVoltage(&motors[chan], val);
+    }
+}
+static void current_write(uint8_t* data, uint8_t len) {
+    if (len != 3) return;
+    const uint8_t chan = data[0]&3;
+    if (chan < 5) {
+        uint16_t val;
+        memcpy(&val, &data[1], 2);
+        Drv8874_SetCurrent(&motors[chan], val);
+    }
+}
+static void encoder_write(uint8_t* data, uint8_t len) {
+    if (len != 5) return;
+    const uint8_t chan = data[0]&3;
+    if (chan < 5) {
+        // disable motors if in PID modes
+        // can change this later if teams need
+        if (motorModes[chan] != MotorModeDirect) {
+            motorModes[chan] = MotorModeDisable;
+            Drv8874_SetVoltage(&motors[chan], 0);
+        }
+        memcpy(&encoders[chan].pos, &data[1], 4);
+    }
 }

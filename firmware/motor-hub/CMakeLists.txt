@@ -45,16 +45,11 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined library search paths
 )
 
+file(GLOB APP_SRC "App/Src/*.c")
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
-    App/Src/app.c
-    App/Src/sipo.c
-    App/Src/encoder.c
-    App/Src/drv8874.c
-    App/Src/com.c
-    App/Src/servo.c
-    App/Src/pid.c
+    ${APP_SRC}
 )
 
 # Add include paths
