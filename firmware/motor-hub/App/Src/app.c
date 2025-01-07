@@ -170,12 +170,12 @@ static void com_callback(UART_HandleTypeDef* huart) {
 }
 
 static void com_send (uint8_t* data, uint8_t len) {
-    while ((HAL_UART_GetState(&huart3) & 1) != 0);
-    HAL_UART_Transmit_DMA(&huart3, data, len);
+    if ((HAL_UART_GetState(&huart3) & 1) == 0)
+        HAL_UART_Transmit_DMA(&huart3, data, len);
 }
 
 static void com_request (uint8_t* data, uint8_t len) {
-    HAL_UART_Receive_DMA(&huart3, data, len);
+    HAL_UART_Receive_IT(&huart3, data, len);
 }
 
 static uint8_t com_parse (uint8_t* data, uint8_t len) {
@@ -270,15 +270,13 @@ void App_Update(void) {
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
+    static uint8_t encoder_index = 0;
     if (htim == &htim6) {
         Sipo_Update(&sipo);
     }else if (htim == &htim7){
         // TODO figure this out when motors arrive
-        Encoder_Update(&encoders[0]);
-        Encoder_Update(&encoders[1]);
-        Encoder_Update(&encoders[2]);
-        Encoder_Update(&encoders[3]);
-        Encoder_Update(&encoders[4]);
+        Encoder_Update(&encoders[encoder_index]);
+        encoder_index = (encoder_index + 1) % 5;
     } else { // tim17
         update_motor(0);
         update_motor(1);
