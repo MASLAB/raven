@@ -262,8 +262,6 @@ static inline void update_motor(uint8_t chan) {
     }
 }
 
-int16_t speed = 0;
-int8_t dir = 100;
 void App_Update(void) {
     check_vbat();
     HAL_Delay(50);
