@@ -291,7 +291,7 @@ static uint8_t servo_read(uint8_t* data, uint8_t len) {
         memset(data, 0, 2);
         return 2;
     }
-    const uint8_t chan = data[0]&3;
+    const uint8_t chan = data[0]&7;
     const uint16_t val = (chan < 4) ? Servo_Read(&servos[chan]) : 0;
     memcpy(data, &val, 2);
     return 2;
@@ -301,7 +301,7 @@ static uint8_t mode_read(uint8_t* data, uint8_t len) {
         memset(data, 0, 1);
         return 1;
     }
-    const uint8_t chan = data[0]&3;
+    const uint8_t chan = data[0]&7;
     data[0] = (chan < 5) ? motorModes[chan] : 0;
     return 1;
 }
@@ -310,7 +310,7 @@ static uint8_t pid_read(uint8_t* data, uint8_t len) {
         memset(data, 0, 12);
         return 12;
     }
-    const uint8_t chan = data[0]&3;
+    const uint8_t chan = data[0]&7;
     if (chan < 5) {
         memcpy(data, &pids[chan].kp, 12);
     }else{
@@ -323,7 +323,7 @@ static uint8_t target_read(uint8_t* data, uint8_t len) {
         memset(data, 0, 4);
         return 4;
     }
-    const uint8_t chan = data[0]&3;
+    const uint8_t chan = data[0]&7;
     const float val = (chan < 5) ? pids[chan].target : 0;
     memcpy(data, &val, 4);
     return 4;
@@ -333,7 +333,7 @@ static uint8_t voltage_read(uint8_t* data, uint8_t len) {
         memset(data, 0, 2);
         return 2;
     }
-    const uint8_t chan = data[0]&3;
+    const uint8_t chan = data[0]&7;
     const int16_t val = (chan < 5) ? Drv8874_GetVoltage(&motors[chan]) : 0;
     memcpy(data, &val, 2);
     return 2;
@@ -343,7 +343,7 @@ static uint8_t current_read(uint8_t* data, uint8_t len) {
         memset(data, 0, 2);
         return 2;
     }
-    const uint8_t chan = data[0]&3;
+    const uint8_t chan = data[0]&7;
     const uint16_t val = (chan < 5) ? Drv8874_GetCurrent(&motors[chan]) : 0;
     memcpy(data, &val, 2);
     return 2;
@@ -353,7 +353,7 @@ static uint8_t encoder_read(uint8_t* data, uint8_t len) {
         memset(data, 0, 4);
         return 4;
     }
-    const uint8_t chan = data[0]&3;
+    const uint8_t chan = data[0]&7;
     const int32_t val = (chan < 5) ? encoders[chan].pos : 0;
     memcpy(data, &val, 4);
     return 4;
@@ -363,7 +363,7 @@ static uint8_t velocity_read(uint8_t* data, uint8_t len) {
         memset(data, 0, 4);
         return 4;
     }
-    const uint8_t chan = data[0]&3;
+    const uint8_t chan = data[0]&7;
     const float val = (chan < 5) ? vels[chan] : 0;
     memcpy(data, &val, 4);
     return 4;
@@ -373,7 +373,7 @@ static uint8_t measCur_read(uint8_t* data, uint8_t len) {
         memset(data, 0, 2);
         return 2;
     }
-    const uint8_t chan = data[0]&3;
+    const uint8_t chan = data[0]&7;
     const uint16_t val = (chan < 5) ? *currents[chan] : 0;
     memcpy(data, &val, 2);
     return 2;
@@ -383,7 +383,7 @@ static uint8_t measBat_read(uint8_t* data, uint8_t len) {
         memset(data, 0, 2);
         return 2;
     }
-    const uint8_t chan = data[0]&3;
+    const uint8_t chan = data[0]&7;
     const uint16_t val = chan ? 0 : *vbat;
     memcpy(data, &val, 2);
     return 2;
@@ -391,7 +391,7 @@ static uint8_t measBat_read(uint8_t* data, uint8_t len) {
 
 static void servo_write(uint8_t* data, uint8_t len) {
     if (len != 3) return;
-    const uint8_t chan = data[0]&3;
+    const uint8_t chan = data[0]&7;
     if (chan < 4) {
         uint16_t val;
         memcpy(&val, &data[1], 2);
@@ -400,7 +400,7 @@ static void servo_write(uint8_t* data, uint8_t len) {
 }
 static void mode_write(uint8_t* data, uint8_t len) {
     if (len != 2) return;
-    const uint8_t chan = data[0]&3;
+    const uint8_t chan = data[0]&7;
     if (chan < 5) {
         motorModes[chan] = data[1];
         if (motorModes[chan] == MotorModeDisable) {
@@ -414,17 +414,17 @@ static void mode_write(uint8_t* data, uint8_t len) {
 }
 static void pid_write(uint8_t* data, uint8_t len) {
     if (len != 13) return;
-    const uint8_t chan = data[0]&3;
+    const uint8_t chan = data[0]&7;
     if (chan < 5) memcpy(&pids[chan].kp, &data[1], 12);
 }
 static void target_write(uint8_t* data, uint8_t len) {
     if (len != 5) return;
-    const uint8_t chan = data[0]&3;
+    const uint8_t chan = data[0]&7;
     if (chan < 5) memcpy(&pids[chan].target, &data[1], 4);
 }
 static void voltage_write(uint8_t* data, uint8_t len) {
     if (len != 3) return;
-    const uint8_t chan = data[0]&3;
+    const uint8_t chan = data[0]&7;
     if (chan < 5) {
         int16_t val;
         memcpy(&val, &data[1], 2);
@@ -433,7 +433,7 @@ static void voltage_write(uint8_t* data, uint8_t len) {
 }
 static void current_write(uint8_t* data, uint8_t len) {
     if (len != 3) return;
-    const uint8_t chan = data[0]&3;
+    const uint8_t chan = data[0]&7;
     if (chan < 5) {
         uint16_t val;
         memcpy(&val, &data[1], 2);
@@ -442,7 +442,7 @@ static void current_write(uint8_t* data, uint8_t len) {
 }
 static void encoder_write(uint8_t* data, uint8_t len) {
     if (len != 5) return;
-    const uint8_t chan = data[0]&3;
+    const uint8_t chan = data[0]&7;
     if (chan < 5) {
         // disable motors if in PID modes
         // can change this later if teams need
