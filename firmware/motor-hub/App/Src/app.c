@@ -38,6 +38,7 @@ static struct Encoder_Handle encoders[5] = {
     ENCODER(4),
     ENCODER(5),
 };
+static uint8_t encoderCheck =  0;
 
 // tim17 update motor freq for pid
 static uint16_t pidFreq = 5000;
@@ -268,13 +269,11 @@ void App_Update(void) {
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
-    static uint8_t encoder_index = 0;
     if (htim == &htim6) {
         Sipo_Update(&sipo);
     }else if (htim == &htim7){
-        // TODO figure this out when motors arrive
-        Encoder_Update(&encoders[encoder_index]);
-        encoder_index = (encoder_index + 1) % 5;
+        Encoder_Update(&encoders[encoderCheck]);
+        encoderCheck = (encoderCheck + 1) % 5;
     } else { // tim17
         update_motor(0);
         update_motor(1);
