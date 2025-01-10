@@ -14,38 +14,38 @@ target_compile_definitions(stm32cubemx INTERFACE
 
 target_include_directories(stm32cubemx INTERFACE
     ../../Core/Inc
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Inc
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy
-    /home/mfact/Contrib/raven/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include
-    /home/mfact/Contrib/raven/firmware/Drivers/CMSIS/Include
+    ../../../Drivers/STM32G4xx_HAL_Driver/Inc
+    ../../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy
+    ../../../Drivers/CMSIS/Device/ST/STM32G4xx/Include
+    ../../../Drivers/CMSIS/Include
 )
 
 target_sources(stm32cubemx INTERFACE
     ../../Core/Src/main.c
     ../../Core/Src/stm32g4xx_it.c
     ../../Core/Src/stm32g4xx_hal_msp.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc_ex.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_adc.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_crc.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_crc_ex.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c
-    /home/mfact/Contrib/raven/firmware/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc_ex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_adc.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_crc.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_crc_ex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c
+    ../../../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c
     ../../Core/Src/system_stm32g4xx.c
     ../../Core/Src/sysmem.c
     ../../Core/Src/syscalls.c
