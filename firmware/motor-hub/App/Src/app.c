@@ -295,14 +295,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
 }
 
 static void reset(uint8_t* data, uint8_t len) {
-    UNUSED(data);
     if (len != 1) return;
     for (uint8_t i = 0; i < 5; i++) {
         Drv8874_SetEnable(&motors[i], 0);
         Drv8874_SetVoltage(&motors[i], 0);
         Drv8874_SetCurrent(&motors[i], 0);
-
-        encoders[i].pos = 0;
+        if(data) encoders[i].pos = 0;
     }
 }
 
