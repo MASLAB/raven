@@ -111,7 +111,7 @@ static uint16_t* vbat = &adc1Data[1];
 static uint16_t* currents[5] = {&adc1Data[0], &adc2Data[3], &adc2Data[0], &adc2Data[1], &adc2Data[2]};
 
 // parse functions
-#define MESSAGES 10
+#define MESSAGES 11
 static uint8_t servo_read(uint8_t*, uint8_t);
 static uint8_t mode_read(uint8_t*, uint8_t);
 static uint8_t pid_read(uint8_t*, uint8_t);
@@ -130,6 +130,7 @@ static void target_write(uint8_t*, uint8_t);
 static void voltage_write(uint8_t*, uint8_t);
 static void current_write(uint8_t*, uint8_t);
 static void encoder_write(uint8_t*, uint8_t);
+static void reset(uint8_t*, uint8_t);
 
 static uint8_t (*readFns[MESSAGES])(uint8_t*, uint8_t) = {
     &servo_read,
@@ -142,6 +143,7 @@ static uint8_t (*readFns[MESSAGES])(uint8_t*, uint8_t) = {
     &velocity_read,
     &measCur_read,
     &measBat_read,
+    NULL,
 };
 static void (*writeFns[MESSAGES])(uint8_t*, uint8_t) = {
     &servo_write,
@@ -154,6 +156,7 @@ static void (*writeFns[MESSAGES])(uint8_t*, uint8_t) = {
     NULL,
     NULL,
     NULL,
+    &reset,
 };
 
 static struct Parser_Handle parser = {
@@ -162,6 +165,8 @@ static struct Parser_Handle parser = {
     .len = MESSAGES,
     .typeBits = 4, // max 16 types
 };
+
+static volatile uint8_t timeoutCounter = 0;
 
 static struct Com_Handle com;
 
@@ -180,6 +185,7 @@ static void com_request (uint8_t* data, uint8_t len) {
 }
 
 static uint8_t com_parse (uint8_t* data, uint8_t len) {
+    timeoutCounter = 0;// kick watchdog ish
     return Parser_Handler(&parser, data, len);
 }
 
@@ -265,6 +271,11 @@ static inline void update_motor(uint8_t chan) {
 
 void App_Update(void) {
     check_vbat();
+    if (timeoutCounter > 10) { // > 500ms
+        reset(NULL, 1);
+    }
+    timeoutCounter++;
+
     HAL_Delay(50);
 }
 
@@ -280,6 +291,18 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
         update_motor(2);
         update_motor(3);
         update_motor(4);
+    }
+}
+
+static void reset(uint8_t* data, uint8_t len) {
+    UNUSED(data);
+    if (len != 1) return;
+    for (uint8_t i = 0; i < 5; i++) {
+        Drv8874_SetEnable(&motors[i], 0);
+        Drv8874_SetVoltage(&motors[i], 0);
+        Drv8874_SetCurrent(&motors[i], 0);
+
+        encoders[i].pos = 0;
     }
 }
 
