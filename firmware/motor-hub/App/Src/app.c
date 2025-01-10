@@ -166,6 +166,7 @@ static struct Parser_Handle parser = {
     .typeBits = 4, // max 16 types
 };
 
+#define TIMEOUT_MAX_COUNT 10  // > 500ms
 static volatile uint8_t timeoutCounter = 0;
 
 static struct Com_Handle com;
@@ -263,15 +264,17 @@ static inline void update_motor(uint8_t chan) {
             vels[i] = (float)(encoders[i].pos - lastPos[i]) * (float)pidFreq / (float)velDiv;
         }
     }
-    if (motorModes[chan] == MotorModePos || motorModes[chan] == MotorModeVel) {
-        const int16_t out = Pid_Update(&pids[chan], (motorModes[chan] == MotorModePos)?(float)encoders[chan].pos:vels[chan]);
-        Drv8874_SetVoltage(&motors[chan], out);
+    if (timeoutCounter < TIMEOUT_MAX_COUNT) { // Only process PID if not timeout
+        if (motorModes[chan] == MotorModePos || motorModes[chan] == MotorModeVel) {
+            const int16_t out = Pid_Update(&pids[chan], (motorModes[chan] == MotorModePos)?(float)encoders[chan].pos:vels[chan]);
+            Drv8874_SetVoltage(&motors[chan], out);
+        }
     }
 }
 
 void App_Update(void) {
     check_vbat();
-    if (timeoutCounter > 10) { // > 500ms
+    if (timeoutCounter > TIMEOUT_MAX_COUNT) {
         reset(NULL, 1);
     }
     timeoutCounter++;
@@ -297,11 +300,19 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
 static void reset(uint8_t* data, uint8_t len) {
     if (len != 1) return;
     for (uint8_t i = 0; i < 5; i++) {
-        Drv8874_SetEnable(&motors[i], 0);
+        if(data) {
+            encoders[i].pos = 0;
+            Drv8874_SetEnable(&motors[i], 0);
+            motorModes[i] = MotorModeDisable;
+            pids[i].kp = 0;
+            pids[i].ki = 0;
+            pids[i].kd = 0;
+        }
         Drv8874_SetVoltage(&motors[i], 0);
         Drv8874_SetCurrent(&motors[i], 0);
-        if(data) encoders[i].pos = 0;
+        Pid_Init(&pids[i]); // Also reset Pid to not integrate error
     }
+    // How should we handle servos?
 }
 
 static uint8_t servo_read(uint8_t* data, uint8_t len) {
@@ -438,6 +449,7 @@ static void pid_write(uint8_t* data, uint8_t len) {
 static void target_write(uint8_t* data, uint8_t len) {
     if (len != 5) return;
     const uint8_t chan = data[0]&7;
+    Pid_Init(&pids[chan]); // Start without error
     if (chan < 5) memcpy(&pids[chan].target, &data[1], 4);
 }
 static void voltage_write(uint8_t* data, uint8_t len) {
