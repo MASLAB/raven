@@ -18,5 +18,12 @@ float Pid_Update(struct Pid_Handle* handle, float pos) {
 	const float d = handle->kd*(err - handle->errPrev);
 	handle->errPrev = err;
 
-	return p+i+d;
+	const float command = p+i+d;
+
+    // Anti-windup    
+    if(command > handle->sat || command < -handle->sat) {
+        handle->errInt -= err; // Do not integrate if saturated
+    } 
+    
+    return command;
 }

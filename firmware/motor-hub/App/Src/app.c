@@ -78,11 +78,11 @@ static struct Drv8874_Handle motors[5] = {
 };
 
 static struct Pid_Handle pids[5] = {
-    {.kp = 0, .ki = 0, .kd = 0},
-    {.kp = 0, .ki = 0, .kd = 0},
-    {.kp = 0, .ki = 0, .kd = 0},
-    {.kp = 0, .ki = 0, .kd = 0},
-    {.kp = 0, .ki = 0, .kd = 0},
+    {.kp = 0, .ki = 0, .kd = 0, .sat = 4095},
+    {.kp = 0, .ki = 0, .kd = 0, .sat = 4095},
+    {.kp = 0, .ki = 0, .kd = 0, .sat = 4095},
+    {.kp = 0, .ki = 0, .kd = 0, .sat = 4095},
+    {.kp = 0, .ki = 0, .kd = 0, .sat = 4095},
 };
 
 enum MotorMode {

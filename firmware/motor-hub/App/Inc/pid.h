@@ -14,6 +14,7 @@ struct Pid_Handle {
 
     float errPrev;
     float errInt;
+    const float sat; // Saturated output
 };
 
 void Pid_Init(struct Pid_Handle* handle);
