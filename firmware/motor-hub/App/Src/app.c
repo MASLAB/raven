@@ -39,16 +39,17 @@ static struct Encoder_Handle encoders[5] = {
     ENCODER(5),
 };
 static uint8_t encoderCheck =  0;
+static uint8_t motorCheck = 0;
 
 // tim17 update motor freq for pid
-static uint16_t pidFreq = 5000;
+static uint16_t pidFreq = 1000;
 
 // velocities for vel PID mode
 static float vels[5] = {0};
 static int32_t lastPos[5] = {0};
 
-static uint16_t velDiv = 10; // division on PID update
-static uint16_t velCounter = 0; // keep 0
+static uint16_t velDiv = 50; // division on PID update
+static uint16_t velCounter[5] = {0}; // keep 0
 
 // functions for dir and en
 // some are through shift register and some are GPIO
@@ -255,14 +256,15 @@ static void check_vbat(void) {
 }
 
 static inline void update_motor(uint8_t chan) {
-    velCounter++;
-    if (velCounter == velDiv) {
-        velCounter = 0;
-    
-        for (uint8_t i = 0; i < 5; i++) {
-            // scaling so freq doesn't effect value
-            vels[i] = (float)(encoders[i].pos - lastPos[i]) * (float)pidFreq / (float)velDiv;
-        }
+    velCounter[chan]++;
+    if (velCounter[chan] == velDiv) {
+        velCounter[chan] = 0;
+
+        // scaling so freq doesn't effect value
+        int32_t newPos = encoders[chan].pos;
+        float newVel = (float)(newPos - lastPos[chan]) * (float)pidFreq / (float)velDiv;;
+        vels[chan] = newVel * 0.8 + vels[chan] * 0.2; // Low pass
+        lastPos[chan] = newPos;
     }
     if (timeoutCounter < TIMEOUT_MAX_COUNT) { // Only process PID if not timeout
         if (motorModes[chan] == MotorModePos || motorModes[chan] == MotorModeVel) {
@@ -289,11 +291,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
         Encoder_Update(&encoders[encoderCheck]);
         encoderCheck = (encoderCheck + 1) % 5;
     } else { // tim17
-        update_motor(0);
-        update_motor(1);
-        update_motor(2);
-        update_motor(3);
-        update_motor(4);
+        update_motor(motorCheck);
+        motorCheck = (motorCheck + 1) % 5;
     }
 }
 
@@ -302,6 +301,8 @@ static void reset(uint8_t* data, uint8_t len) {
     for (uint8_t i = 0; i < 5; i++) {
         if(data) {
             encoders[i].pos = 0;
+            lastPos[i] = 0;
+            vels[i] = 0;
             Drv8874_SetEnable(&motors[i], 0);
             motorModes[i] = MotorModeDisable;
             pids[i].kp = 0;

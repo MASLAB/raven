@@ -23,6 +23,7 @@ float Pid_Update(struct Pid_Handle* handle, float pos) {
     // Anti-windup    
     if(command > handle->sat || command < -handle->sat) {
         handle->errInt -= err; // Do not integrate if saturated
+        return command > 0 ? handle->sat : -handle->sat;
     } 
     
     return command;
