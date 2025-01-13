@@ -167,8 +167,8 @@ static struct Parser_Handle parser = {
     .typeBits = 4, // max 16 types
 };
 
-#define TIMEOUT_MAX_COUNT 10  // > 500ms
-static volatile uint8_t timeoutCounter = 0;
+// #define TIMEOUT_MAX_COUNT 10  // > 500ms
+// static volatile uint8_t timeoutCounter = 0;
 
 static struct Com_Handle com;
 
@@ -187,7 +187,7 @@ static void com_request (uint8_t* data, uint8_t len) {
 }
 
 static uint8_t com_parse (uint8_t* data, uint8_t len) {
-    timeoutCounter = 0;// kick watchdog ish
+    // timeoutCounter = 0;// kick watchdog ish
     return Parser_Handler(&parser, data, len);
 }
 
@@ -266,20 +266,20 @@ static inline void update_motor(uint8_t chan) {
         vels[chan] = newVel * 0.8 + vels[chan] * 0.2; // Low pass
         lastPos[chan] = newPos;
     }
-    if (timeoutCounter < TIMEOUT_MAX_COUNT) { // Only process PID if not timeout
+    // if (timeoutCounter < TIMEOUT_MAX_COUNT) { // Only process PID if not timeout
         if (motorModes[chan] == MotorModePos || motorModes[chan] == MotorModeVel) {
             const int16_t out = Pid_Update(&pids[chan], (motorModes[chan] == MotorModePos)?(float)encoders[chan].pos:vels[chan]);
             Drv8874_SetVoltage(&motors[chan], out);
         }
-    }
+    // }
 }
 
 void App_Update(void) {
     check_vbat();
-    if (timeoutCounter > TIMEOUT_MAX_COUNT) {
-        reset(NULL, 1);
-    }
-    timeoutCounter++;
+    // if (timeoutCounter > TIMEOUT_MAX_COUNT) {
+    //     reset(NULL, 1);
+    // }
+    // timeoutCounter++;
 
     HAL_Delay(50);
 }
