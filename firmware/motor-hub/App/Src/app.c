@@ -450,7 +450,6 @@ static void pid_write(uint8_t* data, uint8_t len) {
 static void target_write(uint8_t* data, uint8_t len) {
     if (len != 5) return;
     const uint8_t chan = data[0]&7;
-    Pid_Init(&pids[chan]); // Start without error
     if (chan < 5) memcpy(&pids[chan].target, &data[1], 4);
 }
 static void voltage_write(uint8_t* data, uint8_t len) {
