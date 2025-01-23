@@ -8,13 +8,13 @@ struct Pid_Handle {
     float kp;
     float ki;
     float kd;
+    float sat; // Saturated output
 
     // internal
     float target;
 
     float errPrev;
     float errInt;
-    const float sat; // Saturated output
 };
 
 void Pid_Init(struct Pid_Handle* handle);

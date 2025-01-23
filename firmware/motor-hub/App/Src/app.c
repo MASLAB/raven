@@ -266,12 +266,10 @@ static inline void update_motor(uint8_t chan) {
         vels[chan] = newVel * 0.8 + vels[chan] * 0.2; // Low pass
         lastPos[chan] = newPos;
     }
-    // if (timeoutCounter < TIMEOUT_MAX_COUNT) { // Only process PID if not timeout
-        if (motorModes[chan] == MotorModePos || motorModes[chan] == MotorModeVel) {
-            const int16_t out = Pid_Update(&pids[chan], (motorModes[chan] == MotorModePos)?(float)encoders[chan].pos:vels[chan]);
-            Drv8874_SetVoltage(&motors[chan], out);
-        }
-    // }
+    if (motorModes[chan] == MotorModePos || motorModes[chan] == MotorModeVel) {
+        const int16_t out = Pid_Update(&pids[chan], (motorModes[chan] == MotorModePos)?(float)encoders[chan].pos:vels[chan]);
+        Drv8874_SetVoltage(&motors[chan], out);
+    }
 }
 
 void App_Update(void) {
@@ -337,16 +335,16 @@ static uint8_t mode_read(uint8_t* data, uint8_t len) {
 }
 static uint8_t pid_read(uint8_t* data, uint8_t len) {
     if (len != 1) {
-        memset(data, 0, 12);
-        return 12;
+        memset(data, 0, 16);
+        return 16;
     }
     const uint8_t chan = data[0]&7;
     if (chan < 5) {
-        memcpy(data, &pids[chan].kp, 12);
+        memcpy(data, &pids[chan].kp, 16);
     }else{
-        memset(data, 0, 12);
+        memset(data, 0, 16);
     }
-    return 12;
+    return 16;
 }
 static uint8_t target_read(uint8_t* data, uint8_t len) {
     if (len != 1) {
@@ -443,9 +441,9 @@ static void mode_write(uint8_t* data, uint8_t len) {
     }
 }
 static void pid_write(uint8_t* data, uint8_t len) {
-    if (len != 13) return;
+    if (len != 17) return;
     const uint8_t chan = data[0]&7;
-    if (chan < 5) memcpy(&pids[chan].kp, &data[1], 12);
+    if (chan < 5) memcpy(&pids[chan].kp, &data[1], 16);
 }
 static void target_write(uint8_t* data, uint8_t len) {
     if (len != 5) return;
@@ -476,10 +474,10 @@ static void encoder_write(uint8_t* data, uint8_t len) {
     if (chan < 5) {
         // disable motors if in PID modes
         // can change this later if teams need
-        if (motorModes[chan] != MotorModeDirect) {
-            motorModes[chan] = MotorModeDisable;
-            Drv8874_SetVoltage(&motors[chan], 0);
-        }
+        // if (motorModes[chan] != MotorModeDirect) {
+        //     motorModes[chan] = MotorModeDisable;
+        //     Drv8874_SetVoltage(&motors[chan], 0);
+        // }
         memcpy(&encoders[chan].pos, &data[1], 4);
     }
 }
