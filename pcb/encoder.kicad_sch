@@ -1,13 +1,15 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "ce245779-15b0-4027-b9e7-4a5eee8b4c53")
 	(paper "A5")
 	(lib_symbols
 		(symbol "Connector:Conn_01x04_Pin"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -81,21 +83,53 @@
 				)
 			)
 			(symbol "Conn_01x04_Pin_1_1"
-				(polyline
-					(pts
-						(xy 1.27 -5.08) (xy 0.8636 -5.08)
-					)
+				(rectangle
+					(start 0.8636 2.667)
+					(end 0 2.413)
 					(stroke
 						(width 0.1524)
 						(type default)
 					)
 					(fill
-						(type none)
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
 					)
 				)
 				(polyline
 					(pts
-						(xy 1.27 -2.54) (xy 0.8636 -2.54)
+						(xy 1.27 2.54) (xy 0.8636 2.54)
 					)
 					(stroke
 						(width 0.1524)
@@ -119,7 +153,7 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 2.54) (xy 0.8636 2.54)
+						(xy 1.27 -2.54) (xy 0.8636 -2.54)
 					)
 					(stroke
 						(width 0.1524)
@@ -129,48 +163,16 @@
 						(type none)
 					)
 				)
-				(rectangle
-					(start 0.8636 -4.953)
-					(end 0 -5.207)
+				(polyline
+					(pts
+						(xy 1.27 -5.08) (xy 0.8636 -5.08)
+					)
 					(stroke
 						(width 0.1524)
 						(type default)
 					)
 					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 2.667)
-					(end 0 2.413)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
+						(type none)
 					)
 				)
 				(pin passive line
@@ -246,9 +248,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:R"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -367,12 +372,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:+5V"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -444,7 +454,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -456,7 +466,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -487,12 +497,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -583,6 +598,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 	)
 	(junction
@@ -779,7 +795,6 @@
 	)
 	(label "AIN"
 		(at 86.36 41.91 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -790,7 +805,6 @@
 	)
 	(label "BIN"
 		(at 99.06 41.91 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -801,7 +815,6 @@
 	)
 	(label "AIN"
 		(at 66.04 55.88 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -812,7 +825,6 @@
 	)
 	(label "BIN"
 		(at 66.04 53.34 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -824,7 +836,6 @@
 	(hierarchical_label "A"
 		(shape output)
 		(at 93.98 54.61 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -836,7 +847,6 @@
 	(hierarchical_label "B"
 		(shape output)
 		(at 106.68 54.61 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -855,7 +865,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0b2d477b-bead-4a46-b1d7-b9e744a481f9")
-		(property "Reference" "#PWR0187"
+		(property "Reference" "#PWR0109"
 			(at 63.5 54.61 0)
 			(effects
 				(font
@@ -937,7 +947,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0eb0a7de-a2f4-426e-a0c6-13262ea8237c")
-		(property "Reference" "#PWR0193"
+		(property "Reference" "#PWR0115"
 			(at 91.44 73.66 0)
 			(effects
 				(font
@@ -1019,7 +1029,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0efcdef7-b1cf-4f81-98a0-903fc5164a90")
-		(property "Reference" "#PWR0196"
+		(property "Reference" "#PWR0118"
 			(at 104.14 73.66 0)
 			(effects
 				(font
@@ -1096,12 +1106,12 @@
 		(at 91.44 60.96 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "628e1dd8-9682-4f3b-8688-0cba2ac90d87")
-		(property "Reference" "R47"
+		(property "Reference" "R30"
 			(at 93.98 59.6899 0)
 			(effects
 				(font
@@ -1196,7 +1206,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8b724696-d8c4-456a-9871-5b8ff9f7a9e2")
-		(property "Reference" "#PWR0188"
+		(property "Reference" "#PWR0110"
 			(at 63.5 69.85 0)
 			(effects
 				(font
@@ -1273,12 +1283,12 @@
 		(at 104.14 60.96 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "94ca9944-9ced-4141-84e7-bfd050489e3e")
-		(property "Reference" "R45"
+		(property "Reference" "R32"
 			(at 106.68 59.6899 0)
 			(effects
 				(font
@@ -1373,7 +1383,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "97f8967d-f62c-4881-a8dd-d3ce70d6f55b")
-		(property "Reference" "R41"
+		(property "Reference" "R31"
 			(at 106.68 46.9899 0)
 			(effects
 				(font
@@ -1468,7 +1478,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c66b9bc9-a120-4c54-8d90-97371da49772")
-		(property "Reference" "R35"
+		(property "Reference" "R29"
 			(at 93.98 46.9899 0)
 			(effects
 				(font
@@ -1563,7 +1573,7 @@
 		(on_board yes)
 		(dnp yes)
 		(uuid "f99b43f8-deec-41e2-b166-c214b09d3638")
-		(property "Reference" "J17"
+		(property "Reference" "J14"
 			(at 56.896 49.784 0)
 			(effects
 				(font
