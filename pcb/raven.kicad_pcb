@@ -283,7 +283,7 @@
 	(net 129 "/MotorHub/EN4")
 	(net 130 "/MotorHub/EN5")
 	(net 131 "/MotorHub/EN1")
-	(net 132 "unconnected-(U8-QH'-Pad9)")
+	(net 132 "unconnected-(U8-QH&apos;-Pad9)")
 	(net 133 "/MotorHub/LargeMotor4/OUTA")
 	(net 134 "/MotorHub/LargeMotor5/OUTB")
 	(net 135 "unconnected-(J1-Pin_13-Pad13)")
@@ -350,7 +350,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at -0.003835 -10.790738 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -391,7 +391,7 @@
 		)
 		(property ki_fp_filters "Choke_* *Coil* Inductor_* L_*")
 		(path "/f9861d9e-0b27-411a-a63f-539a59c78ce2")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -549,7 +549,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -590,7 +590,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/57a549cf-4a04-4a00-b17d-114b63a3b7b2/3077ba6e-0020-4392-a444-2ebe9b8ae0e8")
-		(sheetname "LargeMotor3")
+		(sheetname "/MotorHub/LargeMotor3/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -763,7 +763,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -804,7 +804,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/3aa54ae6-a38f-44f9-a845-d93f1f28a9e6")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -977,7 +977,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1018,7 +1018,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/bf46f9a6-8bb3-427d-a57a-f180aef5e734")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -1230,7 +1230,7 @@
 		)
 		(property ki_fp_filters "DIP*W7.62mm* SOIC*3.9x9.9mm*P1.27mm* TSSOP*4.4x5mm*P0.65mm* SOIC*5.3x10.2mm*P1.27mm* SOIC*7.5x10.3mm*P1.27mm*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/e1edd897-f866-4382-af54-afa45ab836d6")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -1471,7 +1471,7 @@
 			(size 1.95 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 132 "unconnected-(U8-QH'-Pad9)")
+			(net 132 "unconnected-(U8-QH&apos;-Pad9)")
 			(pinfunction "QH'")
 			(pintype "output+no_connect")
 			(uuid "552871d9-5ef8-4b3d-b022-4e1bc0887241")
@@ -1587,7 +1587,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1628,7 +1628,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ecff1507-07a4-4051-a53e-7f381d310b19/46cd9fa3-b471-4683-97f4-4075f75cbfed")
-		(sheetname "LargeMotor2")
+		(sheetname "/MotorHub/LargeMotor2/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -1802,7 +1802,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1843,7 +1843,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/2f925db3-b027-426a-8248-ba0572047d2b")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -2123,7 +2123,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2164,7 +2164,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/a1a579ba-cb28-4cf4-9218-3d3db613743c/17945e91-2a99-4225-b580-17a6ecae7aaa")
-		(sheetname "LargeMotor4")
+		(sheetname "/MotorHub/LargeMotor4/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -2359,7 +2359,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2400,7 +2400,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/203fcdca-7b04-4cf8-821c-79314fecf8df")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -2627,7 +2627,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2668,7 +2668,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/53b970fa-9cb5-40ca-bce6-73192befc367/77f9ebe4-1bbd-4100-9c7d-bb4234e1f649")
-		(sheetname "LargeMotor5")
+		(sheetname "/MotorHub/LargeMotor5/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -2841,7 +2841,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2882,7 +2882,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/57a549cf-4a04-4a00-b17d-114b63a3b7b2/7efa79d2-1ff2-4b98-a5bd-cb626d23bc68")
-		(sheetname "LargeMotor3")
+		(sheetname "/MotorHub/LargeMotor3/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -3055,7 +3055,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3096,7 +3096,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/53b970fa-9cb5-40ca-bce6-73192befc367/a4e460c0-6d6e-4993-9ebf-9a9b80b927e6")
-		(sheetname "LargeMotor5")
+		(sheetname "/MotorHub/LargeMotor5/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -3309,7 +3309,7 @@
 			)
 		)
 		(path "/8ef7f6c1-b5f0-4b4e-b05a-a624501256e5/9bb526f9-7685-4682-b2d6-4c99d09e22f5")
-		(sheetname "IMU")
+		(sheetname "/IMU/")
 		(sheetfile "imu.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -3676,7 +3676,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3717,7 +3717,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ecff1507-07a4-4051-a53e-7f381d310b19/77f9ebe4-1bbd-4100-9c7d-bb4234e1f649")
-		(sheetname "LargeMotor2")
+		(sheetname "/MotorHub/LargeMotor2/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -3890,7 +3890,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3931,7 +3931,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/53b970fa-9cb5-40ca-bce6-73192befc367/3d4efb7e-6c77-45ce-b5fb-e272c1cd6eee")
-		(sheetname "LargeMotor5")
+		(sheetname "/MotorHub/LargeMotor5/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -4104,7 +4104,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4145,7 +4145,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/df64cde0-d91a-4fd1-b1f3-86c4eabb4fd0")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -4318,7 +4318,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4359,7 +4359,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ecff1507-07a4-4051-a53e-7f381d310b19/d1af6638-268d-4094-9a00-2d4b8d61cce6")
-		(sheetname "LargeMotor2")
+		(sheetname "/MotorHub/LargeMotor2/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -4532,7 +4532,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4573,7 +4573,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/249fcc58-d8e4-4b0d-99c0-747a6cf91710/46cd9fa3-b471-4683-97f4-4075f75cbfed")
-		(sheetname "LargeMotor1")
+		(sheetname "/MotorHub/LargeMotor1/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -4747,7 +4747,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4788,7 +4788,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/6541056f-c342-4e00-b0ca-737908828f97")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -4961,7 +4961,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5002,7 +5002,7 @@
 		)
 		(property ki_fp_filters "TerminalBlock*:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/53b970fa-9cb5-40ca-bce6-73192befc367/3042b0e1-15c8-42a0-8fcb-497bfb4599bd")
-		(sheetname "LargeMotor5")
+		(sheetname "/MotorHub/LargeMotor5/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -5457,7 +5457,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5498,7 +5498,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/047c48ad-38c6-4ace-a080-536411528ad9/c66b9bc9-a120-4c54-8d90-97371da49772")
-		(sheetname "Encoder4")
+		(sheetname "/MotorHub/Encoder4/")
 		(sheetfile "encoder.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -5671,7 +5671,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5712,7 +5712,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/53b970fa-9cb5-40ca-bce6-73192befc367/d7d00f71-ae02-4c48-8f27-66f0fe7aca8d")
-		(sheetname "LargeMotor5")
+		(sheetname "/MotorHub/LargeMotor5/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -5885,7 +5885,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5926,7 +5926,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/22819f7a-edb8-4701-9959-2186e2dfbf7f")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -6099,7 +6099,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6140,7 +6140,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/a1a579ba-cb28-4cf4-9218-3d3db613743c/3d4efb7e-6c77-45ce-b5fb-e272c1cd6eee")
-		(sheetname "LargeMotor4")
+		(sheetname "/MotorHub/LargeMotor4/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -6313,7 +6313,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6354,7 +6354,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/90e84c1e-e207-4c69-bc13-699927ed2bce")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -6527,7 +6527,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6568,7 +6568,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/336b134a-05bf-4867-a4be-e7ef5c264e55")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -6741,7 +6741,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6782,7 +6782,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/c88fe690-358f-4cac-89d9-8a4068ed3151")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -7048,7 +7048,7 @@
 		)
 		(property ki_fp_filters "SOT?23*")
 		(path "/fa301327-5055-4786-bf74-314a52a3ebd1")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -7275,7 +7275,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7303,7 +7303,7 @@
 		)
 		(property ki_fp_filters "MountingHole*Pad*")
 		(path "/80e154d3-f010-45b9-a050-d0500c442688")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
@@ -7381,7 +7381,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7422,7 +7422,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/bb55d5dc-17ea-4c4f-8b20-038db2561a4a/161409ef-29d2-45e7-afd0-cd8444771338")
-		(sheetname "Magnometer")
+		(sheetname "/Magnometer/")
 		(sheetfile "magnometer.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -7595,7 +7595,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7636,9 +7636,9 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/fe1f0ae0-b9d2-45da-98fc-eb3e7ec43aeb/94ca9944-9ced-4141-84e7-bfd050489e3e")
-		(sheetname "Encoder5")
+		(sheetname "/MotorHub/Encoder5/")
 		(sheetfile "encoder.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_line
 			(start -0.153641 0.38)
 			(end 0.153641 0.38)
@@ -7809,7 +7809,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7850,7 +7850,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/67dfbad1-04eb-4b0b-9411-721d67128bc0")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -8045,7 +8045,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8086,7 +8086,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/a1a579ba-cb28-4cf4-9218-3d3db613743c/0a598ca7-9939-4aed-9838-e5acdccfd35c")
-		(sheetname "LargeMotor4")
+		(sheetname "/MotorHub/LargeMotor4/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -8259,7 +8259,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8300,7 +8300,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/fe1f0ae0-b9d2-45da-98fc-eb3e7ec43aeb/97f8967d-f62c-4881-a8dd-d3ce70d6f55b")
-		(sheetname "Encoder5")
+		(sheetname "/MotorHub/Encoder5/")
 		(sheetfile "encoder.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -8473,7 +8473,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8514,7 +8514,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/a1a579ba-cb28-4cf4-9218-3d3db613743c/458a06aa-f971-4ee8-a1cb-c371509b1e5e")
-		(sheetname "LargeMotor4")
+		(sheetname "/MotorHub/LargeMotor4/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -8709,7 +8709,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8750,7 +8750,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/249fcc58-d8e4-4b0d-99c0-747a6cf91710/89c4238f-7a59-4c69-aa1e-6730f33a0f7c")
-		(sheetname "LargeMotor1")
+		(sheetname "/MotorHub/LargeMotor1/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -8923,7 +8923,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8964,7 +8964,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/f20e34b7-bec5-4532-b0f6-fb755dc1431f")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -9159,7 +9159,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9200,7 +9200,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ecff1507-07a4-4051-a53e-7f381d310b19/89c4238f-7a59-4c69-aa1e-6730f33a0f7c")
-		(sheetname "LargeMotor2")
+		(sheetname "/MotorHub/LargeMotor2/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -9373,7 +9373,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9414,7 +9414,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/249fcc58-d8e4-4b0d-99c0-747a6cf91710/d1af6638-268d-4094-9a00-2d4b8d61cce6")
-		(sheetname "LargeMotor1")
+		(sheetname "/MotorHub/LargeMotor1/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -9587,7 +9587,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 315)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9628,7 +9628,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/5b467e2e-9cdb-4675-9cab-602735af15e0")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -9801,7 +9801,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9842,7 +9842,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/8ef7f6c1-b5f0-4b4e-b05a-a624501256e5/48492070-2192-4400-ac80-34cb57363af9")
-		(sheetname "IMU")
+		(sheetname "/IMU/")
 		(sheetfile "imu.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -10015,7 +10015,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10056,7 +10056,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/9867c1c3-868b-41cb-9a74-6d1f38e164a2")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -10229,7 +10229,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10270,7 +10270,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/ee19ac59-907d-463c-a648-dc17dcf13de4")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -10443,7 +10443,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10484,7 +10484,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/8ef7f6c1-b5f0-4b4e-b05a-a624501256e5/89b8cff1-33c3-4707-8dbe-968d8f2ed902")
-		(sheetname "IMU")
+		(sheetname "/IMU/")
 		(sheetfile "imu.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -10657,7 +10657,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10698,7 +10698,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ecff1507-07a4-4051-a53e-7f381d310b19/3d4efb7e-6c77-45ce-b5fb-e272c1cd6eee")
-		(sheetname "LargeMotor2")
+		(sheetname "/MotorHub/LargeMotor2/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -10871,7 +10871,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10912,7 +10912,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/bb55d5dc-17ea-4c4f-8b20-038db2561a4a/ce5ca5d5-17e4-4df5-89e9-c39834a33c08")
-		(sheetname "Magnometer")
+		(sheetname "/Magnometer/")
 		(sheetfile "magnometer.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -11085,7 +11085,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11126,7 +11126,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/57a549cf-4a04-4a00-b17d-114b63a3b7b2/458a06aa-f971-4ee8-a1cb-c371509b1e5e")
-		(sheetname "LargeMotor3")
+		(sheetname "/MotorHub/LargeMotor3/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -11321,7 +11321,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11362,7 +11362,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ecff1507-07a4-4051-a53e-7f381d310b19/3077ba6e-0020-4392-a444-2ebe9b8ae0e8")
-		(sheetname "LargeMotor2")
+		(sheetname "/MotorHub/LargeMotor2/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -11535,7 +11535,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11576,7 +11576,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/468749d9-8b94-4554-be6c-6d2c33728e6f")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -11749,7 +11749,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11790,7 +11790,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/a1a579ba-cb28-4cf4-9218-3d3db613743c/7efa79d2-1ff2-4b98-a5bd-cb626d23bc68")
-		(sheetname "LargeMotor4")
+		(sheetname "/MotorHub/LargeMotor4/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -11963,7 +11963,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12004,7 +12004,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/9ef83ae5-ead0-41f0-beff-3f4117a916a0")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -12177,7 +12177,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12218,9 +12218,9 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/44e25890-077a-4dca-8ac5-7180ffdb26d1/628e1dd8-9682-4f3b-8688-0cba2ac90d87")
-		(sheetname "Encoder3")
+		(sheetname "/MotorHub/Encoder3/")
 		(sheetfile "encoder.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_line
 			(start -0.153641 -0.38)
 			(end 0.153641 -0.38)
@@ -12391,7 +12391,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12432,7 +12432,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/5f5322a5-6ca6-4329-b225-2e98f5af77fb/f1d49b53-320e-43ba-bd13-0faf05d6b513")
-		(sheetname "Servo2")
+		(sheetname "/MotorHub/Servo2/")
 		(sheetfile "servo.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -12698,7 +12698,7 @@
 		)
 		(property ki_fp_filters "*TC2030*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/3983e62d-b32c-4fbb-bfd2-6b68f16dda34")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_line
@@ -12920,7 +12920,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12948,7 +12948,7 @@
 		)
 		(property ki_fp_filters "MountingHole*Pad*")
 		(path "/0945dec6-9ee0-4540-ae3b-5f8b802e128c")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
@@ -13025,7 +13025,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13066,9 +13066,9 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/44e25890-077a-4dca-8ac5-7180ffdb26d1/94ca9944-9ced-4141-84e7-bfd050489e3e")
-		(sheetname "Encoder3")
+		(sheetname "/MotorHub/Encoder3/")
 		(sheetfile "encoder.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_line
 			(start -0.153641 -0.38)
 			(end 0.153641 -0.38)
@@ -13239,7 +13239,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13280,7 +13280,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/48bd910e-1922-4cbf-82c0-63516f836aae/f1d49b53-320e-43ba-bd13-0faf05d6b513")
-		(sheetname "Servo4")
+		(sheetname "/MotorHub/Servo4/")
 		(sheetfile "servo.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -13518,7 +13518,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13559,9 +13559,9 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/128c6682-3228-4ea8-b0f1-85499c10b362/94ca9944-9ced-4141-84e7-bfd050489e3e")
-		(sheetname "Encoder2")
+		(sheetname "/MotorHub/Encoder2/")
 		(sheetfile "encoder.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_line
 			(start -0.153641 -0.38)
 			(end 0.153641 -0.38)
@@ -13732,7 +13732,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13773,7 +13773,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/c578305b-ac56-4dd5-9942-2cf67a28b56c")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -14000,7 +14000,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -14041,7 +14041,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/53b970fa-9cb5-40ca-bce6-73192befc367/458a06aa-f971-4ee8-a1cb-c371509b1e5e")
-		(sheetname "LargeMotor5")
+		(sheetname "/MotorHub/LargeMotor5/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -14236,7 +14236,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -14277,7 +14277,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/57a549cf-4a04-4a00-b17d-114b63a3b7b2/0a598ca7-9939-4aed-9838-e5acdccfd35c")
-		(sheetname "LargeMotor3")
+		(sheetname "/MotorHub/LargeMotor3/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -14450,7 +14450,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -14491,7 +14491,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ecff1507-07a4-4051-a53e-7f381d310b19/d7d00f71-ae02-4c48-8f27-66f0fe7aca8d")
-		(sheetname "LargeMotor2")
+		(sheetname "/MotorHub/LargeMotor2/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -14702,7 +14702,7 @@
 			)
 		)
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/249fcc58-d8e4-4b0d-99c0-747a6cf91710/b157f651-21b5-4567-ac52-fcd89b078bc8")
-		(sheetname "LargeMotor1")
+		(sheetname "/MotorHub/LargeMotor1/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -15090,7 +15090,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -15131,7 +15131,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/a1a579ba-cb28-4cf4-9218-3d3db613743c/89c4238f-7a59-4c69-aa1e-6730f33a0f7c")
-		(sheetname "LargeMotor4")
+		(sheetname "/MotorHub/LargeMotor4/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -15342,7 +15342,7 @@
 			)
 		)
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/a1a579ba-cb28-4cf4-9218-3d3db613743c/b157f651-21b5-4567-ac52-fcd89b078bc8")
-		(sheetname "LargeMotor4")
+		(sheetname "/MotorHub/LargeMotor4/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -15730,7 +15730,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -15771,7 +15771,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/06bc7df3-7eb5-4bcc-998a-6c9768b183c2")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -15944,7 +15944,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -15985,7 +15985,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/249fcc58-d8e4-4b0d-99c0-747a6cf91710/3077ba6e-0020-4392-a444-2ebe9b8ae0e8")
-		(sheetname "LargeMotor1")
+		(sheetname "/MotorHub/LargeMotor1/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -16158,7 +16158,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -16199,7 +16199,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/44e25890-077a-4dca-8ac5-7180ffdb26d1/f99b43f8-deec-41e2-b166-c214b09d3638")
-		(sheetname "Encoder3")
+		(sheetname "/MotorHub/Encoder3/")
 		(sheetfile "encoder.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -16448,7 +16448,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -16489,7 +16489,7 @@
 		)
 		(property ki_fp_filters "*Fuse*")
 		(path "/890002d7-e468-4f91-a9ac-b3c9c2048a0f")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -16702,7 +16702,7 @@
 			)
 		)
 		(path "/bb55d5dc-17ea-4c4f-8b20-038db2561a4a/0bd7770b-c450-4358-a63b-4752d375bf45")
-		(sheetname "Magnometer")
+		(sheetname "/Magnometer/")
 		(sheetfile "magnometer.kicad_sch")
 		(attr smd dnp)
 		(fp_line
@@ -17083,7 +17083,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -17124,7 +17124,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??-1MP*")
 		(path "/43c236d9-c693-473b-ad59-03aeb02822dc")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -17399,7 +17399,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -17440,7 +17440,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/44e25890-077a-4dca-8ac5-7180ffdb26d1/c66b9bc9-a120-4c54-8d90-97371da49772")
-		(sheetname "Encoder3")
+		(sheetname "/MotorHub/Encoder3/")
 		(sheetfile "encoder.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -17613,7 +17613,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -17654,7 +17654,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/bb55d5dc-17ea-4c4f-8b20-038db2561a4a/f079cddb-4f33-4879-b7b7-bcbfea77d3b2")
-		(sheetname "Magnometer")
+		(sheetname "/Magnometer/")
 		(sheetfile "magnometer.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -17827,7 +17827,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -17868,7 +17868,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ecff1507-07a4-4051-a53e-7f381d310b19/03cc7311-75e6-4fea-af82-8e7cfc62cf77")
-		(sheetname "LargeMotor2")
+		(sheetname "/MotorHub/LargeMotor2/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -18063,7 +18063,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -18104,7 +18104,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/f13e29e7-eec0-4b61-8a12-c21278c25924")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -18277,7 +18277,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 315)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -18318,7 +18318,7 @@
 		)
 		(property ki_fp_filters "Crystal*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/7bfe26d4-283a-4f79-9674-c49fefeab4cd")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -18519,7 +18519,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -18560,7 +18560,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/e14a8c69-a9c4-40dc-9eae-98239dbb5415")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -18733,7 +18733,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -18774,7 +18774,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ecff1507-07a4-4051-a53e-7f381d310b19/17945e91-2a99-4225-b580-17a6ecae7aaa")
-		(sheetname "LargeMotor2")
+		(sheetname "/MotorHub/LargeMotor2/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -18969,7 +18969,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -19010,7 +19010,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/44e25890-077a-4dca-8ac5-7180ffdb26d1/97f8967d-f62c-4881-a8dd-d3ce70d6f55b")
-		(sheetname "Encoder3")
+		(sheetname "/MotorHub/Encoder3/")
 		(sheetfile "encoder.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -19183,7 +19183,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -19224,7 +19224,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/249fcc58-d8e4-4b0d-99c0-747a6cf91710/a4e460c0-6d6e-4993-9ebf-9a9b80b927e6")
-		(sheetname "LargeMotor1")
+		(sheetname "/MotorHub/LargeMotor1/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -19397,7 +19397,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -19438,7 +19438,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/a1a579ba-cb28-4cf4-9218-3d3db613743c/d1af6638-268d-4094-9a00-2d4b8d61cce6")
-		(sheetname "LargeMotor4")
+		(sheetname "/MotorHub/LargeMotor4/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -19611,7 +19611,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -19652,7 +19652,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/53b970fa-9cb5-40ca-bce6-73192befc367/6282bfc2-e5d1-402a-8b76-b670775ef532")
-		(sheetname "LargeMotor5")
+		(sheetname "/MotorHub/LargeMotor5/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -19825,7 +19825,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at -0.6 -6.6 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -19865,7 +19865,7 @@
 			)
 		)
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/52d0eb79-53f2-45c1-b5f1-8e257e13b1bd")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -20003,7 +20003,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -20044,7 +20044,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/10a2ae97-4185-436b-99f8-9da05df53e06")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -20217,7 +20217,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -20258,7 +20258,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/70c288c6-9a07-4bed-b7fc-acf9d826ee28")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -20431,7 +20431,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -20472,9 +20472,9 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/de0a8e47-afa7-482a-9ba2-9f2770efabd5/94ca9944-9ced-4141-84e7-bfd050489e3e")
-		(sheetname "Encoder1")
+		(sheetname "/MotorHub/Encoder1/")
 		(sheetfile "encoder.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_line
 			(start -0.153641 -0.38)
 			(end 0.153641 -0.38)
@@ -20645,7 +20645,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -20686,7 +20686,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/57a549cf-4a04-4a00-b17d-114b63a3b7b2/6282bfc2-e5d1-402a-8b76-b670775ef532")
-		(sheetname "LargeMotor3")
+		(sheetname "/MotorHub/LargeMotor3/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -20859,7 +20859,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -20900,7 +20900,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/57a549cf-4a04-4a00-b17d-114b63a3b7b2/89c4238f-7a59-4c69-aa1e-6730f33a0f7c")
-		(sheetname "LargeMotor3")
+		(sheetname "/MotorHub/LargeMotor3/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -21073,7 +21073,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -21114,7 +21114,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/53b970fa-9cb5-40ca-bce6-73192befc367/3077ba6e-0020-4392-a444-2ebe9b8ae0e8")
-		(sheetname "LargeMotor5")
+		(sheetname "/MotorHub/LargeMotor5/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -21287,7 +21287,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -21328,7 +21328,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/bb55d5dc-17ea-4c4f-8b20-038db2561a4a/90b88eb8-9e22-4345-96ea-62084f830167")
-		(sheetname "Magnometer")
+		(sheetname "/Magnometer/")
 		(sheetfile "magnometer.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -21501,7 +21501,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -21529,7 +21529,7 @@
 		)
 		(property ki_fp_filters "MountingHole*Pad*")
 		(path "/9fc2a9bb-6e3d-4d30-8297-b4a494782227")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
@@ -21646,7 +21646,7 @@
 			)
 		)
 		(path "/e8194c7b-d1a7-494f-8fcc-1910b40031bf")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -22107,7 +22107,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -22148,7 +22148,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/a1a579ba-cb28-4cf4-9218-3d3db613743c/d7d00f71-ae02-4c48-8f27-66f0fe7aca8d")
-		(sheetname "LargeMotor4")
+		(sheetname "/MotorHub/LargeMotor4/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -22321,7 +22321,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -22362,7 +22362,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/047c48ad-38c6-4ace-a080-536411528ad9/97f8967d-f62c-4881-a8dd-d3ce70d6f55b")
-		(sheetname "Encoder4")
+		(sheetname "/MotorHub/Encoder4/")
 		(sheetfile "encoder.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -22535,7 +22535,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -22576,7 +22576,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/249fcc58-d8e4-4b0d-99c0-747a6cf91710/6282bfc2-e5d1-402a-8b76-b670775ef532")
-		(sheetname "LargeMotor1")
+		(sheetname "/MotorHub/LargeMotor1/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -22749,7 +22749,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -22790,7 +22790,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/a1a579ba-cb28-4cf4-9218-3d3db613743c/6282bfc2-e5d1-402a-8b76-b670775ef532")
-		(sheetname "LargeMotor4")
+		(sheetname "/MotorHub/LargeMotor4/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -22963,7 +22963,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -23004,9 +23004,9 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/047c48ad-38c6-4ace-a080-536411528ad9/94ca9944-9ced-4141-84e7-bfd050489e3e")
-		(sheetname "Encoder4")
+		(sheetname "/MotorHub/Encoder4/")
 		(sheetfile "encoder.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_line
 			(start -0.153641 -0.38)
 			(end 0.153641 -0.38)
@@ -23177,7 +23177,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -23218,7 +23218,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/863b56c6-4c5c-4606-9b52-ac101cb5405b")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -23391,7 +23391,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 45)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -23432,7 +23432,7 @@
 		)
 		(property ki_fp_filters "Inductor_* L_* *Ferrite*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/31519bf7-0527-43e3-8919-d57da8bc2e38")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -23605,7 +23605,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -23646,7 +23646,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/24680a8f-1e75-4aba-81d3-4be67f894aca")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -23819,7 +23819,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 225)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -23860,7 +23860,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ed4e0aa6-5f39-4dc5-9544-1818299ad09e")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -24033,7 +24033,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -24074,7 +24074,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ecff1507-07a4-4051-a53e-7f381d310b19/6282bfc2-e5d1-402a-8b76-b670775ef532")
-		(sheetname "LargeMotor2")
+		(sheetname "/MotorHub/LargeMotor2/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -24247,7 +24247,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -24288,7 +24288,7 @@
 		)
 		(property ki_fp_filters "TerminalBlock*:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ecff1507-07a4-4051-a53e-7f381d310b19/3042b0e1-15c8-42a0-8fcb-497bfb4599bd")
-		(sheetname "LargeMotor2")
+		(sheetname "/MotorHub/LargeMotor2/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -24743,7 +24743,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -24784,7 +24784,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/128c6682-3228-4ea8-b0f1-85499c10b362/c66b9bc9-a120-4c54-8d90-97371da49772")
-		(sheetname "Encoder2")
+		(sheetname "/MotorHub/Encoder2/")
 		(sheetfile "encoder.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -24957,7 +24957,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -24998,9 +24998,9 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/de0a8e47-afa7-482a-9ba2-9f2770efabd5/628e1dd8-9682-4f3b-8688-0cba2ac90d87")
-		(sheetname "Encoder1")
+		(sheetname "/MotorHub/Encoder1/")
 		(sheetfile "encoder.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_line
 			(start -0.153641 -0.38)
 			(end 0.153641 -0.38)
@@ -25171,7 +25171,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -25212,7 +25212,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/a1a579ba-cb28-4cf4-9218-3d3db613743c/3077ba6e-0020-4392-a444-2ebe9b8ae0e8")
-		(sheetname "LargeMotor4")
+		(sheetname "/MotorHub/LargeMotor4/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -25385,7 +25385,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -25426,7 +25426,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/a7cae917-35ba-4b9f-bf09-0479d371664e")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -25599,7 +25599,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -25640,7 +25640,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/f23e39c7-9d37-4787-ba2e-4d57b17b3bdf")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -25813,7 +25813,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -25854,7 +25854,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/53b970fa-9cb5-40ca-bce6-73192befc367/89c4238f-7a59-4c69-aa1e-6730f33a0f7c")
-		(sheetname "LargeMotor5")
+		(sheetname "/MotorHub/LargeMotor5/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -26027,7 +26027,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -26068,7 +26068,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/249fcc58-d8e4-4b0d-99c0-747a6cf91710/7efa79d2-1ff2-4b98-a5bd-cb626d23bc68")
-		(sheetname "LargeMotor1")
+		(sheetname "/MotorHub/LargeMotor1/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -26241,7 +26241,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -26282,7 +26282,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/57a549cf-4a04-4a00-b17d-114b63a3b7b2/46cd9fa3-b471-4683-97f4-4075f75cbfed")
-		(sheetname "LargeMotor3")
+		(sheetname "/MotorHub/LargeMotor3/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -26455,7 +26455,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -26496,7 +26496,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/249fcc58-d8e4-4b0d-99c0-747a6cf91710/17945e91-2a99-4225-b580-17a6ecae7aaa")
-		(sheetname "LargeMotor1")
+		(sheetname "/MotorHub/LargeMotor1/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -26731,7 +26731,7 @@
 			)
 		)
 		(path "/6989a369-6e9a-4a7e-a8ac-317508447f42")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -26947,7 +26947,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -26988,7 +26988,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/53b970fa-9cb5-40ca-bce6-73192befc367/d1af6638-268d-4094-9a00-2d4b8d61cce6")
-		(sheetname "LargeMotor5")
+		(sheetname "/MotorHub/LargeMotor5/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -27162,7 +27162,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -27203,7 +27203,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/c43efd4d-e310-4bbf-b378-f4ca4f0e12c9/f1d49b53-320e-43ba-bd13-0faf05d6b513")
-		(sheetname "Servo1")
+		(sheetname "/MotorHub/Servo1/")
 		(sheetfile "servo.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -27441,7 +27441,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -27482,7 +27482,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/8c1c909f-2165-491f-9bb3-66bf38b62400")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -27694,7 +27694,7 @@
 		)
 		(property ki_fp_filters "QFN*1EP*7x7mm*P0.5mm*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/00f15bf8-e54b-4fca-ae49-0c931e29f9fd")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -28572,7 +28572,7 @@
 			)
 		)
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/53b970fa-9cb5-40ca-bce6-73192befc367/b157f651-21b5-4567-ac52-fcd89b078bc8")
-		(sheetname "LargeMotor5")
+		(sheetname "/MotorHub/LargeMotor5/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -28960,7 +28960,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -29001,7 +29001,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/fe1f0ae0-b9d2-45da-98fc-eb3e7ec43aeb/c66b9bc9-a120-4c54-8d90-97371da49772")
-		(sheetname "Encoder5")
+		(sheetname "/MotorHub/Encoder5/")
 		(sheetfile "encoder.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -29174,7 +29174,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -29215,7 +29215,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ecff1507-07a4-4051-a53e-7f381d310b19/458a06aa-f971-4ee8-a1cb-c371509b1e5e")
-		(sheetname "LargeMotor2")
+		(sheetname "/MotorHub/LargeMotor2/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -29410,7 +29410,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -29451,9 +29451,9 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/fe1f0ae0-b9d2-45da-98fc-eb3e7ec43aeb/628e1dd8-9682-4f3b-8688-0cba2ac90d87")
-		(sheetname "Encoder5")
+		(sheetname "/MotorHub/Encoder5/")
 		(sheetfile "encoder.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_line
 			(start -0.153641 -0.38)
 			(end 0.153641 -0.38)
@@ -29624,7 +29624,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -29665,7 +29665,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/f0779754-6149-4932-a2fb-70093f85be49")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -29838,7 +29838,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -29879,7 +29879,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/8b788a70-6287-4ffe-b96b-be157fd36925")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -30052,7 +30052,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -30093,7 +30093,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/ca8bd20a-5f73-418c-a8c7-d02f22bed047")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -30266,7 +30266,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 315)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -30307,7 +30307,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ce81b4a5-3b60-4c6f-b5c4-686526aff874")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -30480,7 +30480,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -30521,7 +30521,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/57a549cf-4a04-4a00-b17d-114b63a3b7b2/03cc7311-75e6-4fea-af82-8e7cfc62cf77")
-		(sheetname "LargeMotor3")
+		(sheetname "/MotorHub/LargeMotor3/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -30716,7 +30716,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -30757,7 +30757,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/57a549cf-4a04-4a00-b17d-114b63a3b7b2/d1af6638-268d-4094-9a00-2d4b8d61cce6")
-		(sheetname "LargeMotor3")
+		(sheetname "/MotorHub/LargeMotor3/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -30930,7 +30930,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -30958,7 +30958,7 @@
 		)
 		(property ki_fp_filters "MountingHole*Pad*")
 		(path "/5f3bec41-e34d-4e6c-9b74-19f0f3fd98df")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
@@ -31035,7 +31035,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -31076,7 +31076,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/0fa0febd-d760-4f15-b593-e6de2d3954bf")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -31249,7 +31249,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -31290,7 +31290,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/71172e93-bf6a-4cd3-ac02-154d5a6040b2")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -31718,7 +31718,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -31759,7 +31759,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/047c48ad-38c6-4ace-a080-536411528ad9/f99b43f8-deec-41e2-b166-c214b09d3638")
-		(sheetname "Encoder4")
+		(sheetname "/MotorHub/Encoder4/")
 		(sheetfile "encoder.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -32008,7 +32008,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -32049,7 +32049,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/a1a579ba-cb28-4cf4-9218-3d3db613743c/03cc7311-75e6-4fea-af82-8e7cfc62cf77")
-		(sheetname "LargeMotor4")
+		(sheetname "/MotorHub/LargeMotor4/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -32244,7 +32244,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -32285,7 +32285,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/57a549cf-4a04-4a00-b17d-114b63a3b7b2/d7d00f71-ae02-4c48-8f27-66f0fe7aca8d")
-		(sheetname "LargeMotor3")
+		(sheetname "/MotorHub/LargeMotor3/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -32458,7 +32458,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -32499,7 +32499,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7b127a43-6f85-4314-a79e-80a60ca92292")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -32672,7 +32672,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -32713,7 +32713,7 @@
 		)
 		(property ki_fp_filters "TerminalBlock*:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/a1a579ba-cb28-4cf4-9218-3d3db613743c/3042b0e1-15c8-42a0-8fcb-497bfb4599bd")
-		(sheetname "LargeMotor4")
+		(sheetname "/MotorHub/LargeMotor4/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -33168,7 +33168,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -33209,7 +33209,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/a1a579ba-cb28-4cf4-9218-3d3db613743c/77f9ebe4-1bbd-4100-9c7d-bb4234e1f649")
-		(sheetname "LargeMotor4")
+		(sheetname "/MotorHub/LargeMotor4/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -33382,7 +33382,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -33423,7 +33423,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/e9f88aea-7498-403f-bd98-27e0da155b9b")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -33596,7 +33596,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -33637,7 +33637,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/53b970fa-9cb5-40ca-bce6-73192befc367/7efa79d2-1ff2-4b98-a5bd-cb626d23bc68")
-		(sheetname "LargeMotor5")
+		(sheetname "/MotorHub/LargeMotor5/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -33810,7 +33810,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -33851,7 +33851,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/a6c8343c-dd42-46c3-8f60-f97fd46e71d8")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -34024,7 +34024,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -34065,7 +34065,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/21a358fc-e5bb-49ab-b324-b2f2ba9a61ab")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -34238,7 +34238,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -34279,7 +34279,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/e02cbdec-a767-4b1e-a3b1-8e17a1992af4")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -34452,7 +34452,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -34493,7 +34493,7 @@
 		)
 		(property ki_fp_filters "TerminalBlock*:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/57a549cf-4a04-4a00-b17d-114b63a3b7b2/3042b0e1-15c8-42a0-8fcb-497bfb4599bd")
-		(sheetname "LargeMotor3")
+		(sheetname "/MotorHub/LargeMotor3/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -34948,7 +34948,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -34989,7 +34989,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/57a549cf-4a04-4a00-b17d-114b63a3b7b2/a4e460c0-6d6e-4993-9ebf-9a9b80b927e6")
-		(sheetname "LargeMotor3")
+		(sheetname "/MotorHub/LargeMotor3/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -35162,7 +35162,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -35203,7 +35203,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/7c207f47-e63c-4466-af8d-34fd45431369")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -35605,7 +35605,7 @@
 			)
 		)
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/57a549cf-4a04-4a00-b17d-114b63a3b7b2/b157f651-21b5-4567-ac52-fcd89b078bc8")
-		(sheetname "LargeMotor3")
+		(sheetname "/MotorHub/LargeMotor3/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -35993,7 +35993,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -36034,7 +36034,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/3ff27d9e-59b6-405e-bbe3-5835077b7ff5")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -36207,7 +36207,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -36248,7 +36248,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/b002bd1e-3060-45a3-b090-4c1e4c7ea0c4")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -36421,7 +36421,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -36462,7 +36462,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/d31b4592-a168-4389-8a28-e92ba9ebf34a")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -36635,7 +36635,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -36676,7 +36676,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/53b970fa-9cb5-40ca-bce6-73192befc367/03cc7311-75e6-4fea-af82-8e7cfc62cf77")
-		(sheetname "LargeMotor5")
+		(sheetname "/MotorHub/LargeMotor5/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -36871,7 +36871,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 45)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -36912,7 +36912,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/bf0016c8-8c7b-4d5e-b09f-eec3d3d37a3d")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -37085,7 +37085,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -37126,7 +37126,7 @@
 		)
 		(property ki_fp_filters "TerminalBlock*:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/249fcc58-d8e4-4b0d-99c0-747a6cf91710/3042b0e1-15c8-42a0-8fcb-497bfb4599bd")
-		(sheetname "LargeMotor1")
+		(sheetname "/MotorHub/LargeMotor1/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -37581,7 +37581,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -37622,7 +37622,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/d5e5e8dd-aab3-49fd-baaa-ed4b1b887811")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -37795,7 +37795,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -37836,7 +37836,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/249fcc58-d8e4-4b0d-99c0-747a6cf91710/3d4efb7e-6c77-45ce-b5fb-e272c1cd6eee")
-		(sheetname "LargeMotor1")
+		(sheetname "/MotorHub/LargeMotor1/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -38009,7 +38009,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -38050,7 +38050,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/a1a579ba-cb28-4cf4-9218-3d3db613743c/46cd9fa3-b471-4683-97f4-4075f75cbfed")
-		(sheetname "LargeMotor4")
+		(sheetname "/MotorHub/LargeMotor4/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -38223,7 +38223,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 45)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -38264,7 +38264,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/7d05f2b1-4998-4193-8c49-9c666aefbb34")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -38437,7 +38437,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -38478,7 +38478,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/efc83594-e3fb-499b-a4ad-dd6a5dd5f24e/f1d49b53-320e-43ba-bd13-0faf05d6b513")
-		(sheetname "Servo3")
+		(sheetname "/MotorHub/Servo3/")
 		(sheetfile "servo.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -38716,7 +38716,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -38757,7 +38757,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ecff1507-07a4-4051-a53e-7f381d310b19/7efa79d2-1ff2-4b98-a5bd-cb626d23bc68")
-		(sheetname "LargeMotor2")
+		(sheetname "/MotorHub/LargeMotor2/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -38930,7 +38930,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -38971,7 +38971,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/53b970fa-9cb5-40ca-bce6-73192befc367/0a598ca7-9939-4aed-9838-e5acdccfd35c")
-		(sheetname "LargeMotor5")
+		(sheetname "/MotorHub/LargeMotor5/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -39144,7 +39144,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -39185,7 +39185,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/249fcc58-d8e4-4b0d-99c0-747a6cf91710/d7d00f71-ae02-4c48-8f27-66f0fe7aca8d")
-		(sheetname "LargeMotor1")
+		(sheetname "/MotorHub/LargeMotor1/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -39358,7 +39358,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -39399,7 +39399,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/b0e48ace-0a2c-429a-b343-cb6e2ea91c99")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -39572,7 +39572,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -39613,7 +39613,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/355db500-a1f0-4108-ac0d-8423131907f3")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -39786,7 +39786,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -39827,7 +39827,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/53b970fa-9cb5-40ca-bce6-73192befc367/17945e91-2a99-4225-b580-17a6ecae7aaa")
-		(sheetname "LargeMotor5")
+		(sheetname "/MotorHub/LargeMotor5/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -40022,7 +40022,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -40063,7 +40063,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/03d84ad0-c6f0-47eb-9340-7a0387f188cb")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -40290,7 +40290,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -40331,7 +40331,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/53b970fa-9cb5-40ca-bce6-73192befc367/46cd9fa3-b471-4683-97f4-4075f75cbfed")
-		(sheetname "LargeMotor5")
+		(sheetname "/MotorHub/LargeMotor5/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -40504,7 +40504,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -40545,7 +40545,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/c5977041-c0d6-482d-9919-ad80efef969f")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -40718,7 +40718,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -40759,7 +40759,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/fafaf030-5fba-4fe7-873f-f6ad756c3463")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -40932,7 +40932,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -40973,9 +40973,9 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/128c6682-3228-4ea8-b0f1-85499c10b362/628e1dd8-9682-4f3b-8688-0cba2ac90d87")
-		(sheetname "Encoder2")
+		(sheetname "/MotorHub/Encoder2/")
 		(sheetfile "encoder.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_line
 			(start -0.153641 -0.38)
 			(end 0.153641 -0.38)
@@ -41146,7 +41146,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -41187,7 +41187,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/fe1f0ae0-b9d2-45da-98fc-eb3e7ec43aeb/f99b43f8-deec-41e2-b166-c214b09d3638")
-		(sheetname "Encoder5")
+		(sheetname "/MotorHub/Encoder5/")
 		(sheetfile "encoder.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -41436,7 +41436,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -41477,7 +41477,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/bb55d5dc-17ea-4c4f-8b20-038db2561a4a/9068f2f9-38ee-469f-8a39-659290d880e4")
-		(sheetname "Magnometer")
+		(sheetname "/Magnometer/")
 		(sheetfile "magnometer.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -41650,7 +41650,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 225)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -41691,7 +41691,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/8e16c31f-56fa-45d9-8764-9c4d4a8be0f8")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -41864,7 +41864,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -41905,7 +41905,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ecff1507-07a4-4051-a53e-7f381d310b19/0a598ca7-9939-4aed-9838-e5acdccfd35c")
-		(sheetname "LargeMotor2")
+		(sheetname "/MotorHub/LargeMotor2/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -42116,7 +42116,7 @@
 			)
 		)
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ecff1507-07a4-4051-a53e-7f381d310b19/b157f651-21b5-4567-ac52-fcd89b078bc8")
-		(sheetname "LargeMotor2")
+		(sheetname "/MotorHub/LargeMotor2/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -42504,7 +42504,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -42545,7 +42545,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/128c6682-3228-4ea8-b0f1-85499c10b362/f99b43f8-deec-41e2-b166-c214b09d3638")
-		(sheetname "Encoder2")
+		(sheetname "/MotorHub/Encoder2/")
 		(sheetfile "encoder.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -42794,7 +42794,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -42835,7 +42835,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/57a549cf-4a04-4a00-b17d-114b63a3b7b2/17945e91-2a99-4225-b580-17a6ecae7aaa")
-		(sheetname "LargeMotor3")
+		(sheetname "/MotorHub/LargeMotor3/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -43030,7 +43030,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -43071,9 +43071,9 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/047c48ad-38c6-4ace-a080-536411528ad9/628e1dd8-9682-4f3b-8688-0cba2ac90d87")
-		(sheetname "Encoder4")
+		(sheetname "/MotorHub/Encoder4/")
 		(sheetfile "encoder.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_bom dnp)
 		(fp_line
 			(start -0.153641 -0.38)
 			(end 0.153641 -0.38)
@@ -43244,7 +43244,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 135)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -43285,7 +43285,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/0a9de3d3-7edc-4fb5-8efe-2dfe03664134")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -43458,7 +43458,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -43499,7 +43499,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/249fcc58-d8e4-4b0d-99c0-747a6cf91710/77f9ebe4-1bbd-4100-9c7d-bb4234e1f649")
-		(sheetname "LargeMotor1")
+		(sheetname "/MotorHub/LargeMotor1/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -43672,7 +43672,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -43713,7 +43713,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??-1MP*")
 		(path "/b66bb9e3-c447-4758-9f50-76fa348190d6")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -43988,7 +43988,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -44029,7 +44029,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/249fcc58-d8e4-4b0d-99c0-747a6cf91710/0a598ca7-9939-4aed-9838-e5acdccfd35c")
-		(sheetname "LargeMotor1")
+		(sheetname "/MotorHub/LargeMotor1/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -44202,7 +44202,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -44243,7 +44243,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/249fcc58-d8e4-4b0d-99c0-747a6cf91710/03cc7311-75e6-4fea-af82-8e7cfc62cf77")
-		(sheetname "LargeMotor1")
+		(sheetname "/MotorHub/LargeMotor1/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -44438,7 +44438,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -44479,7 +44479,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/ecff1507-07a4-4051-a53e-7f381d310b19/a4e460c0-6d6e-4993-9ebf-9a9b80b927e6")
-		(sheetname "LargeMotor2")
+		(sheetname "/MotorHub/LargeMotor2/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -44652,7 +44652,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -44693,7 +44693,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/128c6682-3228-4ea8-b0f1-85499c10b362/97f8967d-f62c-4881-a8dd-d3ce70d6f55b")
-		(sheetname "Encoder2")
+		(sheetname "/MotorHub/Encoder2/")
 		(sheetfile "encoder.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -44865,7 +44865,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at -0.6 -6.6 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -44905,7 +44905,7 @@
 			)
 		)
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/c2eb3df0-20ab-43ee-8d22-7359f9f90617")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -45043,7 +45043,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -45084,7 +45084,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/5c0dbf66-32fe-4480-b2e4-54bc89bb8a89")
-		(sheetname "MotorHub")
+		(sheetname "/MotorHub/")
 		(sheetfile "motor-hub.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -45257,7 +45257,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -45298,7 +45298,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/57a549cf-4a04-4a00-b17d-114b63a3b7b2/3d4efb7e-6c77-45ce-b5fb-e272c1cd6eee")
-		(sheetname "LargeMotor3")
+		(sheetname "/MotorHub/LargeMotor3/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -45471,7 +45471,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -45512,7 +45512,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/8ef7f6c1-b5f0-4b4e-b05a-a624501256e5/3448f238-88bc-41e8-81b0-d0cc742f1865")
-		(sheetname "IMU")
+		(sheetname "/IMU/")
 		(sheetfile "imu.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -45685,7 +45685,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -45726,7 +45726,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/156dae0f-0a58-4e86-b006-9af1f285ab5a")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -45953,7 +45953,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -45994,7 +45994,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/de0a8e47-afa7-482a-9ba2-9f2770efabd5/97f8967d-f62c-4881-a8dd-d3ce70d6f55b")
-		(sheetname "Encoder1")
+		(sheetname "/MotorHub/Encoder1/")
 		(sheetfile "encoder.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -46167,7 +46167,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -46208,7 +46208,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/57a549cf-4a04-4a00-b17d-114b63a3b7b2/77f9ebe4-1bbd-4100-9c7d-bb4234e1f649")
-		(sheetname "LargeMotor3")
+		(sheetname "/MotorHub/LargeMotor3/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -46381,7 +46381,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -46422,7 +46422,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/de0a8e47-afa7-482a-9ba2-9f2770efabd5/f99b43f8-deec-41e2-b166-c214b09d3638")
-		(sheetname "Encoder1")
+		(sheetname "/MotorHub/Encoder1/")
 		(sheetfile "encoder.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -46671,7 +46671,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -46712,7 +46712,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/de0a8e47-afa7-482a-9ba2-9f2770efabd5/c66b9bc9-a120-4c54-8d90-97371da49772")
-		(sheetname "Encoder1")
+		(sheetname "/MotorHub/Encoder1/")
 		(sheetfile "encoder.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -46885,7 +46885,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -46926,7 +46926,7 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/249fcc58-d8e4-4b0d-99c0-747a6cf91710/458a06aa-f971-4ee8-a1cb-c371509b1e5e")
-		(sheetname "LargeMotor1")
+		(sheetname "/MotorHub/LargeMotor1/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -47121,7 +47121,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -47162,7 +47162,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/bb55d5dc-17ea-4c4f-8b20-038db2561a4a/f1bd4de2-515d-415b-b970-95f553309b12")
-		(sheetname "Magnometer")
+		(sheetname "/Magnometer/")
 		(sheetfile "magnometer.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -47335,7 +47335,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -47376,7 +47376,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/7e3f67f4-c7a7-4f15-a62c-4903c0d88b19/a1a579ba-cb28-4cf4-9218-3d3db613743c/a4e460c0-6d6e-4993-9ebf-9a9b80b927e6")
-		(sheetname "LargeMotor4")
+		(sheetname "/MotorHub/LargeMotor4/")
 		(sheetfile "large-motor.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -47551,7 +47551,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "B.Fab")
@@ -47595,7 +47595,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_2x??_*")
 		(path "/f4591e51-71c0-4927-8ba9-9cd4cd641f38")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr through_hole dnp)
 		(fp_line
@@ -49944,7 +49944,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "B.Fab")
@@ -49974,7 +49974,7 @@
 		)
 		(property ki_fp_filters "Net*Tie*")
 		(path "/d99d6aef-4ac9-4390-9321-91d12d2daa56")
-		(sheetname "Root")
+		(sheetname "/")
 		(sheetfile "raven.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
 		(net_tie_pad_groups "1, 2")
